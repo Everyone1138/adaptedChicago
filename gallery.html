@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+        <a href="index.html"><img src="Adapted+LOGO.jpg" alt="Brand Logo" class="h-10"></a>
+        <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+        <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+            <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+            <ul>
+                <li class="p-2"><a href="index.html">Home</a></li>
+                <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                <li class="p-2"><a href="teampage.html">The Team</a></li>
+                <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                <li class="p-2"><a href="contactus.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Video Background Section -->
+    <section class="h-screen flex justify-center items-center bg-black">
+        <video class="w-full h-full object-cover" autoplay muted loop>
+            <source src="adapted_2024_film_reel (360p).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute text-white text-center">
+            <h1 class="text-5xl font-bold">Gallery</h1>
+            <p class="text-lg mt-3">Look and see some of the projects we've worked on.</p>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="pt-20 p-5">
+        <h2 class="text-4xl text-center font-bold mb-10">Gallery</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <img src="image1.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg shadow-lg">
+            <img src="image2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg shadow-lg">
+            <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg">
+            <img src="image4.jpg" alt="Gallery Image 4" class="w-full h-64 object-cover rounded-lg shadow-lg">
+            <img src="image5.jpg" alt="Gallery Image 5" class="w-full h-64 object-cover rounded-lg shadow-lg">
+            <img src="image6.jpg" alt="Gallery Image 6" class="w-full h-64 object-cover rounded-lg shadow-lg">
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-10 mt-10">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div>
+                <h3 class="text-lg font-bold">Company Info</h3>
+                <p>123 Business Street</p>
+                <p>City, State, ZIP</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Contact Us</h3>
+                <p>Email: contact@yourcompany.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <h3 class="text-lg font-bold"> schedule a zoom meeting</h3>
+                <p>Want to schedule a zoom meeting with us?</p>
+                <p><a href="https://www.example.com" class="bg-blue-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <p><a href="#" class="text-blue-400">Facebook</a></p>
+                <p><a href="#" class="text-blue-400">Twitter</a></p>
+                <p><a href="#" class="text-blue-400">LinkedIn</a></p>
+            </div>
+        </div>
+      <p class="mt-5">&copy; 2025 Your Brand | All Rights Reserved</p>
+      <p>
+          
+      </p>
+      
+      </footer>
+      
+      <script>
+        document.getElementById("menu-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            this.classList.add("rotate-180");
+            document.getElementById("menu").style.right = "0";
+        });
+        
+        document.getElementById("close-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            document.getElementById("menu-btn").classList.remove("rotate-180");
+            document.getElementById("menu").style.right = "-100%";
+        });
+        
+        function closeMenu(event) {
+            let menu = document.getElementById("menu");
+            let menuBtn = document.getElementById("menu-btn");
+            if (!menu.contains(event.target) && event.target !== menuBtn) {
+                menu.style.right = "-100%";
+                menuBtn.classList.remove("rotate-180");
+            }
+        }
+    </script>
+      </body>
+      </html>
+      

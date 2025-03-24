@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white" onclick="closeMenu(event)">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+        <a href="index.html"><img src="Adapted+LOGO.jpg" alt="Brand Logo" class="h-10"></a>
+        <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+        <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+            <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+            <ul>
+                <li class="p-2"><a href="index.html">Home</a></li>
+                <li class="p-2"><a href="#">About</a></li>
+                <li class="p-2"><a href="services.html">Services</a></li>
+                <li class="p-2"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="h-screen flex justify-center items-center bg-black">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold">Our Services</h1>
+            <p class="text-lg mt-3">Discover what we can do for you.</p>
+        </div>
+    </section>
+    
+    <!-- Services Grid -->
+    <section class="py-20 px-5">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-8 rounded-lg text-center">
+                <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
+                <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
+                <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-lg text-center">
+                <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
+                <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
+                <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-lg text-center">
+                <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
+                <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
+                <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-10 mt-10">
+        <p>&copy; 2025 Your Brand | All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            this.classList.add("rotate-180");
+            document.getElementById("menu").style.right = "0";
+        });
+        
+        document.getElementById("close-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            document.getElementById("menu-btn").classList.remove("rotate-180");
+            document.getElementById("menu").style.right = "-100%";
+        });
+        
+        function closeMenu(event) {
+            let menu = document.getElementById("menu");
+            let menuBtn = document.getElementById("menu-btn");
+            if (!menu.contains(event.target) && event.target !== menuBtn) {
+                menu.style.right = "-100%";
+                menuBtn.classList.remove("rotate-180");
+            }
+        }
+    </script>
+</body>
+</html>

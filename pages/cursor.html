@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Cursor Example</title>
+  <h1>testing!</h1>
+  <style>
+    .pointer {
+      cursor: pointer; /* Hand pointer (used for links) */
+    }
+
+    .crosshair {
+      cursor: crosshair; /* Crosshair pointer */
+    }
+
+    .custom-cursor {
+      cursor: url('custom-cursor.png'), auto; /* Custom image cursor */
+    }
+  </style>
+</head>
+<body>
+  <h1>Change Mouse Cursor Example</h1>
+
+  <p class="pointer">Hover over this text for a pointer cursor.</p>
+
+  <p class="crosshair">Hover over this text for a crosshair cursor.</p>
+
+  <p class="custom-cursor">Hover over this text for a custom image cursor (if supported).</p>
+</body>
+</html>

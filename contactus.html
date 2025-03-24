@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+        <a href="index.html"><img src="Adapted+LOGO.jpg" alt="Brand Logo" class="h-10"></a>
+        <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+        <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+            <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+            <ul>
+                <li class="p-2"><a href="index.html">Home</a></li>
+                <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                <li class="p-2"><a href="teampage.html">The Team</a></li>
+                <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                <li class="p-2"><a href="contactus.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Video Background Section -->
+    <section class="h-screen flex justify-center items-center bg-black">
+        <video class="w-full h-full object-cover" autoplay muted loop>
+            <source src="adapted_2024_film_reel (360p).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute text-white text-center">
+            <h1 class="text-5xl font-bold">Contact Us</h1>
+            <p class="text-lg mt-3">We'd love to hear from you!</p>
+        </div>
+    </section>
+    
+    <!-- Contact Form -->
+    <section class="py-20 px-5 bg-black text-white flex justify-center">
+        <form class="bg-transparent p-10 w-full max-w-2xl">
+            <h2 class="text-3xl font-bold mb-5 text-center">Get in Touch</h2>
+            <label class="block mb-2">Name</label>
+            <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Name" required>
+            
+            <label class="block mb-2">Email</label>
+            <input type="email" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Email" required>
+            
+            <label class="block mb-2">Message</label>
+            <textarea class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" rows="5" placeholder="Your Message" required></textarea>
+            
+            <button type="submit" class="w-full bg-gray-700 text-white py-3 rounded-lg hover:bg-gray-600">Send Message</button>
+        </form>
+    </section>
+    
+    <!-- Google Map Embed -->
+    <section class="h-96">
+        <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093706!2d144.95592831531692!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1f9d555%3A0x4c2c4d6a541f5b0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1633564645196!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-10 mt-10">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div>
+                <h3 class="text-lg font-bold">Company Info</h3>
+                <p>123 Business Street</p>
+                <p>City, State, ZIP</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Contact Us</h3>
+                <p>Email: contact@yourcompany.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <h3 class="text-lg font-bold"> schedule a zoom meeting</h3>
+                <p>Want to schedule a zoom meeting with us?</p>
+                <p><a href="https://www.example.com" class="bg-blue-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <p><a href="#" class="text-blue-400">Facebook</a></p>
+                <p><a href="#" class="text-blue-400">Twitter</a></p>
+                <p><a href="#" class="text-blue-400">LinkedIn</a></p>
+            </div>
+        </div>
+      <p class="mt-5">&copy; 2025 Your Brand | All Rights Reserved</p>
+      <p>
+          
+      </p>
+      
+      </footer>
+      
+      <script>
+        document.getElementById("menu-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            this.classList.add("rotate-180");
+            document.getElementById("menu").style.right = "0";
+        });
+        
+        document.getElementById("close-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            document.getElementById("menu-btn").classList.remove("rotate-180");
+            document.getElementById("menu").style.right = "-100%";
+        });
+        
+        function closeMenu(event) {
+            let menu = document.getElementById("menu");
+            let menuBtn = document.getElementById("menu-btn");
+            if (!menu.contains(event.target) && event.target !== menuBtn) {
+                menu.style.right = "-100%";
+                menuBtn.classList.remove("rotate-180");
+            }
+        }
+    </script>
+      </body>
+      </html>
