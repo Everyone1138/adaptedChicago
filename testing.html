@@ -6,6 +6,7 @@
     <title>Modern Web Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style href="styles.css"></style>
     <style>
         body {
             font-family: 'Caviar Dreams', sans-serif, Arial, Helvetica, sans-serif;
@@ -48,9 +49,29 @@
             height: 100%;
             object-fit: cover;
         }
+        .nav-text {
+            display: inline-block;
+            transition: transform 0.5s ease-in-out;
+        }
+        .nav-text:hover {
+            transform: rotate(360deg);
+        }
     </style>
 </head>
 <body class="bg-gray-100" onclick="closeMenu(event)">
+    
+    <!-- Navbar with Spinning Text -->
+    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white text-2xl font-bold">
+            <span class="nav-text">a</span>
+            <span class="nav-text">d</span>
+            <span class="nav-text">a</span>
+            <span class="nav-text">p</span>
+            <span class="nav-text">t</span>
+            <span class="nav-text">e</span>
+            <span class="nav-text">d</span>
+        </a>
+    </nav>
     
     <!-- Video Section with Overlay Text -->
     <section class="video-container">
@@ -59,7 +80,7 @@
             Your browser does not support the video tag.
         </video>
         <div class="overlay">
-            <h1 class="font-bold fade-in">Welcome to adapted.</h1>
+            <h1 class="font-bold fade-in">Welcome to Chicago Vision Studios</h1>
             <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
                 Crafting cinematic masterpieces with passion and precision. From concept to screen, we bring your vision to life with cutting-edge technology and storytelling expertise.
             </p>

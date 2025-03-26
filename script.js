@@ -1,5 +1,7 @@
-document.addEventListener('mousemove', (e) => {
-    const cursor = document.querySelector('.custom-cursor');
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.getElementById("loader").classList.add("hidden");
+        document.getElementById("content").classList.remove("hidden");
+    }, 2000); // Simulates loading delay
 });

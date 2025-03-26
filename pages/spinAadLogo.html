@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Page</title>
+    <link href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Caviar Dreams', sans-serif, Arial, Helvetica, sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            text-align: right;
+            color: white;
+            z-index: 10;
+            transform: translateY(-50%);
+        }
+        .overlay h1 {
+            font-size: 50px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .nav-text {
+            display: inline-block;
+            transition: transform 0.5s ease-in-out;
+        }
+        .nav-text:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100" onclick="closeMenu(event)">
+    
+<!-- Navbar with Spinning Text and Menu -->
+<nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+    <!-- Spinning Text -->
+    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white text-2xl font-bold">
+        <span class="nav-text">a</span>
+        <span class="nav-text">d</span>
+        <span class="nav-text">a</span>
+        <span class="nav-text">p</span>
+        <span class="nav-text">t</span>
+        <span class="nav-text">e</span>
+        <span class="nav-text">d</span>
+        <span class="nav-text">.</span>
+    </a>
+
+    <!-- Menu Button -->
+    <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+
+    <!-- Side Menu -->
+    <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+        <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+        <ul>
+            <li class="p-2"><a href="index.html">Home</a></li>
+            <li class="p-2"><a href="gallery.html">Gallery</a></li>
+            <li class="p-2"><a href="teampage.html">The Team</a></li>
+            <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+            <li class="p-2"><a href="contactus.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+    
+    <!-- Video Section with Overlay Text -->
+    <section class="video-container">
+        <video autoplay muted loop>
+            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <h1 class="text-5xl font-bold fade-in">adapted studios</h1>
+            <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
+    where your dreams come to life of the screen.
+    
+            </p>
+            <a href="gallery.html" class="mt-6 bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
+                Explore Our Work
+            </a>
+        </div>
+    </section>
+    
+    <!-- Content Sections -->
+    <section class="h-screen bg-white flex justify-center items-center text-black">
+        <h2 class="text-4xl">Section 1</h2>
+    </section>
+
+    <section class="h-screen bg-black flex justify-center items-center text-white">
+        <h2 class="text-4xl"></h2>
+        <img src="img/Scene (1).gif" width="100%" height="100%">
+    </section>
+
+    <section class="h-screen bg-white flex justify-center items-center text-black">
+        <h2 class="text-4xl"></h2>
+        <section class="py-20 px-5">
+          <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="bg-gray-800 p-8 rounded-lg text-center">
+                  <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
+                  <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
+                  <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
+              </div>
+              <div class="bg-gray-800 p-8 rounded-lg text-center">
+                  <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
+                  <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
+                  <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
+              </div>
+              <div class="bg-gray-800 p-8 rounded-lg text-center">
+                  <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
+                  <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
+                  <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
+              </div>
+          </div>
+      </section>
+    </section>
+
+    <section class="h-screen bg-black flex justify-center items-center text-white">
+        <h2 class="text-4xl">Section 4</h2>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-10 mt-10">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div>
+                <h3 class="text-lg font-bold">Company Info</h3>
+                <p>123 Business Street</p>
+                <p>City, State, ZIP</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Contact Us</h3>
+                <p>Email: contact@yourcompany.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <h3 class="text-lg font-bold"> schedule a zoom meeting</h3>
+                <p>Want to schedule a zoom meeting with us?</p>
+                <p><a href="https://www.example.com" class="bg-blue-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <p><a href="#" class="text-blue-400">Facebook</a></p>
+                <p><a href="#" class="text-blue-400">Twitter</a></p>
+                <p><a href="#" class="text-blue-400">LinkedIn</a></p>
+            </div>
+        </div>
+      <p class="mt-5">&copy; 2025 Your Brand | All Rights Reserved</p>
+      <p>
+          
+      </p>
+      
+      </footer>
+
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            this.classList.add("rotate-180");
+            document.getElementById("menu").style.right = "0";
+        });
+        
+        document.getElementById("close-btn").addEventListener("click", function(event) {
+            event.stopPropagation();
+            document.getElementById("menu-btn").classList.remove("rotate-180");
+            document.getElementById("menu").style.right = "-100%";
+        });
+        
+        function closeMenu(event) {
+            let menu = document.getElementById("menu");
+            let menuBtn = document.getElementById("menu-btn");
+            if (!menu.contains(event.target) && event.target !== menuBtn) {
+                menu.style.right = "-100%";
+                menuBtn.classList.remove("rotate-180");
+            }
+        }
+    </script>
+</body>
+</html>
