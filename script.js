@@ -30,3 +30,17 @@ function closeMenu(event) {
 
 // banner // 
 
+
+// about us in home page //
+function fadeInOnScroll() {
+    const aboutSection = document.getElementById("aboutUs");
+    const sectionPosition = aboutSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if (sectionPosition < screenPosition) {
+        aboutSection.classList.remove("opacity-0", "translate-y-10");
+    }
+}
+
+window.addEventListener("scroll", fadeInOnScroll);
+
