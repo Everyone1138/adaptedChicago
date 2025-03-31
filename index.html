@@ -3,81 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Web Page</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
-    <style>
-        body {
-            font-family: 'Caviar Dreams', sans-serif, Arial, Helvetica, sans-serif;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1.5s ease-out forwards;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .overlay {
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            text-align: right;
-            color: white;
-            z-index: 10;
-            transform: translateY(-50%);
-        }
-        .overlay h1 {
-            font-size: 50px;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .nav-text {
-            display: inline-block;
-            transition: transform 0.5s ease-in-out;
-        }
-        .nav-text:hover {
-            transform: rotate(360deg);
-        }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-        .loader-text span {
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: bold;
-            animation: bounce 1s infinite alternate;
-        }
-        .loader-text span:nth-child(2) { animation-delay: 0.1s; }
-        .loader-text span:nth-child(3) { animation-delay: 0.2s; }
-        .loader-text span:nth-child(4) { animation-delay: 0.3s; }
-        .loader-text span:nth-child(5) { animation-delay: 0.4s; }
-        .loader-text span:nth-child(6) { animation-delay: 0.5s; }
-        .loader-text span:nth-child(7) { animation-delay: 0.6s; }
-        .loader-text span:nth-child(8) { animation-delay: 0.7s; }
-    </style>
+
 </head>
 <body class="bg-gray-100" onclick="closeMenu(event)">
     <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
@@ -103,11 +34,11 @@
         <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-180 hover:text-red-500">a</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-180 hover:text-red-500">p</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-180 hover:text-red-500">t</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-180 hover:text-red-500">e</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-180 hover:text-red-500">d</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
 
             
@@ -148,29 +79,14 @@
         </div>
     </section>
             <!-- Scrolling Banner Section -->
-            <section class="overflow-hidden whitespace-nowrap bg-gray-800 py-5">
-                <div class="inline-block animate-scroll flex space-x-10">
-                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 1" class="h-32">
-                    <!-- <img src="banner2.jpg" alt="Banner Image 2" class="h-32">
-                    <img src="banner3.jpg" alt="Banner Image 3" class="h-32">
-                    <img src="banner4.jpg" alt="Banner Image 4" class="h-32">
-                    <img src="banner5.jpg" alt="Banner Image 5" class="h-32"> -->
+            <section class="banner-section">
+                <div class="overflow-hidden whitespace-nowrap bg-gray-800">
+                    <div class="animate-scroll">
+                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+                    </div>
                 </div>
             </section>
-            
-            <style>
-                @keyframes scroll {
-                    from {
-                        transform: translateX(100%);
-                    }
-                    to {
-                        transform: translateX(-100%);
-                    }
-                }
-                .animate-scroll {
-                    animation: scroll 20s linear infinite;
-                }
-            </style>
     
     <!-- Content Sections -->
     <section class="h-screen bg-white flex justify-center items-center text-black">
@@ -243,28 +159,6 @@
         <p class="mt-5">&copy; 2025 Your Brand | All Rights Reserved</p>
     </footer>
 
-    <script>
-        document.getElementById("menu-btn").addEventListener("click", function(event) {
-            event.stopPropagation();
-            this.classList.add("rotate-180");
-            document.getElementById("menu").style.right = "0";
-        });
-        
-        document.getElementById("close-btn").addEventListener("click", function(event) {
-            event.stopPropagation();
-            document.getElementById("menu-btn").classList.remove("rotate-180");
-            document.getElementById("menu").style.right = "-100%";
-        });
-        
-        function closeMenu(event) {
-            let menu = document.getElementById("menu");
-            let menuBtn = document.getElementById("menu-btn");
-            if (!menu.contains(event.target) && event.target !== menuBtn) {
-                menu.style.right = "-100%";
-                menuBtn.classList.remove("rotate-180");
-            }
-        }
-    </script>
-     </div> <!-- this is where the loader div ends -->
+</div> <!-- this is where the loader div ends -->
 </body>
 </html>
