@@ -1,16 +1,53 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Modern Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+
 </head>
-<body class="bg-black text-white" onclick="closeMenu(event)">
-    <!-- Navbar -->
-    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
-        <a href="index.html"><img src="Adapted+LOGO.jpg" alt="Brand Logo" class="h-10"></a>
+<body class="bg-gray-100" onclick="closeMenu(event)">
+    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <div class="loader-text">
+            <span>a</span>
+            <span>d</span>
+            <span>a</span>
+            <span>p</span>
+            <span>t</span>
+            <span>e</span>
+            <span>d</span>
+            <span>.</span>
+        </div>
+    </div>
+    
+    <div id="content" class="hidden">
+            <!-- Main content starts here -->
+        
+    
+    
+    <nav class="fixed w-full bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+        <!-- Spinning Text -->
+        <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+
+            
+        </a>
+    
+        <!-- Menu Button -->
         <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+    
+        <!-- Side Menu -->
         <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
             <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
             <ul>
@@ -22,11 +59,12 @@
             </ul>
         </div>
     </nav>
+
     
     <!-- Video Background Section -->
     <section class="h-screen flex justify-center items-center bg-black">
         <video class="w-full h-full object-cover" autoplay muted loop>
-            <source src="adapted_2024_film_reel (360p).mp4" type="video/mp4">
+            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="absolute text-white text-center">
@@ -35,18 +73,47 @@
         </div>
     </section>
     
+                <!-- Scrolling Banner Section -->
+                <section class="banner-section">
+                    <div class="overflow-hidden whitespace-nowrap bg-gray-800">
+                        <div class="animate-scroll">
+                            <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                            <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+                        </div>
+                    </div>
+                </section>
+                
+    <section>
+        <div >
+            <h1 class="text-5xl font-bold fade-in">adapted studios</h1>
+            <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
+    where your dreams come to life of the screen.
+    
+            </p>
+            <a href="gallery.html" class="mt-6 bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
+                Explore Our Work
+            </a>
+        </div>
+    </section>
     <!-- Contact Form -->
     <section class="py-20 px-5 bg-black text-white flex justify-center">
         <form class="bg-transparent p-10 w-full max-w-2xl">
             <h2 class="text-3xl font-bold mb-5 text-center">Get in Touch</h2>
-            <label class="block mb-2">Name</label>
-            <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Name" required>
+            <label class="block mb-2">Name:     <i>(required)</i></label>
+            <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Name Here!" required>
             
-            <label class="block mb-2">Email</label>
-            <input type="email" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Email" required>
+            <label class="block mb-2">Email: <i>(required)</i></label>
+            <input type="email" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Email Here!" required>
+
+            <label class="block mb-2">Budget:  <i>(required)</i></label>
+            <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="What's your budget for this project?" required>
+
             
-            <label class="block mb-2">Message</label>
+            <label class="block mb-2">Message: <i>(required)</i></label>
             <textarea class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" rows="5" placeholder="Your Message" required></textarea>
+
+            <label class="block mb-2">Website  <i>(not required)</i></label>
+            <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="www.yourwebsite.com">
             
             <button type="submit" class="w-full bg-gray-700 text-white py-3 rounded-lg hover:bg-gray-600">Send Message</button>
         </form>
@@ -58,7 +125,7 @@
     </section>
     
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center p-10 mt-10">
+    <footer class="bg-gray-900 bg-opacity-50 text-white text-center p-10 mt-10">
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <div>
                 <h3 class="text-lg font-bold">Company Info</h3>
@@ -69,45 +136,26 @@
                 <h3 class="text-lg font-bold">Contact Us</h3>
                 <p>Email: contact@yourcompany.com</p>
                 <p>Phone: (123) 456-7890</p>
-                <h3 class="text-lg font-bold"> schedule a zoom meeting</h3>
-                <p>Want to schedule a zoom meeting with us?</p>
+                <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                <p>Want to schedule a Zoom meeting with us?</p>
                 <p><a href="https://www.example.com" class="bg-blue-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
             </div>
             <div>
                 <h3 class="text-lg font-bold">Follow Us</h3>
-                <p><a href="#" class="text-blue-400">Facebook</a></p>
-                <p><a href="#" class="text-blue-400">Twitter</a></p>
-                <p><a href="#" class="text-blue-400">LinkedIn</a></p>
+                <p>
+                    <a href="#" class="text-blue-400 text-2xl mx-2">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-pink-400 text-2xl mx-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-blue-500 text-2xl mx-2">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </p>
             </div>
         </div>
-      <p class="mt-5">&copy; 2025 Your Brand | All Rights Reserved</p>
-      <p>
-          
-      </p>
-      
-      </footer>
-      
-      <script>
-        document.getElementById("menu-btn").addEventListener("click", function(event) {
-            event.stopPropagation();
-            this.classList.add("rotate-180");
-            document.getElementById("menu").style.right = "0";
-        });
-        
-        document.getElementById("close-btn").addEventListener("click", function(event) {
-            event.stopPropagation();
-            document.getElementById("menu-btn").classList.remove("rotate-180");
-            document.getElementById("menu").style.right = "-100%";
-        });
-        
-        function closeMenu(event) {
-            let menu = document.getElementById("menu");
-            let menuBtn = document.getElementById("menu-btn");
-            if (!menu.contains(event.target) && event.target !== menuBtn) {
-                menu.style.right = "-100%";
-                menuBtn.classList.remove("rotate-180");
-            }
-        }
-    </script>
+        <p class="mt-5">&copy; 2025 adapted. | All Rights Reserved</p>
+    </footer>
       </body>
       </html>
