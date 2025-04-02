@@ -44,3 +44,16 @@ function fadeInOnScroll() {
 
 window.addEventListener("scroll", fadeInOnScroll);
 
+
+// slit screen animation
+$(document).ready(function () {
+    $("#leftPaneButton").click(function () {
+      $("#leftPane").animate({ width: 0 }, 1000);
+      $("#rightPane").animate({ width: "100%" }, 1000);
+    });
+  
+    $("#rightPaneButton").click(function () {
+      $("#leftPane").animate({ width: "100%" }, 1000);
+      $("#rightPane").animate({ width: 0 }, 1000);
+    });
+  });
