@@ -275,4 +275,12 @@
       padding: 0;
     }
   }
-  
+  .overlay-content p:hover,
+  .overlay-content p:active {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .wrap:active .overlay-content p {
+    opacity: 0; /* Makes the paragraph disappear when any part of .wrap is clicked */
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }

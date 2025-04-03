@@ -156,3 +156,12 @@ body {
         width: 100%;
     }
 }
+
+@media (max-width: 600px) {
+    .nav-text {
+        font-size: 50px; /* Adjust text size */
+    }
+    #menu {
+        width: 100%;
+    }
+}
