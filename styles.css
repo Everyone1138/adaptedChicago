@@ -84,7 +84,7 @@ i {
 .nav-text {
     display: inline-block;
     transition: transform 0.5s ease-in-out, color 0.25s ease-in-out;
-    font-size: 5rem; /* Adjust as needed */
+    font-size: 10rem; /* Adjust as needed */
     font-weight: bold;
 }
 
@@ -156,12 +156,81 @@ body {
         width: 100%;
     }
 }
-
+/*  Adjust text size , Default size for larger screens, Smaller size for very small screens,Adjust size for tablet screens, Adjust size for tablet screens*/
 @media (max-width: 600px) {
     .nav-text {
-        font-size: 50px; /* Adjust text size */
+        font-size: 50px; 
     }
     #menu {
         width: 100%;
     }
 }
+
+.nav-text {
+    font-size: 100px; 
+}
+
+@media (max-width: 768px) {
+    .nav-text {
+        font-size: 50px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-text {
+        font-size: 50px; 
+    }
+}
+
+@media (max-width: 1000px){
+    .nav-text {
+        font-size: 50px; 
+    }
+}
+
+@media (max-width: 1000px){
+    .nav-text {
+        font-size: 50px; 
+    }
+} 
+
+@media only screen and (max-width: 600px) {
+    .nav-text {
+      font-size: 30px; /* Smaller text on small screens */
+    }
+    .video-container .overlay {
+      text-align: center;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .video-container .overlay h1 {
+      font-size: 30px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr;
+      gap: 20px;
+    }
+  }
+  
+  /* trying to figure out the sizing of this font when in cell phone m,ode*/
+  @media only screen and (max-width:6500px) { 
+    .span {
+        font-size: 40px;
+    }
+  }
+  @media only screen and (max-width:30000px) { 
+    .span {
+        font-size: 100px;
+    }
+  }
+  @media only screen and (max-width:300px) { 
+    .video-container h1{
+        display: inline;
+        font-size: 1.5rem;
+    }
+  }

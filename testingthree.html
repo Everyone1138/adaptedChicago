@@ -1,160 +1,265 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style rel="stylesheet" src ="style.css"></style>
-  </head>
-  <body>
-    <!--[if IE 8]>         <div class="lt-ie9"> <![endif]-->
-    <div class="feature"></div>
-    <div class="content">
-      <h2>Heading</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscfing elit. Integer nec
-        odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-        quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-        mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-        Vestibulum lacinia arcu eget nulla.
-      </p>
-      <p>
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-        inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim
-        lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In
-        scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.
-        Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis
-        vel, suscipit quis, luctus non, massa.
-      </p>
-      <p>
-        Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus
-        metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque
-        volutpat condimentum velit. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed
-        lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a
-        cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse
-        potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum
-        sapien. Proin quam. Etiam ultrices.
-      </p>
-      <h2>Heading</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-        odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-        quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-        mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-        Vestibulum lacinia arcu eget nulla.
-      </p>
-      <p>
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-        inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim
-        lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In
-        scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.
-        Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis
-        vel, suscipit quis, luctus non, massa.
-      </p>
-      <p>
-        Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus
-        metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque
-        volutpat condimentum velit. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed
-        lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a
-        cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse
-        potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum
-        sapien. Proin quam. Etiam ultrices.
-      </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+
+</head>
+<body class="bg-gray-100" onclick="closeMenu(event)">
+<!-- icons  -->
+    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+
+            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                <i class="fa-brands fa-square-vimeo"></i>
+            </a>
+            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                <i class="fab fa-facebook"></i>
+            </a>
+        
+        
     </div>
-    <!--[if IE 8]>         </div> <![endif]-->
+    <!-- -->
+    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50 ">
+        <div class="loader-text">
+            <span>a</span>
+            <span>d</span>
+            <span>a</span>
+            <span>p</span>
+            <span>t</span>
+            <span>e</span>
+            <span>d</span>
+            <span>.</span>
+        </div>
+    </div>
+    
+    <div id="content" class="hidden">
+            <!-- Main content starts here -->
+        
+    
+    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 md:px-10 lg:px-20"> <!-- this is the new code. old one is below-->
+<!-- 
+    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50"> -->
+        <!-- Spinning Text -->
+        <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      body,
-      html {
-        padding: 0;
-        margin: 0;
-      }
-      body {
-        background: #232323;
-        color: #fff;
-      }
-      .opaque {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        background: #d2d6f1;
-      }
-      .lt-ie9 .opaque {
-        display: none;
-      }
-      .feature {
-        position: fixed;
-        top: 0;
-        z-index: 0;
-        width: 100%;
-        padding-top: 50%;
-        background: url(http://s3.nikecdn.com/pass/NikeBasketball/LeBron_Poster.jpg)
-          center center no-repeat;
-        -webkit-background-size: 250%;
-        -moz-background-size: 250%;
-        -o-background-size: 250%;
-        background-size: 250%;
-        -webkit-box-shadow: 0 -50px 20px -20px #232323 inset;
-        -moz-box-shadow: 0 -50px 20px -20px #232323 inset;
-        box-shadow: 0 -50px 20px -20px #232323 inset;
-      }
-      .content {
-        position: relative;
-        z-index: 1;
-        padding-top: 45%;
-        width: 90%;
-        margin: 0 auto;
-      }
+            
+        </a>
+    
+        <!-- Menu Button -->
+        <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+    
+        <!-- Side Menu -->
+        <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+            <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+            <ul>
+                <li class="p-2"><a href="index.html">Home</a></li>
+                <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                <li class="p-2"><a href="teampage.html">The Team</a></li>
+                <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                <li class="p-2"><a href="contactus.html">Contact</a></li>
+            </ul>
 
-      @media only screen and (min-width: 36.25em) {
-        .content {
-          width: 60%;
-          padding-top: 35%;
-        }
-      }
-    </style>
-    <script>
-     $(function(){
-    zoom = $('.feature').css('background-size')
-    zoom = parseFloat(zoom)/100
-    size = zoom * $('.feature').width();
-    $(window).on('scroll', function(){
-      fromTop = $(window).scrollTop();
-      newSize = size - (fromTop/3);
-      if (newSize > $('.feature').width()) {
-          $('.feature').css({
-              '-webkit-background-size': newSize,
-              '-moz-background-size': newSize,
-              '-o-background-size': newSize,
-              'background-size': newSize,
-              '-webkit-filter':'blur('+ 0 + (fromTop/100) + 'px)',
-              'opacity': 1 - ((fromTop / $('html').height()) * 1.3)
-          });
-      }
-    });
-});
+            <div class="flex-1"></div>
 
-$(function (){
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+            <!-- Bottom Icons -->
+            <p>
 
-    if (isChrome || isSafari) {
-    } else {
-        $('.feature').append('<div class="opaque"></div>');
-        $(window).on('scroll', function(){
-            var opacity = 0 + ($(window).scrollTop()/5000);
-            $('.opaque').css('opacity', opacity);
-        });
-    }
-});
-    </script>
-  </body>
+                <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                    <i class="fa-brands fa-square-vimeo"></i>
+                </a>
+                <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </p>
+        </div>
+
+        
+    </nav>
+
+    
+    <!-- Video Section with Overlay Text -->
+    <section class="video-container relative flex items-center justify-center shadow-lg  overflow-hidden md:flex-row flex-col">
+        <video autoplay muted loop>
+            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">C</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">h</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">g</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+            <div>  
+            
+            
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">V</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">P</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">r</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">u</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">n</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+        </div>  
+
+            <h1 class="text-5xl font-bold fade-in "></h1>
+            <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
+     where your dreams come to life of the screen.
+    
+            </p>
+            <a href="contactus.html" class="mt-6 bg-red-500 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
+                Hire us!
+            </a>
+        </div>
+    </section>
+            <!-- Scrolling Banner Section -->
+            <section class="banner-section relative flex items-center justify-center shadow-lg  overflow-hidden md:flex-row flex-col">
+                <div class="overflow-hidden whitespace-nowrap bg-gray-800">
+                    <div class="animate-scroll">
+                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="relative flex items-center justify-center min-h-screen p-6 bg-white shadow-lg rounded-2xl overflow-hidden">
+                <div class="max-w-4xl text-center opacity-0 translate-y-10 transition-all duration-1000 ease-in-out" id="aboutUs">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">About Us</h1>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Welcome to <span class="font-semibold text-indigo-600">Our Company</span>, where innovation meets excellence. We are dedicated to delivering
+                        top-notch solutions tailored to your needs. Our team of experts is committed to quality,
+                        ensuring seamless experiences that drive success.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mt-4">
+                        At <span class="font-semibold text-indigo-600">Our Company</span>, we believe in fostering strong relationships with our clients, built on
+                        trust, transparency, and a passion for excellence. Join us on this journey to make a difference.
+                    </p>
+                </div>
+            </section>
+    
+    <!-- Content Sections -->
+    <section class="h-screen bg-white flex justify-center items-center text-black">
+        <h2 class="text-4xl">Section 1</h2>
+    </section>
+
+
+    <section class="banner-section">
+        <div class="overflow-hidden whitespace-nowrap bg-gray-800">
+            <div class="animate-scroll">
+                <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="h-screen bg-black flex justify-center items-center text-white">
+        <h2 class="text-4xl"></h2>
+        <img src="img/Scene (1).gif" width="100%" height="100%">
+    </section>
+
+    <section class="h-screen bg-white flex justify-center items-center text-black">
+        <h2 class="text-4xl"></h2>
+        <section class="py-20 px-5">
+          <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="bg-gray-800 p-8 rounded-lg text-center">
+                  <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
+                  <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
+                  <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
+              </div>
+              <div class="bg-gray-800 p-8 rounded-lg text-center">
+                  <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
+                  <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
+                  <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
+              </div>
+              <div class="bg-gray-800 p-8 rounded-lg text-center">
+                  <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
+                  <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
+                  <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
+              </div>
+          </div>
+      </section>
+    </section>
+
+    <section class="h-screen bg-black flex justify-center items-center text-white">
+        <h2 class="text-4xl">Section 4</h2>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div>
+                <h3 class="text-lg font-bold">Company Info</h3>
+                <p>123 Business Street</p>
+                <p>City, State, ZIP</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Contact Us</h3>
+                <p>Email: contact@yourcompany.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                <p>Want to schedule a Zoom meeting with us?</p>
+                <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <p>
+
+                    <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                        <i class="fa-brands fa-square-vimeo"></i>
+                    </a>
+                    <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
+    </footer>
+
+</div> <!-- this is where the loader div ends -->
+</body>
 </html>
