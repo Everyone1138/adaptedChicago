@@ -4,10 +4,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Web Page</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css"> -->
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
+    <script defer src="./js/main.js"></script>
+    
+    <script defer src="./js/jquery-3.2.1.min.js"></script>
+
+    <script defer src="./js/plugins.js"></script>
+    <script defer src="./js/modernizr.js"></script>
 
 </head>
 <body class="bg-gray-100" onclick="closeMenu(event)">
@@ -110,34 +120,6 @@
         </video>
         <div class="overlay">
 
-            <style>
-               .nav-text {
-    font-size: 5vw; /* Responsive scaling based on viewport width */
-    transition: transform 0.5s;
-}
-
-/* Medium screens (tablets) */
-@media (max-width: 1024px) {
-    .nav-text {
-        font-size: 4vw;
-    }
-}
-
-/* Small screens (phones) */
-@media (max-width: 768px) {
-    .nav-text {
-        font-size: 6vw;
-    }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-    .nav-text {
-        font-size: 8vw;
-    }
-}
-
-            </style>
             
             <h1 class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">C</h1>
             <h1 class="nav-text nav-size transition-transform duration-500 hover:rotate-360 hover:text-red-500">h</h1>
@@ -166,6 +148,7 @@
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">u</span>
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
+            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
             <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">n</span>
@@ -196,23 +179,166 @@
                     </div>
                 </div>
             </section>
+            
+            <section id="works" class="s-works target-section">
 
 
-            <section class="relative flex items-center justify-center min-h-screen p-6 bg-white shadow-lg rounded-2xl overflow-hidden">
-                <div class="max-w-4xl text-center opacity-0 translate-y-10 transition-all duration-1000 ease-in-out" id="aboutUs">
-                    <h1 class="text-4xl font-bold text-gray-800 mb-4">About Us</h1>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Welcome to <span class="font-semibold text-indigo-600">Our Company</span>, where innovation meets excellence. We are dedicated to delivering
-                        top-notch solutions tailored to your needs. Our team of experts is committed to quality,
-                        ensuring seamless experiences that drive success.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed mt-4">
-                        At <span class="font-semibold text-indigo-600">Our Company</span>, we believe in fostering strong relationships with our clients, built on
-                        trust, transparency, and a passion for excellence. Join us on this journey to make a difference.
-                    </p>
-                </div>
+               
+        
+
+            
+                <section class="hero relative flex items-center justify-center min-h-screen p-6 bg-white shadow-lg rounded-2xl overflow-hidden">
+                    <div class="collage" id="collage"></div>
+                    <div class="subtitle">Story-driven visuals. Cinematic impact.</div>
+                    <div class="about-text">
+                      We are a Chicago-based video production company passionate about crafting compelling stories that resonate.
+                      From brand films and commercials to documentaries and social content, we bring a cinematic edge to every frame.
+                      Our team blends creativity with strategy to deliver content that captures attention and leaves a lasting impression.
+                    </div>
+                  </section>
+                
+                  <script>
+                    const text = "Chicago Video Production";
+                    const collage = document.getElementById('collage');
+                    const delayPerLetter = 120;
+                    const totalPhases = 6;
+                    const phaseDelay = 1500;
+                    const letterElements = [];
+                
+                    function typeLetters(index = 0) {
+                      if (index >= text.length) {
+                        setTimeout(() => animateInPhases(totalPhases, phaseDelay), 500);
+                        return;
+                      }
+                
+                      const char = text[index];
+                      const el = document.createElement('div');
+                      el.className = 'letter';
+                      el.textContent = char === " " ? "\u00A0" : char;
+                      collage.appendChild(el);
+                      letterElements.push(el);
+                
+                      setTimeout(() => {
+                        el.classList.add('visible');
+                        typeLetters(index + 1);
+                      }, delayPerLetter);
+                    }
+                
+                    function getRandomOffset() {
+                      return {
+                        x: (Math.random() - 0.5) * 300,
+                        y: (Math.random() - 0.5) * 300,
+                      };
+                    }
+                
+                    function animateInPhases(phases, delayBetweenPhases) {
+                      let phase = 0;
+                      function nextPhase() {
+                        if (phase < phases) {
+                          letterElements.forEach((el) => {
+                            const offset = getRandomOffset();
+                            el.style.transform = `translate(${offset.x}px, ${offset.y}px)`;
+                          });
+                          phase++;
+                          setTimeout(nextPhase, delayBetweenPhases);
+                        } else {
+                          letterElements.forEach((el) => {
+                            el.style.transform = `translate(0, 0)`;
+                          });
+                        }
+                      }
+                      nextPhase();
+                    }
+                
+                    window.onload = () => {
+                      typeLetters();
+                    };
+                  </script>
             </section>
-    
+
+
+           <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">What Our Customers Say</h2>
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Testimonial Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition duration-300 ease-in-out cursor-pointer group">
+        <div class="flex items-center mb-4">
+          <img class="w-14 h-14 rounded-full object-cover border-2 border-gray-200 group-hover:border-indigo-500 transition" src="https://via.placeholder.com/100" alt="Customer 1">
+          <div class="ml-4">
+            <p class="font-semibold text-lg text-gray-900">Jane Doe</p>
+            <p class="text-sm text-gray-500">Creative Director</p>
+          </div>
+        </div>
+        <p class="text-gray-700 group-hover:text-gray-900 transition">
+          “Absolutely loved the experience! The team went above and beyond to deliver something amazing. Highly recommend.”
+        </p>
+      </div>
+
+      <!-- Testimonial Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition duration-300 ease-in-out cursor-pointer group">
+        <div class="flex items-center mb-4">
+          <img class="w-14 h-14 rounded-full object-cover border-2 border-gray-200 group-hover:border-indigo-500 transition" src="https://via.placeholder.com/100" alt="Customer 2">
+          <div class="ml-4">
+            <p class="font-semibold text-lg text-gray-900">John Smith</p>
+            <p class="text-sm text-gray-500">Entrepreneur</p>
+          </div>
+        </div>
+        <p class="text-gray-700 group-hover:text-gray-900 transition">
+          “Quick turnaround, clear communication, and excellent results. I couldn’t be happier with how everything turned out.”
+        </p>
+      </div>
+
+      <!-- Testimonial Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition duration-300 ease-in-out cursor-pointer group">
+        <div class="flex items-center mb-4">
+          <img class="w-14 h-14 rounded-full object-cover border-2 border-gray-200 group-hover:border-indigo-500 transition" src="https://via.placeholder.com/100" alt="Customer 3">
+          <div class="ml-4">
+            <p class="font-semibold text-lg text-gray-900">Ava Lee</p>
+            <p class="text-sm text-gray-500">Photographer</p>
+          </div>
+        </div>
+        <p class="text-gray-700 group-hover:text-gray-900 transition">
+          “The attention to detail was insane. They listened to what I wanted and nailed it perfectly.”
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+              
+            
+<!-- video section to inform user of services-->
+            <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Cinematic Moments</h1>
+                <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2>
+                <p class="text-md md:text-lg text-white-500 mb-8">
+                  Dive into our curated gallery of cinematic visuals. Hover to explore each moment in motion and feel the impact of storytelling through the lens.
+                </p>
+                <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
+                  <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" 
+                          title="Sample Video" frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                          allowfullscreen>
+                          <iframe title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+                  </iframe>
+                </div>
+              </section>
+
+
+              <!--- second video section-->
+<!-- 
+              <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-indigo-500/30">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="Sample Video" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
+               -->
+              
     <!-- Content Sections -->
     <section class="h-screen bg-white flex justify-center items-center text-black">
         <h2 class="text-4xl">Section 1</h2>
@@ -256,6 +382,242 @@
           </div>
       </section>
     </section>
+
+
+    <section class="bg-gray-100 py-16 px-6">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Services</h2>
+          <p class="text-lg text-gray-600 mb-12">
+            We offer a wide range of professional video production services to bring your creative vision to life.
+          </p>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="text-blue-500 text-4xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v12H2V2zm0 14h20v6H2v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Film Production</h3>
+              <p class="text-gray-600">End-to-end film production services, from concept to final cut.</p>
+            </div>
+      
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="text-blue-500 text-4xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Videos</h3>
+              <p class="text-gray-600">Create impactful videos for your brand, product, or service.</p>
+            </div>
+      
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="text-blue-500 text-4xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v4h10V2H7zm0 6v12h10V8H7z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Photography</h3>
+              <p class="text-gray-600">High-quality photography to accompany your video projects.</p>
+            </div>
+      
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="text-blue-500 text-4xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Post-Production</h3>
+              <p class="text-gray-600">Expert editing, color grading, and sound design to perfect your video.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="bg-gray-100 py-16 px-6">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Services</h2>
+          <p class="text-lg text-gray-600 mb-12">
+            We offer a wide range of professional video production services to bring your creative vision to life.
+          </p>
+      
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Service Card 1 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Film Production Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v12H2V2zm0 14h20v6H2v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Film Production</h3>
+              <p class="text-gray-600">End-to-end film production services, from concept to final cut.</p>
+            </div>
+      
+            <!-- Service Card 2 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Commercial Video Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Videos</h3>
+              <p class="text-gray-600">Create impactful videos for your brand, product, or service.</p>
+            </div>
+      
+            <!-- Service Card 3 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Photography Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v4h10V2H7zm0 6v12h10V8H7z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Photography</h3>
+              <p class="text-gray-600">High-quality photography to accompany your video projects.</p>
+            </div>
+      
+            <!-- Service Card 4 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Post-Production Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Post-Production</h3>
+              <p class="text-gray-600">Expert editing, color grading, and sound design to perfect your video.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Inline Style for Animation -->
+      <style>
+        /* Slide-in animation */
+        @keyframes slideUp {
+          0% {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      
+        .service-card {
+          opacity: 0;
+          animation: slideUp 0.6s ease-out forwards;
+        }
+      
+        /* Delay animation for each card */
+        .service-card:nth-child(1) {
+          animation-delay: 0.2s;
+        }
+      
+        .service-card:nth-child(2) {
+          animation-delay: 0.4s;
+        }
+      
+        .service-card:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+      
+        .service-card:nth-child(4) {
+          animation-delay: 0.8s;
+        }
+      
+        /* Add a hover effect for the entire card */
+        .service-card:hover {
+          transform: translateY(-10px);
+        }
+      </style>
+      
+    
+
+
+      <section class="bg-transparent py-16 px-6">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Services</h2>
+          <p class="text-lg text-gray-600 mb-12">
+            We offer a wide range of professional video production services to bring your creative vision to life.
+          </p>
+      
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Service Card 1 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Film Production Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v12H2V2zm0 14h20v6H2v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Film Production</h3>
+              <p class="text-gray-600">End-to-end film production services, from concept to final cut.</p>
+            </div>
+      
+            <!-- Service Card 2 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Commercial Video Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Videos</h3>
+              <p class="text-gray-600">Create impactful videos for your brand, product, or service.</p>
+            </div>
+      
+            <!-- Service Card 3 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Photography Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v4h10V2H7zm0 6v12h10V8H7z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Photography</h3>
+              <p class="text-gray-600">High-quality photography to accompany your video projects.</p>
+            </div>
+      
+            <!-- Service Card 4 -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+              <div class="text-blue-500 text-4xl mb-4">
+                <!-- Post-Production Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Post-Production</h3>
+              <p class="text-gray-600">Expert editing, color grading, and sound design to perfect your video.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Inline Style for Animation -->
+      <style>
+        /* Slide-in animation */
+        @keyframes slideUp {
+          0% {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      
+        .service-card {
+          opacity: 0;
+          animation: slideUp 0.6s ease-out forwards;
+        }
+      
+        /* Delay animation for each card */
+        .service-card:nth-child(1) {
+          animation-delay: 0.2s;
+        }
+      
+        .service-card:nth-child(2) {
+          animation-delay: 0.4s;
+        }
+      
+        .service-card:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+      
+        .service-card:nth-child(4) {
+          animation-delay: 0.8s;
+        }
+      
+        /* Add a hover effect for the entire card */
+        .service-card:hover {
+          transform: translateY(-10px);
+        }
+      </style>
+      
+
+
 
     <section class="h-screen bg-black flex justify-center items-center text-white">
         <h2 class="text-4xl">Section 4</h2>

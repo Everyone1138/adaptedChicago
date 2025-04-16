@@ -1,4 +1,7 @@
 
+@import url(https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap);
+@import "tailwindcss";
+
 body {
     font-family: 'Caviar Dreams', sans-serif, Arial, Helvetica, sans-serif;
     background: url('Studio+Shots_0012.JPG') no-repeat center center fixed;
@@ -220,7 +223,7 @@ body {
   /* trying to figure out the sizing of this font when in cell phone m,ode*/
   @media only screen and (max-width:6500px) { 
     .span {
-        font-size: 40px;
+        font-size: 100px;
     }
   }
   @media only screen and (max-width:30000px) { 
@@ -232,5 +235,162 @@ body {
     .video-container h1{
         display: inline;
         font-size: 1.5rem;
+    }
+  }
+
+
+  /* come back to this code later. organize everything then work with the resize */
+
+  .nav-text {
+    font-size: 5vw; /* Responsive scaling based on viewport width */
+    transition: transform 0.5s;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    .nav-text {
+        font-size: 4vw;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+    .nav-text {
+        font-size: 6vw;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .nav-text {
+        font-size: 8vw;
+    }
+}
+
+
+@layer utilities {
+    .animate-pop {
+      animation: pop 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+    .animate-slide {
+      animation: slide 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+    .animate-slide-left {
+      animation: slide-left 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+    .animate-slide-up {
+      animation: slide-up 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+
+    @keyframes pop {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slide {
+      0% { opacity: 0; transform: translateX(4em); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slide-left {
+      0% { opacity: 0; transform: translateX(-40px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slide-up {
+      0% { opacity: 0; transform: translateY(3em); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+
+
+
+
+
+
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1200px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .letter {
+    width: 80px;
+    height: 80px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #4a90e2;
+    background-color: transparent;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    opacity: 0;
+    user-select: none;
+  }
+
+  .letter.visible {
+    opacity: 1;
+  }
+
+  .subtitle {
+    font-size: 24px;
+    color: #bbbbbb;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+
+  .about-text {
+    max-width: 800px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #dddddd;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    .letter {
+      width: 60px;
+      height: 60px;
+      font-size: 36px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+    }
+
+    .about-text {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .letter {
+      width: 50px;
+      height: 50px;
+      font-size: 28px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+    }
+
+    .about-text {
+      font-size: 15px;
     }
   }
