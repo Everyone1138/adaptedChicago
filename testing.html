@@ -1,42 +1,227 @@
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css" integrity="sha512-RntatPOhEcQEA81gC/esYoCkGkL7AYV7TeTPoU+R9zE44/yWxVvLIBfBSaMu78rhoDd73ZeRHXRJN5+aPEK53Q==" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+
+    <style>
+        /* Carousel Section Styling */
+        
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            background-color: #000;
+            /* To create contrast */
+        }
+        /* Carousel Images */
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%;
+            /* Ensures 3 images are shown */
+        }
+        
+        .carousel-slide {
+            width: 100%;
+            /* Each slide takes up 100% of the container width */
+            flex-shrink: 0;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            /* Ensure the image covers the width of its container */
+            height: 100%;
+            /* Ensure the image fits vertically */
+            object-fit: cover;
+            /* Make sure images maintain their aspect ratio */
+        }
+        /* Navigation arrows */
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 10px;
+        }
+        
+        .prev,
+        .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 50vh;
+                /* Adjust height for smaller screens */
+            }
+            .carousel-slide img {
+                height: 100%;
+                object-fit: contain;
+                /* Make sure images are contained within the screen */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .carousel-container {
+                height: 40vh;
+                /* Adjust height further for mobile screens */
+            }
+        }
+    </style>
 </head>
 
-<body>
-  <div class="flex h-screen relative overflow-hidden">
+<body class="bg-gray-100" onclick="closeMenu(event)">
+    <!--Icons-->
+    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50">
+        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+            <i class="fa-brands fa-square-vimeo"></i>
+        </a>
+        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+            <i class="fab fa-facebook"></i>
+        </a>
+    </div>
 
-    <div id="leftPane" class=" w-1/2 bg-black text-white text-center relative">
-      <div class="absolute flex items-center h-screen right-0 w-48">
-        <div id="leftPaneButton" class="w-full h-48  flex items-center cursor-pointer transition duration-500 hover:bg-gray-300 bg-white text-black flex justify-center items-center">links</div>
-      </div>
-      <div class="flex  items-center justify-center  p-48  h-screen">
-        LOREM IPSUM DOLOR
-      </div>
+    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <div class="loader-text">
+            <span>a</span>
+            <span>d</span>
+            <span>a</span>
+            <span>p</span>
+            <span>t</span>
+            <span>e</span>
+            <span>d</span>
+            <span>.</span>
+        </div>
     </div>
-    <div id="rightPane" class=" w-1/2 bg-white text-black text-center relative ">
-      <div class="absolute flex items-center h-screen left-0 w-48">
-        <div id="rightPaneButton" class="w-full h-48  flex items-center cursor-pointer transition duration-500 hover:bg-gray-700 bg-black text-white flex justify-center items-center">rechts</div>
-      </div>
-      <div class="flex items-center justify-center  p-48 text-center h-screen">
-        LOREM IPSUM DOLOR
-      </div>
-    </div>
-  </div>
-  <script>
-    $(document).ready(function () {
-    $("#leftPaneButton").click(function () {
-      $("#leftPane").animate({ width: 0 }, 1000);
-      $("#rightPane").animate({ width: "100%" }, 1000);
-    });
-  
-    $("#rightPaneButton").click(function () {
-      $("#leftPane").animate({ width: "100%" }, 1000);
-      $("#rightPane").animate({ width: 0 }, 1000);
-    });
-  });
-  </script>
-  </body>
+
+    <div id="content" class="hidden">
+        <!-- Main content starts here -->
+
+        <nav class="fixed w-full bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+            <!-- Spinning Text -->
+            <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+            </a>
+
+            <!-- Menu Button -->
+            <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+
+            <!-- Side Menu -->
+            <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+                <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+                <ul>
+                    <li class="p-2"><a href="index.html">Home</a></li>
+                    <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                    <li class="p-2"><a href="teampage.html">The Team</a></li>
+                    <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                    <li class="p-2"><a href="contactus.html">Contact</a></li>
+                </ul>
+
+                <div class="flex-1"></div>
+
+                <!-- Bottom Icons -->
+                <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                    <i class="fa-brands fa-square-vimeo"></i>
+                </a>
+                <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Carousel Section -->
+        <section class="carousel-container">
+            <!-- Carousel Track -->
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="https://via.placeholder.com/1200x500" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://via.placeholder.com/1200x500" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://via.placeholder.com/1200x500" alt="Image 3">
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="carousel-nav">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="py-20 px-5 bg-black text-white flex justify-center">
+            <form class="bg-transparent p-10 w-full max-w-2xl">
+                <h2 class="text-3xl font-bold mb-5 text-center">Get in Touch</h2>
+                <label class="block mb-2">Name:     <i>(required)</i></label>
+                <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Name Here!" required>
+
+                <label class="block mb-2">Email: <i>(required)</i></label>
+                <input type="email" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Email Here!" required>
+
+                <label class="block mb-2">Budget:  <i>(required)</i></label>
+                <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="What's your budget for this project?" required>
+
+
+                <label class="block mb-2">Project Scope: <i>(required)</i></label>
+                <textarea class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" rows="5" placeholder="Your Message" required></textarea>
+
+                <label class="block mb-2">Website:  <i>(not required)</i></label>
+                <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="www.yourwebsite.com">
+
+                <button type="submit" class="w-full bg-gray-700 text-white py-3 rounded-lg hover:bg-gray-600">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 bg-opacity-50 text-white text-center p-10 mt-10">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div>
+                    <h3 class="text-lg font-bold">Company Info</h3>
+                    <p>123 Business Street</p>
