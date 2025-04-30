@@ -1,34 +1,37 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Web Page</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
 
 </head>
-<body class="bg-gray-100" onclick="closeMenu(event)">
-<!-- icons  -->
-    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50 grid grid-cols-1 md:grid-cols-3 gap-8">
-        
 
-            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                <i class="fa-brands fa-square-vimeo"></i>
-            </a>
-            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                <i class="fab fa-facebook"></i>
-            </a>
-        
-        
+<body class="bg-gray-100" onclick="closeMenu(event)">
+    <!-- icons  -->
+    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+            <i class="fa-brands fa-square-vimeo"></i>
+        </a>
+        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+            <i class="fab fa-facebook"></i>
+        </a>
+
+
     </div>
     <!-- -->
     <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50 ">
@@ -43,203 +46,46 @@
             <span>.</span>
         </div>
     </div>
-    
+
     <div id="content" class="hidden">
-            <!-- Main content starts here -->
-        
-    
-    <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 md:px-10 lg:px-20"> <!-- this is the new code. old one is below-->
-<!-- 
+        <!-- Main content starts here -->
+
+
+        <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 md:px-10 lg:px-20">
+            <!-- this is the new code. old one is below-->
+            <!-- 
     <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50"> -->
-        <!-- Spinning Text -->
-        <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+            <!-- Spinning Text -->
+            <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
 
-            
-        </a>
-    
-        <!-- Menu Button -->
-        <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
-    
-        <!-- Side Menu -->
-        <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
-            <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
-            <ul>
-                <li class="p-2"><a href="index.html">Home</a></li>
-                <li class="p-2"><a href="gallery.html">Gallery</a></li>
-                <li class="p-2"><a href="teampage.html">The Team</a></li>
-                <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
-                <li class="p-2"><a href="contactus.html">Contact</a></li>
-            </ul>
 
-            <div class="flex-1"></div>
-
-            <!-- Bottom Icons -->
-            <p>
-
-                <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                    <i class="fa-brands fa-square-vimeo"></i>
-                </a>
-                <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </p>
-        </div>
-
-        
-    </nav>
-
-    
-    <!-- Video Section with Overlay Text -->
-    <section class="video-container relative flex items-center justify-center shadow-lg  overflow-hidden md:flex-row flex-col">
-        <video autoplay muted loop>
-            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="overlay">
-            
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">C</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">h</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">g</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
-            <div>  
-            
-            
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">V</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">P</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">r</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">u</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">n</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
-        </div>  
-
-            <h1 class="text-5xl font-bold fade-in "></h1>
-            <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
-     where your dreams come to life of the screen.
-    
-            </p>
-            <a href="contactus.html" class="mt-6 bg-red-500 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
-                Hire us!
             </a>
-        </div>
-    </section>
-            <!-- Scrolling Banner Section -->
-            <section class="banner-section relative flex items-center justify-center shadow-lg  overflow-hidden md:flex-row flex-col">
-                <div class="overflow-hidden whitespace-nowrap bg-gray-800">
-                    <div class="animate-scroll">
-                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
-                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
-                    </div>
-                </div>
-            </section>
 
+            <!-- Menu Button -->
+            <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
 
-            <section class="relative flex items-center justify-center min-h-screen p-6 bg-white shadow-lg rounded-2xl overflow-hidden">
-                <div class="max-w-4xl text-center opacity-0 translate-y-10 transition-all duration-1000 ease-in-out" id="aboutUs">
-                    <h1 class="text-4xl font-bold text-gray-800 mb-4">About Us</h1>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Welcome to <span class="font-semibold text-indigo-600">Our Company</span>, where innovation meets excellence. We are dedicated to delivering
-                        top-notch solutions tailored to your needs. Our team of experts is committed to quality,
-                        ensuring seamless experiences that drive success.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed mt-4">
-                        At <span class="font-semibold text-indigo-600">Our Company</span>, we believe in fostering strong relationships with our clients, built on
-                        trust, transparency, and a passion for excellence. Join us on this journey to make a difference.
-                    </p>
-                </div>
-            </section>
-    
-    <!-- Content Sections -->
-    <section class="h-screen bg-white flex justify-center items-center text-black">
-        <h2 class="text-4xl">Section 1</h2>
-    </section>
+            <!-- Side Menu -->
+            <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+                <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+                <ul>
+                    <li class="p-2"><a href="index.html">Home</a></li>
+                    <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                    <li class="p-2"><a href="teampage.html">The Team</a></li>
+                    <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                    <li class="p-2"><a href="contactus.html">Contact</a></li>
+                </ul>
 
+                <div class="flex-1"></div>
 
-    <section class="banner-section">
-        <div class="overflow-hidden whitespace-nowrap bg-gray-800">
-            <div class="animate-scroll">
-                <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
-                <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
-            </div>
-        </div>
-    </section>
-
-
-    <section class="h-screen bg-black flex justify-center items-center text-white">
-        <h2 class="text-4xl"></h2>
-        <img src="img/Scene (1).gif" width="100%" height="100%">
-    </section>
-
-    <section class="h-screen bg-white flex justify-center items-center text-black">
-        <h2 class="text-4xl"></h2>
-        <section class="py-20 px-5">
-          <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="bg-gray-800 p-8 rounded-lg text-center">
-                  <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
-                  <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
-                  <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
-              </div>
-              <div class="bg-gray-800 p-8 rounded-lg text-center">
-                  <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
-                  <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
-                  <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
-              </div>
-              <div class="bg-gray-800 p-8 rounded-lg text-center">
-                  <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
-                  <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
-                  <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
-              </div>
-          </div>
-      </section>
-    </section>
-
-    <section class="h-screen bg-black flex justify-center items-center text-white">
-        <h2 class="text-4xl">Section 4</h2>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div>
-                <h3 class="text-lg font-bold">Company Info</h3>
-                <p>123 Business Street</p>
-                <p>City, State, ZIP</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold">Contact Us</h3>
-                <p>Email: contact@yourcompany.com</p>
-                <p>Phone: (123) 456-7890</p>
-                <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
-                <p>Want to schedule a Zoom meeting with us?</p>
-                <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold">Follow Us</h3>
+                <!-- Bottom Icons -->
                 <p>
 
                     <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
@@ -256,10 +102,334 @@
                     </a>
                 </p>
             </div>
-        </div>
-        <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
-    </footer>
 
-</div> <!-- this is where the loader div ends -->
+
+        </nav>
+
+
+        <!-- Video Section with Overlay Text -->
+        <section class="video-container relative flex items-center justify-center shadow-lg  overflow-hidden md:flex-row flex-col">
+            <video autoplay muted loop>
+            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+            <div class="overlay">
+
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">C</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">h</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">g</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+                <div>
+
+
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">V</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">P</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">r</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">u</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">n</span>
+                    <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+                </div>
+
+                <h1 class="text-5xl font-bold fade-in "></h1>
+                <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
+                    where your dreams come to life of the screen.
+
+                </p>
+                <a href="contactus.html" class="mt-6 bg-red-500 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
+                Hire us!
+            </a>
+            </div>
+        </section>
+        <!-- Scrolling Banner Section -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Our Unique Approach Section with Floating Letters and Grey Tint -->
+        <section id="our-approach" class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+            <!-- Grey Tint Overlay -->
+            <style>
+                .collage {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    pointer-events: none;
+                    overflow: hidden;
+                }
+            </style>
+            <div class="absolute inset-0 bg-gray-800 bg-opacity-50 z-10 pointer-events-none"></div>
+
+            <!-- Content Container -->
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center fade-in-up z-20 relative">
+
+                <!-- Image -->
+                <div class="w-full">
+                    <img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=1200&q=80" alt="Cinematic production" class="rounded-2xl shadow-xl w-full h-auto object-cover max-h-[500px]" />
+                </div>
+
+                <!-- Text Content -->
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Our Unique Approach</h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        At <span class="text-white font-semibold">Adapted.</span> we believe that each project deserves a distinctive touch, reflecting the character and personality of our clients.
+                        <br class="hidden md:block mt-4" /> We’re not just content creators — <span class="italic text-white">we are storytellers</span>.
+                        <br class="hidden md:block mt-4" /> We take the time to build a personal connection, working closely with our clients to understand their goals and vision.
+                        <br class="hidden md:block mt-4" /> This collaborative process allows us to craft customized, authentic solutions that bring their unique visions to life.
+                    </p>
+                    <div class="mt-8">
+                        <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+            Start Your Story
+          </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!--Gallery Section -->
+
+
+        <section class="pt-20 p-5">
+            <h2 class="text-4xl text-center font-bold mb-10">Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="Screenshot 2025-03-26 101132.png" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="banner-section relative flex items-center justify-center shadow-lg  overflow-hidden md:flex-row flex-col">
+            <div class="overflow-hidden whitespace-nowrap bg-gray-800">
+                <div class="animate-scroll">
+                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Our Unique Approach Section -->
+        <section id="our-approach" class="relative min-h-screen flex items-center justify-center px-6 py-20">
+            <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">Our Unique Approach</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    At <span class="text-white font-semibold">Adapted.</span> we believe that each project deserves a distinctive touch, reflecting the character and personality of our clients.
+                    <br class="hidden md:block mt-4" /> We’re not just content creators — <span class="italic text-white">we are storytellers</span>.
+                    <br class="hidden md:block mt-4" /> We take the time to build a personal connection, working closely with our clients to understand their goals and vision.
+                    <br class="hidden md:block mt-4" /> This collaborative process allows us to craft customized, authentic solutions that bring their unique visions to life.
+                </p>
+                <div class="mt-10">
+                    <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+          Start Your Story
+        </button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- <section class="banner-section">
+                <div class="overflow-hidden whitespace-nowrap bg-gray-800">
+                    <div class="animate-scroll">
+                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+                    </div>
+                </div>
+            </section> -->
+
+
+
+
+
+        <!-- Our Unique Approach Section with Grey Tint and Floating Letters -->
+        <section id="our-approach" class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+            <!-- Letter Collage (reuse existing setup) -->
+            <div class="absolute inset-0 collage pointer-events-none z-0"></div>
+
+            <!-- Grey Tint Overlay -->
+            <div class="absolute inset-0 bg-gray-800 bg-opacity-50 z-0 pointer-events-none"></div>
+
+            <!-- Main Content -->
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center fade-in-up z-10">
+
+                <!-- Image -->
+                <div class="w-full">
+                    <img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=1200&q=80" alt="Cinematic production" class="rounded-2xl shadow-xl w-full h-auto object-cover max-h-[500px]" />
+                </div>
+
+                <!-- Text Content -->
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Our Unique Approach</h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        At <span class="text-white font-semibold">Adapted.</span> we believe that each project deserves a distinctive touch, reflecting the character and personality of our clients.
+                        <br class="hidden md:block mt-4" /> We’re not just content creators — <span class="italic text-white">we are storytellers</span>.
+                        <br class="hidden md:block mt-4" /> We take the time to build a personal connection, working closely with our clients to understand their goals and vision.
+                        <br class="hidden md:block mt-4" /> This collaborative process allows us to craft customized, authentic solutions that bring their unique visions to life.
+                    </p>
+                    <div class="mt-8">
+                        <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+            Start Your Story
+          </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- 
+            <section class="h-screen bg-black flex justify-center items-center text-white">
+                <h2 class="text-4xl"></h2>
+                <img src="img/Scene (1).gif" width="100%" height="100%">
+            </section>
+
+            <section class="h-screen bg-white flex justify-center items-center text-black">
+                <h2 class="text-4xl"></h2>
+                <section class="py-20 px-5">
+                    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-gray-800 p-8 rounded-lg text-center">
+                            <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
+                            <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
+                        </div>
+                        <div class="bg-gray-800 p-8 rounded-lg text-center">
+                            <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
+                            <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
+                        </div>
+                        <div class="bg-gray-800 p-8 rounded-lg text-center">
+                            <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
+                            <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
+                        </div>
+                    </div>
+                </section>
+            </section> -->
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div>
+                    <h3 class="text-lg font-bold">Company Info</h3>
+                    <p>123 Business Street</p>
+                    <p>City, State, ZIP</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Contact Us</h3>
+                    <p>Email: contact@yourcompany.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                    <p>Want to schedule a Zoom meeting with us?</p>
+                    <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Follow Us</h3>
+                    <p>
+
+                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                            <i class="fa-brands fa-square-vimeo"></i>
+                        </a>
+                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
+        </footer>
+
+    </div>
+    <!-- this is where the loader div ends -->
 </body>
+
 </html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windy City Films | Chicago Video Production</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        
+        .hero-video {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-video video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .testimonial-slide {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .testimonial-slide.active {
+            opacity: 1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #e53e3e;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-100 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-red-600">WINDY CITY <span class="text-gray-800">FILMS</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-red-600">Home</a>
+                        <a href="#services" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-red-600">Services</a>
+                        <a href="#portfolio" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-red-600">Portfolio</a>
+                        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-red-600">About</a>
+                        <a href="#testimonials" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-red-600">Clients</a>
+                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-red-600">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-900 hover:text-red-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-red-600">Home</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-red-600">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-red-600">Portfolio</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-red-600">About</a>
+                <a href="#testimonials" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-red-600">Clients</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-red-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-video">
+        <video autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-at-night-1120-large.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="hero-content h-full flex items-center bg-black bg-opacity-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Chicago's Premier Video Production</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">We craft compelling visual stories that engage audiences and elevate brands.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="px-8 py-3 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition duration-300">Get a Quote</a>
+                    <a href="#portfolio" class="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-gray-900 transition duration-300">View Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Services</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Comprehensive video production solutions tailored to your needs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
+                        <i class="fas fa-film text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Commercial Production</h3>
+                    <p class="text-gray-600">High-impact commercials that tell your brand story and drive conversions.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
+                        <i class="fas fa-video text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Corporate Video</h3>
+                    <p class="text-gray-600">Professional videos for training, internal communications, and brand awareness.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
+                        <i class="fas fa-photo-film text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Documentary</h3>
+                    <p class="text-gray-600">Thought-provoking documentaries that inform, educate, and inspire action.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
+                        <i class="fas fa-music text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Music Videos</h3>
+                    <p class="text-gray-600">Creative music video production that complements and enhances your music.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
+                        <i class="fas fa-drone text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Aerial Cinematography</h3>
+                    <p class="text-gray-600">Breathtaking aerial footage captured with our state-of-the-art drone technology.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
+                        <i class="fas fa-pen-nib text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Post-Production</h3>
+                    <p class="text-gray-600">Expert editing, color grading, motion graphics, and visual effects services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Portfolio</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">A showcase of our recent work across various industries</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1561212024-cb9ad0a9c8b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial Production" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium flex items-center">
+                                <i class="fas fa-play mr-2"></i> Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Chicago Food Festival</h3>
+                        <p class="text-gray-600">Commercial for the annual Chicago food festival featuring local chefs.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Corporate Video" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium flex items-center">
+                                <i class="fas fa-play mr-2"></i> Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Midwest Financial Group</h3>
+                        <p class="text-gray-600">Corporate brand video highlighting company values and client success stories.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Music Video" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium flex items-center">
+                                <i class="fas fa-play mr-2"></i> Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">The Chicago Sound</h3>
+                        <p class="text-gray-600">Music video for local indie band featuring iconic Chicago locations.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Documentary" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium flex items-center">
+                                <i class="fas fa-play mr-2"></i> Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">The River's Story</h3>
+                        <p class="text-gray-600">Documentary exploring the environmental impact on the Chicago River.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Aerial Cinematography" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium flex items-center">
+                                <i class="fas fa-play mr-2"></i> Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Chicago Skyline</h3>
+                        <p class="text-gray-600">Aerial footage showcasing the architectural beauty of Chicago.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1603190287605-e6ade32fa852?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Post-Production" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium flex items-center">
+                                <i class="fas fa-play mr-2"></i> Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Fashion Week Chicago</h3>
+                        <p class="text-gray-600">High-energy recap video with dynamic editing and motion graphics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                    View Full Portfolio
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Chicago's Storytellers
+                    </h2>
+                    <p class="mt-3 text-xl text-gray-600 sm:mt-4">
+                        Founded in 2010, Windy City Films has grown from a small production crew to one of Chicago's most respected video production companies.
+                    </p>
+                    <p class="mt-3 text-base text-gray-500 sm:mt-4 sm:text-lg">
+                        Our team of award-winning filmmakers, editors, and creative professionals are passionate about crafting visual stories that resonate. We combine technical expertise with artistic vision to deliver exceptional results for our clients.
+                    </p>
+                    <div class="mt-8 sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <p class="text-base font-medium text-gray-900">
+                            Why choose Windy City Films?
+                        </p>
+                        <div class="mt-3 space-y-2">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-base text-gray-500">
+                                    Local Chicago team with deep industry connections
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-base text-gray-500">
+                                    State-of-the-art equipment and production facilities
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-base text-gray-500">
+                                    Collaborative approach tailored to your vision
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-base text-gray-500">
+                                    Proven track record with Fortune 500 companies and startups alike
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+                        <div class="relative block w-full bg-white rounded-lg overflow-hidden">
+                            <img class="w-full" src="https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Our Team">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="text-xl font-semibold text-white">Meet Our Team</h3>
+                                <p class="mt-1 text-gray-200">Dedicated professionals passionate about storytelling</p>
+                                <div class="mt-4 flex space-x-3">
+                                    <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                                        Our Team
+                                    </a>
+                                    <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-red-700 bg-red-100 hover:bg-red-200 transition duration-300">
+                                        Careers
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Clients Say</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Trusted by brands across industries</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Testimonial Slides -->
+                <div class="testimonial-slide active bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-600">Marketing Director, Chicago Food Festival</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Working with Windy City Films was an absolute pleasure. They captured the energy and excitement of our food festival perfectly. The final commercial exceeded our expectations and helped us achieve record attendance this year."
+                    </p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide hidden bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Michael Chen">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-600">CEO, Midwest Financial Group</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The corporate video Windy City Films produced for us has become an essential part of our onboarding process. Their team understood our brand values and translated them into a compelling visual narrative that resonates with both employees and clients."
+                    </p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide hidden bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="David Rodriguez">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">David Rodriguez</h4>
+                            <p class="text-gray-600">Creative Director, The Chicago Sound</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "As a local band, we wanted a music video that truly represented Chicago. Windy City Films not only delivered that but also brought creative ideas we hadn't even considered. The final product helped us gain significant exposure and new fans."
+                    </p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <!-- Navigation arrows -->
+                <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-12 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 -mr-12 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-chevron-right text-gray-600"></i>
+                </button>
+            </div>
+
+            <!-- Client Logos -->
+            <div class="mt-16">
+                <h3 class="text-center text-lg font-medium text-gray-900 mb-8">Trusted By</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                    <img class="h-12 mx-auto opacity-70 hover:opacity-100 transition duration-300" src="https://via.placeholder.com/150x60?text=Client+1" alt="Client Logo">
+                    <img class="h-12 mx-auto opacity-70 hover:opacity-100 transition duration-300" src="https://via.placeholder.com/150x60?text=Client+2" alt="Client Logo">
+                    <img class="h-12 mx-auto opacity-70 hover:opacity-100 transition duration-300" src="https://via.placeholder.com/150x60?text=Client+3" alt="Client Logo">
+                    <img class="h-12 mx-auto opacity-70 hover:opacity-100 transition duration-300" src="https://via.placeholder.com/150x60?text=Client+4" alt="Client Logo">
+                    <img class="h-12 mx-auto opacity-70 hover:opacity-100 transition duration-300" src="https://via.placeholder.com/150x60?text=Client+5" alt="Client Logo">
+                    <img class="h-12 mx-auto opacity-70 hover:opacity-100 transition duration-300" src="https://via.placeholder.com/150x60?text=Client+6" alt="Client Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Let's Create Something Amazing</h2>
+                    <p class="mt-4 text-xl text-gray-600">
+                        Ready to start your next video project? Get in touch with our team to discuss your vision and how we can bring it to life.
+                    </p>
+
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium text-gray-900">Contact Information</h3>
+                        <div class="mt-4 space-y-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-red-600"></i>
+                                </div>
+                                <div class="ml-3 text-base text-gray-500">
+                                    <p>1234 Film Street</p>
+                                    <p>Chicago, IL 60601</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-red-600"></i>
+                                </div>
+                                <div class="ml-3 text-base text-gray-500">
+                                    <p>(312) 555-1234</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope text-red-600"></i>
+                                </div>
+                                <div class="ml-3 text-base text-gray-500">
+                                    <p>info@windycityfilms.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium text-gray-900">Follow Us</h3>
+                        <div class="mt-4 flex space-x-6">
+                            <a href="#" class="text-gray-500 hover:text-red-600 transition duration-300">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-red-600 transition duration-300">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-red-600 transition duration-300">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-red-600 transition duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-red-600 transition duration-300">
+                                <i class="fab fa-vimeo-v text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                        <div class="px-6 py-5 border-b border-gray-200">
+                            <h3 class="text-lg font-medium text-gray-900">Get a Free Quote</h3>
+                        </div>
+                        <div class="px-6 py-5">
+                            <form>
+                                <div class="grid grid-cols-1 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                        <input type="text" id="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                        <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                                        <input type="tel" id="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500">
+                                    </div>
+                                    <div>
+                                        <label for="project-type" class="block text-sm font-medium text-gray-700">Project Type</label>
+                                        <select id="project-type" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500">
+                                            <option>Commercial Production</option>
+                                            <option>Corporate Video</option>
+                                            <option>Documentary</option>
+                                            <option>Music Video</option>
+                                            <option>Aerial Cinematography</option>
+                                            <option>Post-Production</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="message" class="block text-sm font-medium text-gray-700">Project Details</label>
+                                        <textarea id="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500"></textarea>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-300">
+                                            Submit Request
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-red-600 mb-4">WINDY CITY FILMS</h3>
+                    <p class="text-gray-400">
+                        Chicago's premier video production company specializing in commercial, corporate, and documentary filmmaking.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Commercial Production</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Corporate Video</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Documentary</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Music Videos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Aerial Cinematography</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest projects and industry insights.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-r-md transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2023 Windy City Films. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mr-4 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mr-4 transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const prevButton = document.getElementById('prev-testimonial');
+        const nextButton = document.getElementById('next-testimonial');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                if (i === index) {
+                    testimonial.classList.remove('hidden');
+                    testimonial.classList.add('active');
+                } else {
+                    testimonial.classList.add('hidden');
+                    testimonial.classList.remove('active');
+                }
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+
+</html>

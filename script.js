@@ -1,5 +1,5 @@
 // script.js
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => {
         document.getElementById("loader").classList.add("hidden");
         document.getElementById("content").classList.remove("hidden");
@@ -46,79 +46,120 @@ window.addEventListener("scroll", fadeInOnScroll);
 
 
 // slit screen animation
-$(document).ready(function () {
-    $("#leftPaneButton").click(function () {
-      $("#leftPane").animate({ width: 0 }, 1000);
-      $("#rightPane").animate({ width: "100%" }, 1000);
+$(document).ready(function() {
+    $("#leftPaneButton").click(function() {
+        $("#leftPane").animate({ width: 0 }, 1000);
+        $("#rightPane").animate({ width: "100%" }, 1000);
     });
-  
-    $("#rightPaneButton").click(function () {
-      $("#leftPane").animate({ width: "100%" }, 1000);
-      $("#rightPane").animate({ width: 0 }, 1000);
+
+    $("#rightPaneButton").click(function() {
+        $("#leftPane").animate({ width: "100%" }, 1000);
+        $("#rightPane").animate({ width: 0 }, 1000);
     });
-  });
+});
 
 
 
-  // tailwind.config.js
+// tailwind.config.js
 module.exports = {
     theme: {
-      extend: {
-        keyframes: {
-          'fade-in': {
-            '0%': { opacity: 0 },
-            '100%': { opacity: 1 },
-          },
-          'fade-in-left': {
-            '0%': { opacity: 0, transform: 'translateX(-20px)' },
-            '100%': { opacity: 1, transform: 'translateX(0)' },
-          },
-          'fade-in-up': {
-            '0%': { opacity: 0, transform: 'translateY(20px)' },
-            '100%': { opacity: 1, transform: 'translateY(0)' },
-          },
+        extend: {
+            keyframes: {
+                'fade-in': {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+                'fade-in-left': {
+                    '0%': { opacity: 0, transform: 'translateX(-20px)' },
+                    '100%': { opacity: 1, transform: 'translateX(0)' },
+                },
+                'fade-in-up': {
+                    '0%': { opacity: 0, transform: 'translateY(20px)' },
+                    '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+            },
+            animation: {
+                'fade-in': 'fade-in 1s ease-out',
+                'fade-in-left': 'fade-in-left 1s ease-out',
+                'fade-in-up': 'fade-in-up 1s ease-out',
+            },
         },
-        animation: {
-          'fade-in': 'fade-in 1s ease-out',
-          'fade-in-left': 'fade-in-left 1s ease-out',
-          'fade-in-up': 'fade-in-up 1s ease-out',
-        },
-      },
     },
     plugins: [],
-  };
+};
 
 
-  module.exports = {
+module.exports = {
     content: ["./*.html"],
     theme: {
-      extend: {
-        animation: {
-          'pop': 'pop 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
-          'slide': 'slide 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
-          'slide-left': 'slide-left 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
-          'slide-up': 'slide-up 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
-        },
-        keyframes: {
-          pop: {
-            '0%': { opacity: '0', transform: 'scale(0.5)' },
-            '100%': { opacity: '1', transform: 'scale(1)' },
-          },
-          slide: {
-            '0%': { opacity: '0', transform: 'translateX(4em)' },
-            '100%': { opacity: '1', transform: 'translateX(0)' },
-          },
-          'slide-left': {
-            '0%': { opacity: '0', transform: 'translateX(-40px)' },
-            '100%': { opacity: '1', transform: 'translateX(0)' },
-          },
-          'slide-up': {
-            '0%': { opacity: '0', transform: 'translateY(3em)' },
-            '100%': { opacity: '1', transform: 'translateY(0)' },
-          },
+        extend: {
+            animation: {
+                'pop': 'pop 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
+                'slide': 'slide 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
+                'slide-left': 'slide-left 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
+                'slide-up': 'slide-up 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards',
+            },
+            keyframes: {
+                pop: {
+                    '0%': { opacity: '0', transform: 'scale(0.5)' },
+                    '100%': { opacity: '1', transform: 'scale(1)' },
+                },
+                slide: {
+                    '0%': { opacity: '0', transform: 'translateX(4em)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+                'slide-left': {
+                    '0%': { opacity: '0', transform: 'translateX(-40px)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+                'slide-up': {
+                    '0%': { opacity: '0', transform: 'translateY(3em)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+            }
         }
-      }
     },
     plugins: [],
-  }
-  
+}
+
+
+// Carousel Functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const indicators = document.querySelectorAll('.carousel-indicator');
+const totalSlides = slides.length;
+
+function updateCarousel() {
+    const carouselInner = document.querySelector('.carousel-inner');
+    carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+}
+
+// Auto slide change
+setInterval(nextSlide, 5000);
+
+// Initialize carousel
+updateCarousel();

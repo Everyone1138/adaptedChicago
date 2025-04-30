@@ -1,0 +1,17 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+input,
+textarea {
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #dc2626;
+}
+
+
+/*# sourceMappingURL=styles.css.map */
