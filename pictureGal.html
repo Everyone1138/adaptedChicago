@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adapted | Gallery + Story</title>
+    <link rel="stylesheet" href="customStyle.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 2s ease-out forwards;
+        }
+        
+        body {
+            margin: 0;
+            background: #000;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        #collage-2 .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 10s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.05;
+            backdrop-filter: blur(6px);
+        }
+        
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 10s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.05;
+            backdrop-filter: blur(6px);
+        }
+        
+        .hover-zoom {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-zoom:hover {
+            transform: scale(1.05);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="relative bg-black text-white overflow-x-hidden">
+
+    <!-- Floating Letter Collage -->
+    <div class="collage" id="collage"></div>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="relative px-6 py-16">
+        <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">Our Story</h2>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                Born in the heart of Chicago, our journey began with a vision: to capture real stories with cinematic beauty. From city streets to skyline dreams, every frame we create breathes authenticity, passion, and artistry. Today, we are a trusted name — crafting
+                films that move people and redefine what’s possible.
+            </p>
+            <div class="mt-10">
+                <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+          Let's Create Together
+        </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section with Floating Letters -->
+    <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+        <!-- Floating Letters Background -->
+        <div class="collage" id="collage-2"></div>
+
+        <!-- Foreground Content -->
+        <div class="relative z-10 max-w-4xl mx-auto text-center fade-in-up">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                Our style is immersive. Our storytelling is intentional. With a deep connection to the communities we serve, we elevate voices through film and visual expression that stays with you.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- Gallery Section -->
+    <div class="relative z-10 px-6 pb-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <!-- Image Cards -->
+            <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
+                <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                    <p class="text-white p-4 text-lg">Description for image 1</p>
+                </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(1)">
+                <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                    <p class="text-white p-4 text-lg">Description for image 2</p>
+                </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(2)">
+                <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                    <p class="text-white p-4 text-lg">Description for image 3</p>
+                </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(3)">
+                <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                    <p class="text-white p-4 text-lg">Description for image 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
+        <div class="relative max-w-screen-lg w-full px-4 fade-in">
+            <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
+            <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
+            <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
+            <div class="text-center">
+                <img id="lightboxImage" src="" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300" />
+                <p id="lightboxText" class="text-lg text-gray-300 mt-4"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Second Section with Floating Letters, Image, and Bullet Points -->
+    <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+        <!-- Floating Letters Background -->
+        <div class="collage" id="collage-2"></div>
+
+        <!-- Content Wrapper -->
+        <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
+
+            <!-- Image Placeholder -->
+            <div class="w-full md:w-1/2">
+                <img src="images/portfolio/gallery/g-beetle.jpg" alt="Team at Work" class="w-full rounded-lg shadow-lg" />
+            </div>
+
+            <!-- Text and Bullet Points -->
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+                <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
+                    <li>Authentic storytelling driven by emotion</li>
+                    <li>Decades of combined industry experience</li>
+                    <li>Cinematic visuals tailored to your brand</li>
+                    <li>Chicago-rooted, globally minded production</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Scripts -->
+    <script>
+        function scrollToContact() {
+            const el = document.getElementById('contact');
+            if (el) el.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        const collage = document.getElementById('collage');
+        const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+        const TOTAL_LETTERS = 50;
+
+        function createFloatingLetters() {
+            for (let i = 0; i < TOTAL_LETTERS; i++) {
+                const letter = document.createElement('div');
+                letter.className = 'letter';
+                letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                collage.appendChild(letter);
+            }
+        }
+
+        function setRandomPositions() {
+            const letters = document.querySelectorAll('.letter');
+            letters.forEach(el => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                el.style.left = `${x}px`;
+                el.style.top = `${y}px`;
+            });
+        }
+
+        function floatAndRotateForever() {
+            const letters = document.querySelectorAll('.letter');
+            letters.forEach((el) => {
+                const offsetX = (Math.random() - 0.5) * 150;
+                const offsetY = (Math.random() - 0.5) * 150;
+                const rotation = Math.random() * 360;
+                el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+            });
+            setTimeout(floatAndRotateForever, 10000);
+        }
+
+        window.onload = () => {
+            createFloatingLetters();
+            setRandomPositions();
+            floatAndRotateForever();
+            createFloatingLettersIn("collage-2");
+        };
+
+        window.onresize = setRandomPositions;
+
+        // Lightbox Logic
+        const images = [{
+            src: "images/portfolio/lady-shutterbug.jpg",
+            description: "Description for image 1"
+        }, {
+            src: "images/portfolio/lady-shutterbug.jpg",
+            description: "Description for image 2"
+        }, {
+            src: "images/portfolio/lady-shutterbug.jpg",
+            description: "Description for image 3"
+        }, {
+            src: "images/portfolio/lady-shutterbug.jpg",
+            description: "Description for image 4"
+        }];
+
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            document.getElementById("lightbox").classList.remove("hidden");
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.add("hidden");
+            document.body.style.overflow = '';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightbox();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            const img = images[currentIndex];
+            document.getElementById("lightboxImage").src = img.src;
+            document.getElementById("lightboxText").innerText = img.description;
+        }
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById("lightbox").addEventListener("touchstart", e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.getElementById("lightbox").addEventListener("touchend", e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) nextImage();
+            if (touchEndX > touchStartX + 50) prevImage();
+        });
+
+        // SECOND COLLAGE SECTION
+        function createFloatingLettersIn(targetId) {
+            const container = document.getElementById(targetId);
+            if (!container) return;
+
+            const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+            const TOTAL = 30;
+
+            for (let i = 0; i < TOTAL; i++) {
+                const letter = document.createElement('div');
+                letter.className = 'letter';
+                letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                container.appendChild(letter);
+            }
+
+            function positionAndAnimate() {
+                const letters = container.querySelectorAll('.letter');
+                letters.forEach(el => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    const offsetX = (Math.random() - 0.5) * 100;
+                    const offsetY = (Math.random() - 0.5) * 100;
+                    const rotation = Math.random() * 360;
+
+                    el.style.left = `${x}px`;
+                    el.style.top = `${y}px`;
+                    el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+                });
+
+                setTimeout(positionAndAnimate, 10000);
+            }
+
+            positionAndAnimate();
+        }
+
+        window.onload = () => {
+            createFloatingLetters(); // for collage-1
+            setRandomPositions();
+            floatAndRotateForever();
+
+            createFloatingLettersIn("collage-2"); // 👈 New section collage
+        };
+
+        function createFloatingLettersIn(targetId) {
+            const container = document.getElementById(targetId);
+            if (!container) return;
+
+            const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+            const TOTAL = 40;
+
+            for (let i = 0; i < TOTAL; i++) {
+                const letter = document.createElement('div');
+                letter.className = 'letter';
+                letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                container.appendChild(letter);
+            }
+
+            function positionAndAnimate() {
+                const letters = container.querySelectorAll('.letter');
+                letters.forEach(el => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    const offsetX = (Math.random() - 0.5) * 100;
+                    const offsetY = (Math.random() - 0.5) * 100;
+                    const rotation = Math.random() * 360;
+
+                    el.style.left = `${x}px`;
+                    el.style.top = `${y}px`;
+                    el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+                });
+
+                setTimeout(positionAndAnimate, 10000);
+            }
+
+            positionAndAnimate();
+        }
+    </script>
+</body>
+
+</html>
