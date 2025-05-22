@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adapted Studios | Chicago Video Production</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Caviar Dreams', sans-serif;
+            margin: 0;
+            background: #000;
+            overflow-x: hidden;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 2s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 10s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.05;
+            backdrop-filter: blur(6px);
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .overlay {
+            position: relative;
+            z-index: 10;
+            text-align: right;
+            color: white;
+            padding-right: 5%;
+            width: 100%;
+        }
+        
+        .spin-hover span {
+            display: inline-block;
+            transition: transform 0.5s ease, color 0.5s ease;
+        }
+        
+        .spin-hover span:hover {
+            transform: rotate(360deg);
+            color: #ef4444;
+        }
+    </style>
+</head>
+
+<body class="relative bg-black text-white overflow-x-hidden">
+    <!-- Floating Letters -->
+    <div class="collage" id="collage"></div>
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <div class="text-black text-4xl font-bold">Loading...</div>
+    </div>
+
+    <div id="content" class="hidden">
+        <!-- Navbar -->
+        <nav class="fixed w-full bg-gray-900 bg-opacity-70 top-0 left-0 p-4 flex justify-between items-center z-50">
+            <a href="#" class="text-white font-bold text-4xl spin-hover">
+                <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
+            </a>
+            <button class="text-white text-3xl">☰</button>
+        </nav>
+
+        <!-- Hero Video Section -->
+        <section class=" video-container h-screen flex items-center justify-center relative">
+            <video autoplay muted loop>
+        <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+      </video>
+            <div class="overlay">
+                <h1 class="text-[100px] sm:text-[80px] md:text-[120px] lg:text-[180px] font-bold fade-in-up spin-hover">
+                    <span>C</span><span>h</span><span>i</span><span>c</span><span>a</span><span>g</span><span>o</span>
+                </h1>
+                <h2 class="text-2xl font-bold fade-in-up spin-hover">
+                    <span>V</span><span>i</span><span>d</span><span>e</span><span>o</span> <span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span>
+                </h2>
+                <p class="text-xl mt-4 fade-in-up">Where your dreams come to life on the screen.</p>
+                <a href="#contact" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in-up">Hire us!</a>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section id="our-story" class="collage relative px-6 py-16">
+            <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">Our Story</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Born in the heart of Chicago, our journey began with a vision: to capture real stories with cinematic beauty. From city streets to skyline dreams, every frame we create breathes authenticity, passion, and artistry. Today, we are a trusted name — crafting
+                    films that move people and redefine what’s possible.
+                </p>
+                <div class="mt-10">
+                    <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+            Let's Create Together
+          </button>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Unique Value Section -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage-2"></div>
+            <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
+                <div class="w-full md:w-1/2">
+                    <img src="images/portfolio/gallery/g-beetle.jpg" alt="Team at Work" class="w-full rounded-lg shadow-lg" />
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+                    <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
+                        <li>Authentic storytelling driven by emotion</li>
+                        <li>Decades of combined industry experience</li>
+                        <li>Cinematic visuals tailored to your brand</li>
+                        <li>Chicago-rooted, globally minded production</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-10 px-6">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold mb-2">Contact</h3>
+                    <p>123 Business Street, Chicago, IL</p>
+                    <p>Email: contact@adaptedstudios.com</p>
+                    <p>Phone: (312) 555-6789</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-2">Links</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-red-400">Home</a></li>
+                        <li><a href="#" class="hover:text-red-400">Gallery</a></li>
+                        <li><a href="#" class="hover:text-red-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-2">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl"><i class="fab fa-vimeo"></i></a>
+                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-10">&copy; 2025 Adapted Studios. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').classList.remove('hidden');
+        });
+
+        function scrollToContact() {
+            const el = document.getElementById('contact');
+            if (el) el.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        const collage = document.getElementById('collage');
+        const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+        const TOTAL_LETTERS = 50;
+
+        function createFloatingLetters() {
+            for (let i = 0; i < TOTAL_LETTERS; i++) {
+                const letter = document.createElement('div');
+                letter.className = 'letter';
+                letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                collage.appendChild(letter);
+            }
+        }
+
+        function setRandomPositions() {
+            const letters = document.querySelectorAll('.letter');
+            letters.forEach(el => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                el.style.left = `${x}px`;
+                el.style.top = `${y}px`;
+            });
+        }
+
+        function floatAndRotateForever() {
+            const letters = document.querySelectorAll('.letter');
+            letters.forEach((el) => {
+                const offsetX = (Math.random() - 0.5) * 150;
+                const offsetY = (Math.random() - 0.5) * 150;
+                const rotation = Math.random() * 360;
+                el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+            });
+            setTimeout(floatAndRotateForever, 10000);
+        }
+
+        function createFloatingLettersIn(targetId) {
+            const container = document.getElementById(targetId);
+            if (!container) return;
+
+            for (let i = 0; i < 30; i++) {
+                const letter = document.createElement('div');
+                letter.className = 'letter';
+                letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                container.appendChild(letter);
+            }
+
+            function animate() {
+                const letters = container.querySelectorAll('.letter');
+                letters.forEach(el => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    const offsetX = (Math.random() - 0.5) * 100;
+                    const offsetY = (Math.random() - 0.5) * 100;
+                    const rotation = Math.random() * 360;
+                    el.style.left = `${x}px`;
+                    el.style.top = `${y}px`;
+                    el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+                });
+                setTimeout(animate, 10000);
+            }
+            animate();
+        }
+
+        window.onload = () => {
+            createFloatingLetters();
+            setRandomPositions();
+            floatAndRotateForever();
+            createFloatingLettersIn("collage-2");
+        };
+    </script>
+</body>
+
+</html>

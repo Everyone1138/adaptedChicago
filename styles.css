@@ -34,9 +34,11 @@ i {
     position: absolute;
     top: 50%;
     right: 5%;
-    text-align: right;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
     color: white;
-    z-index: 10;
+    z-index: 30;
     transform: translateY(-50%);
 }
 

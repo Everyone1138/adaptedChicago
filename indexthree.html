@@ -1,0 +1,1297 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css"> -->
+
+
+
+
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/vendor.css"> -->
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <script defer src="./js/main.js"></script>
+
+    <script defer src="./js/jquery-3.2.1.min.js"></script>
+
+    <script defer src="./js/plugins.js"></script>
+    <script defer src="./js/modernizr.js"></script>
+
+</head>
+
+<body class="bg-gray-100" onclick="closeMenu(event)">
+    <!-- icons  -->
+    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50">
+
+
+        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+            <i class="fa-brands fa-square-vimeo"></i>
+        </a>
+        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+            <i class="fab fa-facebook"></i>
+        </a>
+
+
+    </div>
+    <!-- -->
+    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <div class="loader-text">
+            <span>a</span>
+            <span>d</span>
+            <span>a</span>
+            <span>p</span>
+            <span>t</span>
+            <span>e</span>
+            <span>d</span>
+            <span>.</span>
+        </div>
+    </div>
+
+    <div id="content" class="hidden">
+        <!-- Main content starts here -->
+
+
+
+        <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
+            <!-- Spinning Text -->
+            <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+
+
+            </a>
+
+            <!-- Menu Button -->
+            <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+
+            <!-- Side Menu -->
+            <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+                <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+                <ul>
+                    <li class="p-2"><a href="index.html">Home</a></li>
+                    <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                    <li class="p-2"><a href="teampage.html">The Team</a></li>
+                    <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                    <li class="p-2"><a href="contactus.html">Contact</a></li>
+                </ul>
+
+                <div class="flex-1"></div>
+
+                <!-- Bottom Icons -->
+                <p>
+
+                    <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                        <i class="fa-brands fa-square-vimeo"></i>
+                    </a>
+                    <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </p>
+            </div>
+
+
+        </nav>
+
+
+        <!-- Video Section with Overlay Text -->
+        <section class="video-container">
+            <video autoplay muted loop>
+            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+            <div class="overlay">
+
+
+                <h1 class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">C</h1>
+                <h1 class="nav-text nav-size transition-transform duration-500 hover:rotate-360 hover:text-red-500">h</h1>
+                <h1 class="nav-text nav-size transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</h1>
+                <h1 class="nav-text nav-size transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</h1>
+                <h1 class="nav-text nav-size transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</h1>
+                <h1 class="nav-text nav-size transition-transform duration-500 hover:rotate-360 hover:text-red-500">g</h1>
+                <h1 class="nav-text nav-size transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</h1>
+                <div>
+                    <p></p>
+                </div>
+
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">V</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+
+                <div>
+                    <p></p>
+                </div>
+
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">P</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">r</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">u</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">c</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">i</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">o</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">n</span>
+                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+                <div>
+                    <h1 class="text-5xl font-bold fade-in "></h1>
+                    <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
+                        where your dreams come to life of the screen.
+
+                    </p>
+                    <a href="contactus.html" class="mt-6 bg-red-500 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
+                    Hire us!
+                </a>
+                </div>
+
+            </div>
+
+
+
+    </div>
+    </section>
+
+
+    <!-- Our Story Section with Floating Letter Background -->
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 2s ease-out forwards;
+        }
+        
+        .collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 10s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.05;
+            backdrop-filter: blur(6px);
+        }
+    </style>
+
+    <section id="our-story-wrapper" class="relative bg-black text-white overflow-hidden">
+        <!-- Floating Background Letters -->
+        <div class="collage" id="collage"></div>
+
+        <!-- Story Content -->
+        <section id="our-story" class="relative min-h-screen flex items-center justify-center px-6 py-20 z-10">
+            <div class="max-w-5xl mx-auto text-center fade-in-up">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">Our Story</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Born in the heart of Chicago, our journey began with a vision: to capture real stories with cinematic beauty. From city streets to skyline dreams, every frame we create breathes authenticity, passion, and artistry. Today, we are a trusted name — crafting
+                    films that move people and redefine what’s possible.
+                </p>
+                <div class="mt-10">
+                    <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+            Let's Create Together
+          </button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Optional Contact Section Anchor -->
+    <section id="contact" class="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+        <h2 class="text-3xl md:text-5xl font-bold">Contact Us</h2>
+    </section>
+
+    <!-- Floating Letters Script -->
+    <script>
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        const collage = document.getElementById('collage');
+        const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+        const TOTAL_LETTERS = 50;
+
+        function createFloatingLetters() {
+            for (let i = 0; i < TOTAL_LETTERS; i++) {
+                const letter = document.createElement('div');
+                letter.className = 'letter';
+                letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                collage.appendChild(letter);
+            }
+        }
+
+        function setRandomPositions() {
+            const letters = document.querySelectorAll('.letter');
+            letters.forEach(el => {
+                el.style.left = `${Math.random() * window.innerWidth}px`;
+                el.style.top = `${Math.random() * window.innerHeight}px`;
+            });
+        }
+
+        function floatAndRotateForever() {
+            const letters = document.querySelectorAll('.letter');
+            letters.forEach(el => {
+                const offsetX = (Math.random() - 0.5) * 150;
+                const offsetY = (Math.random() - 0.5) * 150;
+                const rotation = Math.random() * 360;
+                el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+            });
+            setTimeout(floatAndRotateForever, 10000);
+        }
+
+        window.addEventListener('load', () => {
+            createFloatingLetters();
+            setRandomPositions();
+            floatAndRotateForever();
+
+            setTimeout(() => {
+                document.querySelector('#our-story .fade-in-up').classList.add('opacity-100');
+            }, 500);
+        });
+
+        window.addEventListener('resize', setRandomPositions);
+    </script>
+
+
+    <!-- Our Unique Approach Section -->
+    <section id="our-approach" class="relative min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">Our Unique Approach</h2>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                At <span class="text-white font-semibold">Adapted.</span> we believe that each project deserves a distinctive touch, reflecting the character and personality of our clients.
+                <br class="hidden md:block mt-4" /> We’re not just content creators — <span class="italic text-white">we are storytellers</span>.
+                <br class="hidden md:block mt-4" /> We take the time to build a personal connection, working closely with our clients to understand their goals and vision.
+                <br class="hidden md:block mt-4" /> This collaborative process allows us to craft customized, authentic solutions that bring their unique visions to life.
+            </p>
+            <div class="mt-10">
+                <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+          Start Your Story
+        </button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- works
+    ================================================== -->
+    <section id="works" class="s-works target-section">
+
+        <div class="row section-header has-bottom-sep narrow target-section" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Our Works</h3>
+                <h1 class="display-1">
+                    We create brands, products, and experiences that people love. Check out our recent works.
+                </h1>
+            </div>
+        </div>
+        <!-- end section-header -->
+
+        <div class="row masonry-wrap">
+
+            <div class="masonry">
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/gallery/g-shutterbug.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700">
+                                <img src="images/portfolio/lady-shutterbug.jpg" srcset="images/portfolio/lady-shutterbug.jpg 1x, images/portfolio/lady-shutterbug@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Shutterbug
+                            </h3>
+                            <p class="item-folio__cat">
+                                Branding
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/gallery/g-woodcraft.jpg" class="thumb-link" title="Woodcraft" data-size="1050x700">
+                                <img src="images/portfolio/woodcraft.jpg" srcset="images/portfolio/woodcraft.jpg 1x, images/portfolio/woodcraft@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Woodcraft
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Design
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/gallery/g-beetle.jpg" class="thumb-link" title="The Beetle Car" data-size="1050x700">
+                                <img src="images/portfolio/the-beetle.jpg" srcset="images/portfolio/the-beetle.jpg 1x, images/portfolio/the-beetle@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                The Beetle
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Development
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/gallery/g-salad.jpg" class="thumb-link" title="Grow Green" data-size="1050x700">
+                                <img src="images/portfolio/salad.jpg" srcset="images/portfolio/salad.jpg 1x, images/portfolio/salad@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Salad
+                            </h3>
+                            <p class="item-folio__cat">
+                                Branding
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/gallery/g-lamp.jpg" class="thumb-link" title="Guitarist" data-size="1050x700">
+                                <img src="images/portfolio/lamp.jpg" srcset="images/portfolio/lamp.jpg 1x, images/portfolio/lamp@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Lamp
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Design
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/gallery/g-fuji.jpg" class="thumb-link" title="Palmeira" data-size="1050x700">
+                                <img src="images/portfolio/fuji.jpg" srcset="images/portfolio/fuji.jpg 1x, images/portfolio/fuji@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Fuji
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Design
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end masonry__brick -->
+
+            </div>
+            <!-- end masonry -->
+
+        </div>
+        <!-- end masonry-wrap -->
+
+    </section>
+    <!-- end s-works -->
+
+    <!-- Scrolling Banner Section -->
+    <!-- <section id="works" class="s-works target-section mt-0 pt-0">
+
+        <div class="overflow-hidden whitespace-nowrap bg-gray-800">
+            <div class="animate-scroll">
+                <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+            </div>
+        </div>
+    </section> -->
+    <!-- Parallax Floating Letter Styles -->
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 2s ease-out forwards;
+        }
+        
+        .collage {
+            position: fixed;
+            top: -30vh;
+            left: 0;
+            width: 100%;
+            height: 160vh;
+            z-index: 0;
+            pointer-events: none;
+            overflow: visible;
+        }
+        
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 10s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.05;
+            backdrop-filter: blur(6px);
+            will-change: transform;
+        }
+    </style>
+
+    <!-- Our Story Section -->
+    <section id="our-story-wrapper" class="relative bg-black text-white overflow-visible">
+        <!-- Floating Background Letters -->
+        <div class="collage" id="collage"></div>
+
+        <section id="our-story" class="relative min-h-screen flex items-center justify-center px-6 py-20 z-10">
+            <div class="max-w-5xl mx-auto text-center fade-in-up">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">Our Story</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Born in the heart of Chicago, our journey began with a vision: to capture real stories with cinematic beauty. From city streets to skyline dreams, every frame we create breathes authenticity, passion, and artistry. Today, we are a trusted name — crafting
+                    films that move people and redefine what’s possible.
+                </p>
+                <div class="mt-10">
+                    <button onclick="scrollToContact()" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition-transform transform hover:scale-105">
+            Let's Create Together
+          </button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Contact Anchor -->
+    <section id="contact" class="min-h-screen flex items-center justify-center bg-gray-900 text-white relative z-10">
+        <h2 class="text-3xl md:text-5xl font-bold">Contact Us</h2>
+    </section>
+
+
+
+
+    <section class="bg-white py-16 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Google Reviews</h2>
+            <p class="text-lg text-gray-600 mb-12">See what our customers are saying about us on Google</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review Card -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md transition duration-300 transform hover:-translate-y-2 hover:scale-105 hover:ring-4 hover:ring-red-500 group cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://via.placeholder.com/50" alt="Reviewer 1">
+                        <div class="ml-4 text-left">
+                            <p class="font-semibold text-gray-900 group-hover:text-red-600">Emily R.</p>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 group-hover:text-gray-900 text-sm transition">Amazing team and top-notch production quality. Truly brought our vision to life!</p>
+                </div>
+
+                <!-- Review Card -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md transition duration-300 transform hover:-translate-y-2 hover:scale-105 hover:ring-4 hover:ring-red-500 group cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://via.placeholder.com/50" alt="Reviewer 2">
+                        <div class="ml-4 text-left">
+                            <p class="font-semibold text-gray-900 group-hover:text-red-600">Michael T.</p>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 group-hover:text-gray-900 text-sm transition">The best video crew we’ve worked with. Professional, creative, and fast!</p>
+                </div>
+
+                <!-- Review Card -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md transition duration-300 transform hover:-translate-y-2 hover:scale-105 hover:ring-4 hover:ring-red-500 group cursor-pointer">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://via.placeholder.com/50" alt="Reviewer 3">
+                        <div class="ml-4 text-left">
+                            <p class="font-semibold text-gray-900 group-hover:text-red-600">Samantha D.</p>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 group-hover:text-gray-900 text-sm transition">Super smooth process from start to finish. Highly recommend Adapted Studios!</p>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <a href="https://www.google.com/maps/place/Adapted+Studios" target="_blank" class="inline-block bg-red-500 hover:bg-red-600 text-white text-lg px-6 py-3 rounded-lg shadow-md transition">
+            View More on Google
+          </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- new section for reviews-->
+
+
+
+
+
+    <style>
+        .review-card {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        
+        .carousel-container {
+            perspective: 1000px;
+        }
+        
+        .active-review {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .next-review {
+            transform: translateX(30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .prev-review {
+            transform: translateX(-30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .hidden-review {
+            transform: translateX(100%) scale(0.8);
+            opacity: 0;
+            z-index: 1;
+        }
+    </style>
+    </head>
+
+
+    <section class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-4">
+        <div class="max-w-4xl w-full">
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">What Our Customers Say</h1>
+            <div class="flex justify-center mb-8">
+                <div class="flex items-center">
+                    <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google Reviews" class="h-8 mr-2">
+                    <span class="text-yellow-500 font-semibold">4.9 ★ from 127 reviews</span>
+                </div>
+            </div>
+
+            <div class="carousel-container relative h-96 md:h-80 overflow-hidden">
+                <!-- Review cards will be inserted here by JavaScript -->
+            </div>
+
+            <div class="flex justify-center mt-6 space-x-3">
+                <button id="prevBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
+              <i class="fas fa-chevron-left text-gray-700"></i>
+          </button>
+                <div id="indicators" class="flex items-center space-x-2">
+                    <!-- Indicators will be inserted here by JavaScript -->
+                </div>
+                <button id="nextBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
+              <i class="fas fa-chevron-right text-gray-700"></i>
+          </button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Sample review data (in a real app, you might fetch this from an API)
+                const reviews = [{
+                    id: 1,
+                    name: "Sarah Johnson",
+                    rating: 5,
+                    date: "2 weeks ago",
+                    text: "Absolutely amazing service! The team went above and beyond to help me with my project. I couldn't be happier with the results. Highly recommend to anyone looking for quality work.",
+                    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+                }, {
+                    id: 2,
+                    name: "Michael Chen",
+                    rating: 4,
+                    date: "1 month ago",
+                    text: "Great experience overall. The communication was excellent and the final product met all my expectations. Would definitely work with them again for future projects.",
+                    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+                }, {
+                    id: 3,
+                    name: "Emily Rodriguez",
+                    rating: 5,
+                    date: "3 weeks ago",
+                    text: "I was blown away by the attention to detail and professionalism. They delivered exactly what I needed before the deadline. 10/10 would recommend!",
+                    avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+                }, {
+                    id: 4,
+                    name: "David Wilson",
+                    rating: 5,
+                    date: "2 months ago",
+                    text: "Exceptional service from start to finish. The team was responsive, knowledgeable, and delivered beyond my expectations. Will be using them for all my future needs.",
+                    avatar: "https://randomuser.me/api/portraits/men/75.jpg"
+                }, {
+                    id: 5,
+                    name: "Jessica Kim",
+                    rating: 5,
+                    date: "1 week ago",
+                    text: "I'm so impressed with the quality of work and customer service. They made the entire process so easy and stress-free. Can't recommend them enough!",
+                    avatar: "https://randomuser.me/api/portraits/women/90.jpg"
+                }];
+
+                const carouselContainer = document.querySelector('.carousel-container');
+                const indicatorsContainer = document.getElementById('indicators');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+
+                let currentIndex = 0;
+                let autoScrollInterval;
+                const autoScrollDelay = 5000; // 5 seconds
+
+                // Create review cards
+                function createReviewCards() {
+                    carouselContainer.innerHTML = '';
+                    indicatorsContainer.innerHTML = '';
+
+                    reviews.forEach((review, index) => {
+                        // Create review card
+                        const reviewCard = document.createElement('div');
+                        reviewCard.className = `review-card absolute w-full md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-lg p-6 transition-all duration-500 ${index === 0 ? 'active-review' : 'hidden-review'}`;
+
+                        // Create stars
+                        let stars = '';
+                        for (let i = 0; i < 5; i++) {
+                            stars += i < review.rating ?
+                                '<i class="fas fa-star text-yellow-400"></i>' :
+                                '<i class="far fa-star text-yellow-400"></i>';
+                        }
+
+                        reviewCard.innerHTML = `
+                      <div class="flex items-start mb-4">
+                          <img src="${review.avatar}" alt="${review.name}" class="w-12 h-12 rounded-full mr-4 object-cover">
+                          <div>
+                              <h3 class="font-semibold text-gray-800">${review.name}</h3>
+                              <div class="flex items-center mt-1">
+                                  ${stars}
+                                  <span class="text-gray-500 text-sm ml-2">${review.date}</span>
+                              </div>
+                          </div>
+                      </div>
+                      <p class="text-gray-600">"${review.text}"</p>
+                      <div class="mt-4 flex justify-end">
+                          <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google" class="h-6">
+                      </div>
+                  `;
+
+                        carouselContainer.appendChild(reviewCard);
+
+                        // Create indicator
+                        const indicator = document.createElement('button');
+                        indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                        indicator.dataset.index = index;
+                        indicator.addEventListener('click', () => goToReview(index));
+                        indicatorsContainer.appendChild(indicator);
+                    });
+                }
+
+                // Update carousel position
+                function updateCarousel() {
+                    const cards = document.querySelectorAll('.review-card');
+                    const indicators = document.querySelectorAll('#indicators button');
+
+                    cards.forEach((card, index) => {
+                        if (index === currentIndex) {
+                            card.classList.remove('hidden-review', 'next-review', 'prev-review');
+                            card.classList.add('active-review');
+                        } else if (index === (currentIndex + 1) % reviews.length) {
+                            card.classList.remove('hidden-review', 'active-review', 'prev-review');
+                            card.classList.add('next-review');
+                        } else if (index === (currentIndex - 1 + reviews.length) % reviews.length) {
+                            card.classList.remove('hidden-review', 'active-review', 'next-review');
+                            card.classList.add('prev-review');
+                        } else {
+                            card.classList.remove('active-review', 'next-review', 'prev-review');
+                            card.classList.add('hidden-review');
+                        }
+                    });
+
+                    indicators.forEach((indicator, index) => {
+                        indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                    });
+                }
+
+                // Navigate to specific review
+                function goToReview(index) {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Next review
+                function nextReview() {
+                    currentIndex = (currentIndex + 1) % reviews.length;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Previous review
+                function prevReview() {
+                    currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Auto-scroll functionality
+                function startAutoScroll() {
+                    autoScrollInterval = setInterval(nextReview, autoScrollDelay);
+                }
+
+                function resetAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                    startAutoScroll();
+                }
+
+                // Event listeners
+                nextBtn.addEventListener('click', nextReview);
+                prevBtn.addEventListener('click', prevReview);
+
+                // Pause auto-scroll on hover
+                carouselContainer.addEventListener('mouseenter', () => {
+                    clearInterval(autoScrollInterval);
+                });
+
+                carouselContainer.addEventListener('mouseleave', () => {
+                    startAutoScroll();
+                });
+
+                // Initialize
+                createReviewCards();
+                startAutoScroll();
+
+                // Handle keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        nextReview();
+                    } else if (e.key === 'ArrowLeft') {
+                        prevReview();
+                    }
+                });
+            });
+        </script>
+    </section>
+
+
+
+
+
+
+    <!-- video section to inform user of services-->
+    <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Cinematic Moments</h1>
+        <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2>
+        <p class="text-md md:text-lg text-white-500 mb-8">
+            Dive into our curated gallery of cinematic visuals. Hover to explore each moment in motion and feel the impact of storytelling through the lens.
+        </p>
+        <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
+            <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" title="Sample Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                          <iframe title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+            </iframe>
+        </div>
+    </section>
+
+
+    <!--- second video section-->
+    <!-- 
+              <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-indigo-500/30">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="Sample Video" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
+               -->
+
+    <!-- Content Sections -->
+    <section class="h-screen bg-white flex justify-center items-center text-black">
+        <h2 class="text-4xl">Section 1</h2>
+    </section>
+
+
+    <section class="banner-section mb-0">
+        <div class="s-works target-section mt-0">
+            <div class="animate-scroll">
+                <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
+                <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="h-screen bg-black flex justify-center items-center text-white">
+        <h2 class="text-4xl"></h2>
+        <img src="img/Scene (1).gif" width="100%" height="100%">
+    </section>
+
+    <section class="h-screen bg-white flex justify-center items-center text-black">
+        <h2 class="text-4xl"></h2>
+        <section class="py-20 px-5">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-lg text-center">
+                    <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
+                    <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg text-center">
+                    <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
+                    <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg text-center">
+                    <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
+                    <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <section class="bg-gray-100 py-16 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Services</h2>
+            <p class="text-lg text-gray-600 mb-12">
+                We offer a wide range of professional video production services to bring your creative vision to life.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v12H2V2zm0 14h20v6H2v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Film Production</h3>
+                    <p class="text-gray-600">End-to-end film production services, from concept to final cut.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Videos</h3>
+                    <p class="text-gray-600">Create impactful videos for your brand, product, or service.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v4h10V2H7zm0 6v12h10V8H7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Photography</h3>
+                    <p class="text-gray-600">High-quality photography to accompany your video projects.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Post-Production</h3>
+                    <p class="text-gray-600">Expert editing, color grading, and sound design to perfect your video.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-100 py-16 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Services</h2>
+            <p class="text-lg text-gray-600 mb-12">
+                We offer a wide range of professional video production services to bring your creative vision to life.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Film Production Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v12H2V2zm0 14h20v6H2v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Film Production</h3>
+                    <p class="text-gray-600">End-to-end film production services, from concept to final cut.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Commercial Video Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Videos</h3>
+                    <p class="text-gray-600">Create impactful videos for your brand, product, or service.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Photography Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v4h10V2H7zm0 6v12h10V8H7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Photography</h3>
+                    <p class="text-gray-600">High-quality photography to accompany your video projects.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Post-Production Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Post-Production</h3>
+                    <p class="text-gray-600">Expert editing, color grading, and sound design to perfect your video.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline Style for Animation -->
+    <style>
+        /* Slide-in animation */
+        
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .service-card {
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        /* Delay animation for each card */
+        
+        .service-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .service-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .service-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .service-card:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+        /* Add a hover effect for the entire card */
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+
+
+
+
+    <section class="bg-transparent py-16 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Services</h2>
+            <p class="text-lg text-gray-600 mb-12">
+                We offer a wide range of professional video production services to bring your creative vision to life.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Film Production Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v12H2V2zm0 14h20v6H2v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Film Production</h3>
+                    <p class="text-gray-600">End-to-end film production services, from concept to final cut.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Commercial Video Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Videos</h3>
+                    <p class="text-gray-600">Create impactful videos for your brand, product, or service.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Photography Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v4h10V2H7zm0 6v12h10V8H7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Photography</h3>
+                    <p class="text-gray-600">High-quality photography to accompany your video projects.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 group hover:scale-105 hover:shadow-2xl">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <!-- Post-Production Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16v12H4V2zm0 14h16v6H4v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Post-Production</h3>
+                    <p class="text-gray-600">Expert editing, color grading, and sound design to perfect your video.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline Style for Animation -->
+    <style>
+        /* Slide-in animation */
+        
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .service-card {
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        /* Delay animation for each card */
+        
+        .service-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .service-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .service-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .service-card:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+        /* Add a hover effect for the entire card */
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+
+
+
+
+    <section class="h-screen bg-black flex justify-center items-center text-white">
+        <h2 class="text-4xl">Section 4</h2>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div>
+                <h3 class="text-lg font-bold">Company Info</h3>
+                <p>123 Business Street</p>
+                <p>City, State, ZIP</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Contact Us</h3>
+                <p>Email: contact@yourcompany.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                <p>Want to schedule a Zoom meeting with us?</p>
+                <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <p>
+
+                    <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                        <i class="fa-brands fa-square-vimeo"></i>
+                    </a>
+                    <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
+    </footer>
+
+    </div>
+    <!-- this is where the loader div ends -->
+</body>
+
+</html>
