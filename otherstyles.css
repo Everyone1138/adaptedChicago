@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap);
+/* @import url(https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap); */
+
 @import "tailwindcss";
 
 /* font:caviar, only caviar! */
@@ -22,7 +23,7 @@ body {
     display: inline-block;
     font-size: 2rem;
     font-weight: bold;
-    animation: bounce 4s infinite alternate;
+    animation: bounce 3s infinite alternate;
 }
 
 .loader-text span:nth-child(2) {
@@ -51,4 +52,19 @@ body {
 
 .loader-text span:nth-child(8) {
     animation-delay: 0.7s;
+}
+
+
+/*    hidden H1 for SEO     */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
