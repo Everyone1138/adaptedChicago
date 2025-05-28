@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('/fonts/CaviarDreams.ttf') format('truetype');
+    /* Update path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Caviar Dreams', sans-serif;
+}
+
 .loader-text span {
     display: inline-block;
     font-size: 2rem;
