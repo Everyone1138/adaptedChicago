@@ -6,8 +6,7 @@
 
 @font-face {
     font-family: 'Caviar Dreams';
-    src: url('/fonts/CaviarDreams.ttf') format('truetype');
-    /* Update path */
+    src: url('fonts/CaviarDreams.woff2') format('woff2'), url('fonts/CaviarDreams.woff') format('woff'), url('fonts/CaviarDreams.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
