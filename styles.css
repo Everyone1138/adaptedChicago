@@ -86,7 +86,7 @@ i {
     display: inline-block;
     font-size: 2rem;
     font-weight: bold;
-    animation: bounce 1s infinite alternate;
+    animation: bounce 3s infinite alternate;
 }
 
 .loader-text span:nth-child(2) {
