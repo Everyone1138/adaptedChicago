@@ -63,12 +63,13 @@
             user-select: none;
             opacity: 0.09;
             backdrop-filter: blur(6px);
+            pointer-events: none;
+            z-index: 0;
         }
         
         .collage {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             z-index: 0;
@@ -129,6 +130,22 @@
             .spin-hover span h2 {
                 font-size: 80px;
             }
+        }
+        /* Your Experience Matters Section*/
+        
+        .aspect-w-16 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+        
+        .aspect-w-16 iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -216,13 +233,13 @@
         <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
     </video>
             <div class="overlay">
-                <h1 class="text-[80px] sm:text-[80px] md:text-[130px] lg:text-[190px] font-bold fade-in spin-hover">
+                <h2 class="text-[30px] sm:text-[45px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
                     <span>C</span><span>h</span><span>i</span><span>c</span><span>a</span><span>g</span><span>o</span>
-                </h1>
-                <h2 class="text-[30px] sm:text-[30px] md:text-[50px] lg:text-[70px] font-bold fade-in spin-hover">
+                </h2>
+                <h2 class="text-[30px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold fade-in spin-hover">
                     <span>V</span><span>i</span><span>d</span><span>e</span><span>o</span> <span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span><span>.</span>
                 </h2>
-                <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[30px] mt-4 fade-in" style="animation-delay: 0.5s;">Where your dreams come to life on the screen.</p>
+                <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[25px] mt-4 fade-in" style="animation-delay: 0.5s;">where your dreams come to life on the screen.</p>
                 <!-- <p class="text-[15px] sm:text-[13px] md:text-[20px] lg:text-[30px] mt-4 fade-in" style="animation-delay: 0.5s;"></p> -->
                 <a href="#contact" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
             </div>
@@ -322,6 +339,48 @@
 
 
 
+
+            <!-- Your Experience Matters Section -->
+            <section class="relative px-6 py-24 bg-black text-white overflow-hidden">
+                <!-- Floating Letters Background -->
+                <div class="collage" id="collage-experience"></div>
+
+                <!-- Content Layout -->
+                <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
+
+                    <!-- Text Content -->
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Your Experience Matters</h2>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-4">
+                            Creating content should be an enjoyable, seamless and personalized experience. At
+                            <span class="text-white font-semibold">adapted.</span> we’re committed to providing that personal touch of authenticity and genuine interest that sets us apart.
+                        </p>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                            Our clients aren’t just numbers to us; they’re integral partners in the creative process. We work tirelessly to ensure that their brand vision is not just realized but exceeded.
+                        </p>
+                        <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+        Work With Us
+      </a>
+                    </div>
+
+                    <!-- Interactive Video Embed -->
+                    <div class="w-full md:w-1/2 transform transition-transform duration-500 hover:scale-105 rounded-xl overflow-hidden shadow-lg">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full rounded-lg" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Adapted Studios"
+                                allowfullscreen>
+        </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
             <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
                 <div class="collage" id="collage"></div>
                 <div class="relative z-10 max-w-4xl mx-auto text-center fade-in-up">
@@ -332,43 +391,7 @@
                 </div>
             </section>
 
-            <script>
-                const collage = document.getElementById('collage');
-                const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
 
-                function createFloatingLetters() {
-                    for (let i = 0; i < 50; i++) {
-                        const letter = document.createElement('div');
-                        letter.className = 'letter';
-                        letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
-                        collage.appendChild(letter);
-                    }
-                }
-
-                function animateLetters() {
-                    const letters = document.querySelectorAll('.letter');
-                    letters.forEach(el => {
-                        const x = Math.random() * window.innerWidth;
-                        const y = Math.random() * window.innerHeight;
-                        const offsetX = (Math.random() - 0.5) * 150;
-                        const offsetY = (Math.random() - 0.5) * 150;
-                        const rotation = Math.random() * 360;
-                        el.style.left = `${x}px`;
-                        el.style.top = `${y}px`;
-                        el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
-                    });
-                    setTimeout(animateLetters, 10000);
-                }
-
-                window.onload = () => {
-                    createFloatingLetters();
-                    animateLetters();
-                }
-
-                window.onresize = () => {
-                    animateLetters();
-                }
-            </script>
 
             <!-- About Section -->
             <section class="bg-gray-900 text-white py-20 px-6">
@@ -387,11 +410,12 @@
 
             <!-- video section to inform user of services-->
             <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Cinematic Moments</h1>
-                <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2>
-                <p class="text-md md:text-lg text-white-500 mb-8">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">cinematic moments</h1>
+                <!-- adjust this section move it somewhere else. -->
+                <!-- <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2> -->
+                <!-- <p class="text-md md:text-lg text-white-500 mb-8">
                     Dive into our curated gallery of cinematic visuals. Hover to explore each moment in motion and feel the impact of storytelling through the lens.
-                </p>
+                </p> -->
                 <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
                     <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" title="Sample Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                           <iframe title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
@@ -477,6 +501,40 @@
                 </div>
             </section>
 
+
+
+
+            <!-- Drone Footage Section -->
+            <section class="relative bg-black text-white py-20 px-6 ">
+                <!-- Floating Letters Background -->
+                <div class="collage" id="collage-drone"></div>
+
+                <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
+
+                    <!-- Video on the Left -->
+                    <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Drone Footage" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Text on the Right -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6">A New Perspective</h2>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                            Elevate your visual storytelling with aerial cinematography that captures sweeping landscapes and dynamic movement from the sky.
+                        </p>
+                        <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+        Book Aerial Coverage
+      </a>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
             <!-- Call to Action Section -->
             <section class="bg-black text-white py-20 px-6 fade-in-up">
                 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -502,21 +560,62 @@
             </section>
 
 
-            <!-- Parallax Storytelling Section -->
-            <section class="relative h-[600px] md:h-[700px] overflow-hidden text-white">
-                <div class="absolute inset-0 bg-fixed bg-center bg-cover z-0" style="background-image: url('https://via.placeholder.com/1600x900');"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
 
-                <div class="relative z-20 h-full flex flex-col items-center justify-center text-center px-6">
-                    <h2 class="text-4xl md:text-6xl font-bold mb-6">Ready to Tell Your Story</h2>
-                    <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-8">
-                        Adapted is here and ready to help you tell your story in a way that is truly unique, engaging, and unforgettable. Let’s collaborate to create content that stands out, resonates, and makes an impact.
+
+            <!-- Full-Width Clients Carousel with Floating Letters -->
+            <section class="relative bg-black text-white py-20 px-6 overflow-hidden">
+                <!-- Floating Letters Background -->
+                <div class="collage" id="collage-clients"></div>
+
+                <div class="relative z-10 w-full text-center fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-10">Our Clients</h2>
+                    <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto">
+                        Trusted by brands that move the world forward.
                     </p>
-                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
-      Let's Collaborate
-    </a>
+
+                    <!-- Scrolling Track -->
+                    <div class="overflow-hidden w-screen px-4 sm:px-8">
+                        <div class="flex space-x-16 animate-scroll-x whitespace-nowrap">
+                            <!-- Logos (repeat and duplicate for seamless loop) -->
+                            <img src="img/" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 1" />
+                            <img src="img/clients/logo2.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 2" />
+                            <img src="img/clients/logo3.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 3" />
+                            <img src="img/clients/logo4.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 4" />
+                            <img src="img/clients/logo5.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 5" />
+                            <!-- Duplicates -->
+                            <img src="img/clients/logo1.png" class="h-12 grayscale opacity-60" alt="Client 1" />
+                            <img src="img/clients/logo2.png" class="h-12 grayscale opacity-60" alt="Client 2" />
+                            <img src="img/clients/logo3.png" class="h-12 grayscale opacity-60" alt="Client 3" />
+                            <img src="img/clients/logo4.png" class="h-12 grayscale opacity-60" alt="Client 4" />
+                            <img src="img/clients/logo5.png" class="h-12 grayscale opacity-60" alt="Client 5" />
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <!-- Add this if not already present -->
+            <style>
+                @keyframes scroll-x {
+                    0% {
+                        transform: translateX(-50%);
+                    }
+                    100% {
+                        transform: translateX(0%);
+                    }
+                }
+                
+                .animate-scroll-x {
+                    animation: scroll-x 40s linear infinite;
+                }
+            </style>
+
+
+
+
+
+
+
+
 
 
             <!-- google review section-->
@@ -585,6 +684,11 @@
                 </div>
 
                 <script>
+                    // 'your experience matters' section js //
+
+                    // end of js section for 'your experience matters' //
+
+
                     document.addEventListener('DOMContentLoaded', function() {
                         // Sample review data (in a real app, you might fetch this from an API)
                         const reviews = [{
@@ -762,6 +866,49 @@
                             }
                         });
                     });
+
+
+                    // Floating Letters for Clients Section
+                    function createFloatingLetters(targetId) {
+                        const collage = document.getElementById(targetId);
+                        const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+
+                        for (let i = 0; i < 30; i++) {
+                            const letter = document.createElement('div');
+                            letter.className = 'letter';
+                            letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                            collage.appendChild(letter);
+                        }
+                    }
+
+                    function animateLetters() {
+                        document.querySelectorAll('.letter').forEach(el => {
+                            const x = Math.random() * window.innerWidth;
+                            const y = Math.random() * window.innerHeight;
+                            const offsetX = (Math.random() - 0.5) * 150;
+                            const offsetY = (Math.random() - 0.5) * 150;
+                            const rotation = Math.random() * 360;
+                            el.style.left = `${x}px`;
+                            el.style.top = `${y}px`;
+                            el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+                        });
+                        setTimeout(animateLetters, 10000);
+                    }
+
+                    // Add this to your existing onload logic:
+                    window.onload = () => {
+                        createFloatingLetters('collage');
+                        createFloatingLetters('collage-2');
+                        createFloatingLetters('collage-experience');
+                        createFloatingLetters('collage-clients'); // ✅ Add this line
+                        createFloatingLetters('collage-drone');
+                        animateLetters();
+                    };
+
+
+
+
+                    //carosel in clients section
                 </script>
             </section>
 
@@ -883,6 +1030,9 @@
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             openLightbox(currentIndex);
         }
+
+
+        // our clients carosal js
     </script>
 </body>
 
