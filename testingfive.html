@@ -4,795 +4,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Web Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
+    <title>Adapted Studios | Chicago Video Production</title>
+    <link rel="stylesheet" href="otherstyles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E40AF',
-                        secondary: '#1E3A8A',
-                    }
-                }
-            }
-        }
-    </script>
+    <script defer src="script.js"></script>
     <style>
-        /* Loader Animation */
-        
-        #loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 9999;
+        body {
+            font-family: 'Caviar Dreams', sans-serif;
+            background-image: url('Studio+Shots_0012.JPG');
+            /* <-- Change this path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            /* Optional: makes it stay in place while scrolling */
         }
         
-        .loader-text span {
-            display: inline-block;
-            font-size: 3rem;
-            font-weight: bold;
-            color: #1E40AF;
-            animation: bounce 1s infinite alternate;
+        .fade-in {
+            animation: fadeInUp 1.5s ease-out forwards;
+            opacity: 0;
         }
         
-        .loader-text span:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        
-        .loader-text span:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .loader-text span:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        
-        .loader-text span:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-        
-        .loader-text span:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-        
-        .loader-text span:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-        
-        .loader-text span:nth-child(7) {
-            animation-delay: 0.7s;
-        }
-        
-        .loader-text span:nth-child(8) {
-            animation-delay: 0.8s;
-        }
-        
-        @keyframes bounce {
-            from {
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
                 transform: translateY(0);
             }
-            to {
-                transform: translateY(-20px);
-            }
         }
-        /* Carousel Section */
         
-        .carousel {
-            position: relative;
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 40s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.09;
+            backdrop-filter: blur(6px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .collage {
+            position: absolute;
+            inset: 0;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
             overflow: hidden;
         }
         
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
         
-        .carousel-item {
-            min-width: 100%;
-            position: relative;
-        }
-        
-        .carousel-item-container {
-            position: relative;
-            width: 100%;
-            height: 600px;
-        }
-        
-        .carousel-item img,
-        .carousel-item video {
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            z-index: -1;
         }
         
-        .carousel-item video {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .carousel-item:hover video {
-            opacity: 1;
-        }
-        
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            color: white;
-            z-index: 2;
-        }
-        
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .carousel-control.prev {
-            left: 20px;
-        }
-        
-        .carousel-control.next {
-            right: 20px;
-        }
-        
-        .carousel-indicators {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-        
-        .carousel-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-indicator.active {
-            background-color: white;
-            transform: scale(1.2);
-        }
-        
-        @media (max-width: 768px) {
-            .carousel-item-container {
-                height: 400px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .carousel-item-container {
-                height: 300px;
-            }
-            .carousel-control {
-                width: 40px;
-                height: 40px;
-            }
-        }
-        /* Menu Animation */
-        
-        #menu {
-            transition: right 0.5s ease;
-        }
-        
-        #menu.active {
-            right: 0;
-        }
-        /* Gallery Hover Effect */
-        
-        .gallery-item {
+        .overlay {
             position: relative;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            z-index: 10;
+            text-align: right;
+            color: white;
+            padding-right: 5%;
+            width: 100%;
         }
         
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        .spin-hover span {
+            display: inline-block;
+            transition: transform 0.5s ease, color 0.5s ease;
         }
         
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .spin-hover span:hover,
+        .spin-hover span:active {
+            transform: rotate(360deg);
+            color: #ef4444;
+            /* Tailwind red-500 */
         }
         
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        /* Testimonial Styles */
-        
-        .testimonial-slide {
-            transition: opacity 0.5s ease, transform 0.5s ease;
+        @media (min-width: 480px) {
+            .spin-hover span h1 {
+                font-size: 30px;
+            }
         }
         
-        .testimonial-slide.active {
-            opacity: 1;
-            transform: translateX(0);
+        @media (min-width: 1024px) {
+            .spin-hover span h1 {
+                font-size: 200px;
+            }
         }
         
-        .testimonial-slide.hidden {
-            opacity: 0;
-            transform: translateX(100%);
+        @media (min-width: 1024px) {
+            .spin-hover span h2 {
+                font-size: 80px;
+            }
+        }
+        /* Your Experience Matters Section*/
+        
+        .aspect-w-16 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+        
+        .aspect-w-16 iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+        }
+        
+        .review-card {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .active-review {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .prev-review {
+            transform: translateX(-30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .next-review {
+            transform: translateX(30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .hidden-review {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 0;
         }
     </style>
 </head>
 
-<body class="bg-gray-100">
+<!--Hidden H1 for SEO-->
+<h1 class="sr-only">Adapted Studios - Chicago Video Production</h1>
+
+<body class="bg-gray-100 relative bg-cover bg-fixed bg-center" onclick="closeMenu(event)" style="background-image: url('Studio+Shots_0012.JPG');">
+    <!-- ...rest of the document stays unchanged... -->
+
+    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+        <a href="https://www.instagram.com/adaptedstudios/" class="text-grey-400 text-2xl mx-2">
+            <i class="fa-brands fa-instagram" style="color: #91969c;"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-grey-500 text-2xl mx-2">
+            <i class="fab fa-linkedin" style="color: #91969c;"></i>
+        </a>
+        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+            <i class="fa-brands fa-square-vimeo" style="color: #91969c;"></i>
+        </a>
+        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+            <i class="fa-brands fa-facebook" style="color: #91969c;"></i>
+        </a>
+
+
+    </div>
     <!-- Loader -->
     <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
         <div class="loader-text">
-            <span>a</span>
-            <span>d</span>
-            <span>a</span>
-            <span>p</span>
-            <span>t</span>
-            <span>e</span>
-            <span>d</span>
-            <span>.</span>
+            <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
         </div>
     </div>
 
+
+
     <div id="content" class="hidden">
-        <!-- Social Icons -->
-        <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50">
-            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2 hover:text-pink-600 transition-colors">
-                <i class="fab fa-instagram"></i>
+        <!-- Navbar -->
+        <nav class="fixed w-full bg-gray-900 bg-opacity-70 top-0 left-0 p-4 flex justify-between items-center z-50">
+            <a href="#" class="text-white font-bold text-4xl spin-hover">
+                <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
             </a>
-            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2 hover:text-blue-700 transition-colors">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2 hover:text-blue-700 transition-colors">
-                <i class="fa-brands fa-square-vimeo"></i>
-            </a>
-            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2 hover:text-blue-600 transition-colors">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="fixed w-full bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 backdrop-blur-sm">
-            <!-- Logo -->
-            <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl">
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
-            </a>
-
             <!-- Menu Button -->
-            <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300 hover:rotate-90">☰</button>
+            <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
 
             <!-- Side Menu -->
-            <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg p-5 z-50">
-                <button id="close-btn" class="text-white text-3xl absolute top-5 right-5 hover:text-red-500 transition-colors">&times;</button>
-                <ul class="mt-16 space-y-4">
-                    <li class="p-2 hover:text-red-500 transition-colors"><a href="index.html">Home</a></li>
-                    <li class="p-2 hover:text-red-500 transition-colors"><a href="gallery.html">Gallery</a></li>
-                    <li class="p-2 hover:text-red-500 transition-colors"><a href="teampage.html">The Team</a></li>
-                    <li class="p-2 hover:text-red-500 transition-colors"><a href="what_We_Can_Do_For_You.html">Services</a></li>
-                    <li class="p-2 hover:text-red-500 transition-colors"><a href="contactus.html">Contact</a></li>
+            <div id="menu" class="fixed top-0 right-[-100%] w-full sm:w-2/3 md:w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5 z-[9999]">
+                <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+                <ul>
+                    <li class="p-2"><a href="index.html">Home</a></li>
+                    <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                    <li class="p-2"><a href="teampage.html">The Team</a></li>
+                    <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                    <li class="p-2"><a href="contactus.html">Contact</a></li>
                 </ul>
 
-                <div class="absolute bottom-10 left-5">
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl hover:text-pink-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl hover:text-blue-700 transition-colors">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl hover:text-blue-700 transition-colors">
-                            <i class="fa-brands fa-square-vimeo"></i>
-                        </a>
-                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl hover:text-blue-600 transition-colors">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
+                <div class="flex-1"></div>
+                <h3> Follow us:</h3>
+                <!-- Bottom Icons -->
+                <p>
+
+                    <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                        <i class="fa-brands fa-instagram" style="color: #91969c;"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                        <i class="fa-brands fa-linkedin" style="color: #91969c;"></i>
+                    </a>
+                    <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                        <i class="fa-brands fa-square-vimeo" style="color: #91969c;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                        <i class="fa-brands fa-facebook" style="color: #91969c;"></i>
+                    </a>
+                </p>
             </div>
+
         </nav>
 
-        <!-- Video Background Section -->
-        <section class="h-screen flex justify-center items-center bg-black relative">
-            <video class="w-full h-full object-cover" autoplay muted loop>
-                <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="absolute text-white text-center z-10">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">Gallery</h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto">Look and see some of the projects we've worked on.</p>
-            </div>
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </div>
-        </section>
 
-        <!-- Carousel Section -->
-        <section class="py-20 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
 
-                <div class="carousel">
-                    <div class="carousel-inner">
-                        <!-- Project 1 with video and link -->
-                        <div class="carousel-item">
-                            <a href="project1.html" class="block">
-                                <div class="carousel-item-container">
-                                    <img src="Screen+Shot+2022-04-07+at+4.02.00+PM.jpg" alt="Project 1">
-                                    <video muted loop>
-                                        <source src="project1-video.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="carousel-caption">
-                                    <h3 class="text-2xl font-bold">Project Title 1</h3>
-                                    <p>Short description of the project goes here</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Project 2 with video and link -->
-                        <div class="carousel-item">
-                            <a href="project2.html" class="block">
-                                <div class="carousel-item-container">
-                                    <img src="Screen+Shot+2022-04-07+at+4.02.11+PM.png" alt="Project 2">
-                                    <video muted loop>
-                                        <source src="project2-video.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="carousel-caption">
-                                    <h3 class="text-2xl font-bold">Project Title 2</h3>
-                                    <p>Short description of the project goes here</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Project 3 with video and link -->
-                        <div class="carousel-item">
-                            <a href="project3.html" class="block">
-                                <div class="carousel-item-container">
-                                    <img src="sdfvsdvsdv.jpg" alt="Project 3">
-                                    <video muted loop>
-                                        <source src="project3-video.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="carousel-caption">
-                                    <h3 class="text-2xl font-bold">Project Title 3</h3>
-                                    <p>Short description of the project goes here</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
-                    <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
-
-                    <div class="carousel-indicators">
-                        <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
-                        <div class="carousel-indicator" onclick="goToSlide(1)"></div>
-                        <div class="carousel-indicator" onclick="goToSlide(2)"></div>
-                    </div>
-                </div>
+        <!-- Hero Video Section -->
+        <section class="video-container h-screen flex items-center justify-center relative">
+            <video autoplay muted loop playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" class="pointer-events-none">
+        <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+    </video>
+            <div class="overlay">
+                <h2 class="text-[30px] sm:text-[45px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
+                    <span>C</span><span>h</span><span>i</span><span>c</span><span>a</span><span>g</span><span>o</span>
+                </h2>
+                <h2 class="text-[30px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold fade-in spin-hover">
+                    <span>V</span><span>i</span><span>d</span><span>e</span><span>o</span> <span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span><span>.</span>
+                </h2>
+                <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[25px] mt-4 fade-in" style="animation-delay: 0.5s;">where your dreams come to life on the screen.</p>
+                <!-- <p class="text-[15px] sm:text-[13px] md:text-[20px] lg:text-[30px] mt-4 fade-in" style="animation-delay: 0.5s;"></p> -->
+                <a href="#contact" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 bg-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Clients Say</h2>
-                    <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Trusted by brands across industries</p>
-                </div>
+        <section>
+            <style>
+                body {
+                    margin: 0;
+                    background: #f3f4f6;
+                }
+                
+                .banner-container {
+                    overflow: hidden;
+                    width: 100%;
+                    background-color: #f3f4f6;
+                    padding: 3px 0;
+                }
+                
+                .banner-track {
+                    display: flex;
+                    width: max-content;
+                    animation: scroll-left 80s linear infinite;
+                }
+                
+                .banner-track img {
+                    height: 100px;
+                    object-fit: cover;
+                    margin: 0 1px;
+                    border-radius: 8px;
+                }
+                
+                @keyframes scroll-left {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
 
-                <div class="relative max-w-4xl mx-auto">
-                    <!-- Testimonial Slides -->
-                    <div class="testimonial-slide active bg-white p-8 rounded-lg shadow-sm">
-                        <div class="flex items-center mb-6">
-                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson">
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-900">Sarah Johnson</h4>
-                                <p class="text-gray-600">Marketing Director, Chicago Food Festival</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 italic">
-                            "Working with Windy City Films was an absolute pleasure. They captured the energy and excitement of our food festival perfectly. The final commercial exceeded our expectations and helped us achieve record attendance this year."
-                        </p>
-                        <div class="mt-4 flex">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                    </div>
 
-                    <div class="testimonial-slide hidden bg-white p-8 rounded-lg shadow-sm">
-                        <div class="flex items-center mb-6">
-                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Michael Chen">
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-900">Michael Chen</h4>
-                                <p class="text-gray-600">CEO, Midwest Financial Group</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 italic">
-                            "The corporate video Windy City Films produced for us has become an essential part of our onboarding process. Their team understood our brand values and translated them into a compelling visual narrative that resonates with both employees and clients."
-                        </p>
-                        <div class="mt-4 flex">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                    </div>
 
-                    <div class="testimonial-slide hidden bg-white p-8 rounded-lg shadow-sm">
-                        <div class="flex items-center mb-6">
-                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="David Rodriguez">
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-900">David Rodriguez</h4>
-                                <p class="text-gray-600">Creative Director, The Chicago Sound</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 italic">
-                            "As a local band, we wanted a music video that truly represented Chicago. Windy City Films not only delivered that but also brought creative ideas we hadn't even considered. The final product helped us gain significant exposure and new fans."
-                        </p>
-                        <div class="mt-4 flex">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                    </div>
 
-                    <!-- Navigation arrows -->
-                    <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-12 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-chevron-left text-gray-600"></i>
-                    </button>
-                    <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 -mr-12 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-chevron-right text-gray-600"></i>
-                    </button>
+            <div class="banner-container">
+                <div class="banner-track" id="banner-track">
+                    <!-- Image Set -->
+                    <img src="img/ArtInstituteChicago-09.jpg" alt="Art Institute Chicago" />
+                    <img src="img/Bian-03.jpg" alt="Bian" />
+                    <img src="img/ChicagoTribune-12.jpg" alt="Chicago Tribune" />
+                    <img src="img/CocaCola-04.jpg" alt="CocaCola" />
+                    <img src="img/crainsChicagoBusiness-05.jpg" alt="Crains Chicago Business" />
+                    <img src="img/Lollapalooza-07.jpg" alt="Lollapalooza" />
+                    <img src="img/PBS-06.jpg" alt="PBS" />
+                    <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
+                    <img src="img/theEconomist-02.jpg" alt="The Economist" />
+                    <img src="img/TimeOut-08.jpg" alt="TimeOut" />
+                    <img src="img/vice-1.jpg" alt="vice" />
+                    <!-- Duplicated Set -->
+                    <img src="img/ArtInstituteChicago-09.jpg" alt="Art Institute Chicago" />
+                    <img src="img/Bian-03.jpg" alt="Bian" />
+                    <img src="img/ChicagoTribune-12.jpg" alt="Chicago Tribune" />
+                    <img src="img/CocaCola-04.jpg" alt="CocaCola" />
+                    <img src="img/crainsChicagoBusiness-05.jpg" alt="Crains Chicago Business" />
+                    <img src="img/Lollapalooza-07.jpg" alt="Lollapalooza" />
+                    <img src="img/PBS-06.jpg" alt="PBS" />
+                    <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
+                    <img src="img/theEconomist-02.jpg" alt="The Economist" />
+                    <img src="img/TimeOut-08.jpg" alt="TimeOut" />
+                    <img src="img/vice-1.jpg" alt="vice" />
                 </div>
             </div>
+
+            <script>
+                // Optional: Dynamically duplicate images if needed
+                const track = document.getElementById('banner-track');
+                const children = [...track.children];
+                children.forEach((child) => {
+                    const clone = child.cloneNode(true);
+                    track.appendChild(clone);
+                });
+            </script>
+
         </section>
+
+        <!-- Section: Welcome to Adapted -->
+        <section class="relative px-6 py-16 bg-black text-white">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-welcome"></div>
+
+            <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">The way you tell your story makes a difference.</h2>
+                <h3 class="text-3xl md:text-5xl font-bold mb-6">Welcome to Adapted</h3>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Based in the vibrant heart of Chicago, Adapted is a premiere video production company and creative agency that’s redefining visual storytelling. We’ve swiftly earned a reputation as the go-to partner for businesses, organizations, and individuals who
+                    demand exceptional attention-grabbing content.
+                </p>
+            </div>
+        </section>
+
+        <script>
+            // Floating Letters Creation
+            function createFloatingLetters(targetId) {
+                const collage = document.getElementById(targetId);
+                const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+                for (let i = 0; i < 30; i++) {
+                    const letter = document.createElement('div');
+                    letter.className = 'letter';
+                    letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                    collage.appendChild(letter);
+                }
+            }
+
+            window.onload = () => {
+                createFloatingLetters('collage-welcome');
+            };
+        </script>
+
+
+
+
+
+
+
+
+        <!-- video section to inform user of services-->
+        <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">cinematic moments</h1>
+            <!-- adjust this section move it somewhere else. -->
+            <!-- <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2> -->
+            <!-- <p class="text-md md:text-lg text-white-500 mb-8">
+                    Dive into our curated gallery of cinematic visuals. Hover to explore each moment in motion and feel the impact of storytelling through the lens.
+                </p> -->
+            <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
+                <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" title="Sample Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                          <iframe title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+                </iframe>
+            </div>
+        </section>
+
 
         <!-- Gallery Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Our Work</h2>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <div class="gallery-item">
-                        <a href="gallery-item1.html">
-                            <img src="Screenshot 2025-03-26 101132.png" alt="Gallery Image 1" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="gallery-item2.html">
-                            <img src="image2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="gallery-item3.html">
-                            <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="gallery-item4.html">
-                            <img src="image3.jpg" alt="Gallery Image 4" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="gallery-item5.html">
-                            <img src="image3.jpg" alt="Gallery Image 5" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="gallery-item6.html">
-                            <img src="image3.jpg" alt="Gallery Image 6" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="gallery-item7.html">
-                            <img src="image3.jpg" alt="Gallery Image 7" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="gallery-item8.html">
-                            <img src="image3.jpg" alt="Gallery Image 8" class="w-full h-64 object-cover">
-                            <div class="gallery-overlay">
-                                <span class="bg-white text-black px-4 py-2 rounded-full font-medium">View Project</span>
-                            </div>
-                        </a>
+        <div class="relative z-10 px-6 pb-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <!-- Image Cards -->
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 1</p>
                     </div>
                 </div>
 
-                <div class="text-center mt-12">
-                    <a href="all-projects.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">
-                        View More Projects
-                    </a>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(1)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 2</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(2)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 3</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(3)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
+            <div class="relative max-w-screen-lg w-full px-4 fade-in">
+                <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
+                <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
+                <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
+                <div class="text-center">
+                    <img id="lightboxImage" src="" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300" />
+                    <p id="lightboxText" class="text-lg text-gray-300 mt-4"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--Video Gallery Section -->
+
+
+        <section class="pt-20 p-5">
+            <h2 class="text-4xl text-center font-bold mb-10">Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="Screenshot 2025-03-26 101132.png" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
+                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-gray-900 text-white py-16">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Company Info</h3>
-                        <p class="mb-2">123 Business Street</p>
-                        <p>City, State, ZIP</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Contact Us</h3>
-                        <p class="mb-2">Email: contact@yourcompany.com</p>
-                        <p class="mb-4">Phone: (123) 456-7890</p>
 
-                        <h3 class="text-xl font-bold mb-4">Schedule a Zoom Meeting</h3>
-                        <p class="mb-4">Want to schedule a Zoom meeting with us?</p>
-                        <a href="https://www.example.com" class="inline-block bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition-colors">
-                            Visit External Link
-                        </a>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Follow Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl hover:text-pink-600 transition-colors">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl hover:text-blue-700 transition-colors">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl hover:text-blue-700 transition-colors">
-                                <i class="fa-brands fa-square-vimeo"></i>
-                            </a>
-                            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl hover:text-blue-600 transition-colors">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </div>
+
+        <!-- Second Section with Floating Letters, Image, and Bullet Points -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-2"></div>
+
+            <!-- Content Wrapper -->
+            <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
+
+                <!-- Image Placeholder -->
+                <div class="w-full md:w-1/2">
+                    <img src="images/portfolio/gallery/g-beetle.jpg" alt="Team at Work" class="w-full rounded-lg shadow-lg" />
+                </div>
+
+                <!-- Text and Bullet Points -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+                    <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
+                        <li>Authentic storytelling driven by emotion</li>
+                        <li>Decades of combined industry experience</li>
+                        <li>Cinematic visuals tailored to your brand</li>
+                        <li>Chicago-rooted, globally minded production</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- Drone Footage Section -->
+        <section class="relative bg-black text-white py-20 px-6 ">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-drone"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
+
+                <!-- Video on the Left -->
+                <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Drone Footage" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
-                <div class="border-t border-gray-700 mt-12 pt-8 text-center">
-                    <p>&copy; 2025 adapted. | All Rights Reserved</p>
+                <!-- Text on the Right -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">A New Perspective</h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                        Elevate your visual storytelling with aerial cinematography that captures sweeping landscapes and dynamic movement from the sky.
+                    </p>
+                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+        Book Aerial Coverage
+      </a>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div>
+                    <h3 class="text-lg font-bold">Company Info</h3>
+                    <p>123 Business Street</p>
+                    <p>City, State, ZIP</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Contact Us</h3>
+                    <p>Email: contact@yourcompany.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                    <p>Want to schedule a Zoom meeting with us?</p>
+                    <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Follow Us</h3>
+                    <p>
+
+                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                            <i class="fa-brands fa-square-vimeo"></i>
+                        </a>
+                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </p>
                 </div>
             </div>
+            <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
         </footer>
+
     </div>
 
     <script>
-        // Loader
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('content').classList.remove('hidden');
-            }, 1500);
-        });
+        // carosel last
 
-        // Menu Toggle
+
+
+
+
+        // menu 
         const menuBtn = document.getElementById('menu-btn');
-        const closeBtn = document.getElementById('close-btn');
-        const menu = document.getElementById('menu');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', function() {
-            menu.classList.add('active');
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('-translate-x-full');
         });
 
-        closeBtn.addEventListener('click', function() {
-            menu.classList.remove('active');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!menu.contains(event.target) && event.target !== menuBtn) {
-                menu.classList.remove('active');
+        function closeMenu(e) {
+            if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
+                mobileMenu.classList.add('-translate-x-full');
             }
+        }
+        //
+
+
+        window.addEventListener('load', () => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').classList.remove('hidden');
         });
 
-        // Carousel Functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
-        const indicators = document.querySelectorAll('.carousel-indicator');
-        const totalSlides = slides.length;
 
-        function updateCarousel() {
-            const carouselInner = document.querySelector('.carousel-inner');
-            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+        const images = [{
+            src: 'images/portfolio/lady-shutterbug.jpg',
+            description: 'Description for image 1'
+        }, {
+            src: 'images/portfolio/lady-shutterbug.jpg',
+            description: 'Description for image 2'
+        }, {
+            src: 'images/portfolio/lady-shutterbug.jpg',
+            description: 'Description for image 3'
+        }, {
+            src: 'images/portfolio/lady-shutterbug.jpg',
+            description: 'Description for image 4'
+        }];
 
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
+        let currentIndex = 0;
 
-            // Pause all videos when changing slides
-            document.querySelectorAll('.carousel-item video').forEach(video => {
-                video.pause();
-            });
+        function openLightbox(index) {
+            currentIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightboxImage');
+            const text = document.getElementById('lightboxText');
+
+            image.src = images[index].src;
+            text.textContent = images[index].description;
+            lightbox.classList.remove('hidden');
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
         }
 
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            openLightbox(currentIndex);
         }
 
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            openLightbox(currentIndex);
         }
 
-        // Auto slide change
-        let slideInterval = setInterval(nextSlide, 5000);
 
-        // Pause auto slide when hovering over carousel
-        const carousel = document.querySelector('.carousel');
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-
-        carousel.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 5000);
-        });
-
-        // Initialize carousel
-        updateCarousel();
-
-        // Play video on hover for each carousel item
-        document.querySelectorAll('.carousel-item').forEach(item => {
-            const video = item.querySelector('video');
-
-            item.addEventListener('mouseenter', () => {
-                if (video) {
-                    video.currentTime = 0;
-                    video.play().catch(e => console.log('Video play error:', e));
-                }
-            });
-
-            item.addEventListener('mouseleave', () => {
-                if (video) {
-                    video.pause();
-                }
-            });
-        });
-
-        // Testimonial Carousel Functionality
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial-slide');
-        const totalTestimonials = testimonials.length;
-
-        function updateTestimonials() {
-            testimonials.forEach((testimonial, index) => {
-                if (index === currentTestimonial) {
-                    testimonial.classList.remove('hidden');
-                    testimonial.classList.add('active');
-                } else {
-                    testimonial.classList.add('hidden');
-                    testimonial.classList.remove('active');
-                }
-            });
-        }
-
-        document.getElementById('next-testimonial').addEventListener('click', function() {
-            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-            updateTestimonials();
-        });
-
-        document.getElementById('prev-testimonial').addEventListener('click', function() {
-            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-            updateTestimonials();
-        });
-
-        // Auto change testimonials
-        let testimonialInterval = setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-            updateTestimonials();
-        }, 6000);
-
-        // Pause auto change when hovering over testimonials
-        const testimonialContainer = document.querySelector('#testimonials .relative');
-        testimonialContainer.addEventListener('mouseenter', () => {
-            clearInterval(testimonialInterval);
-        });
-
-        testimonialContainer.addEventListener('mouseleave', () => {
-            testimonialInterval = setInterval(() => {
-                currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-                updateTestimonials();
-            }, 6000);
-        });
-
-        // Initialize testimonials
-        updateTestimonials();
+        // our clients carosal js
     </script>
 </body>
 

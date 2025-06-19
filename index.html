@@ -94,12 +94,12 @@
         }
         
         .overlay {
-            position: relative;
-            z-index: 10;
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
             text-align: right;
             color: white;
-            padding-right: 5%;
-            width: 100%;
+            z-index: 10;
         }
         
         .spin-hover span {
@@ -147,6 +147,37 @@
             width: 100%;
             height: 100%;
         }
+        
+        .review-card {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .active-review {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .prev-review {
+            transform: translateX(-30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .next-review {
+            transform: translateX(30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .hidden-review {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 0;
+        }
     </style>
 </head>
 
@@ -160,16 +191,16 @@
 
 
         <a href="https://www.instagram.com/adaptedstudios/" class="text-grey-400 text-2xl mx-2">
-            <i class="fa-brands fa-instagram" style="color: #91969c;"></i>
+            <i class="fa-brands fa-instagram" style="color: white;"></i>
         </a>
         <a href="https://www.linkedin.com/company/adapted-studios/" class="text-grey-500 text-2xl mx-2">
-            <i class="fab fa-linkedin" style="color: #91969c;"></i>
+            <i class="fab fa-linkedin" style="color: white;"></i>
         </a>
         <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-            <i class="fa-brands fa-square-vimeo" style="color: #91969c;"></i>
+            <i class="fa-brands fa-square-vimeo" style="color: white;"></i>
         </a>
         <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-            <i class="fa-brands fa-facebook" style="color: #91969c;"></i>
+            <i class="fa-brands fa-facebook" style="color: white;"></i>
         </a>
 
 
@@ -233,15 +264,15 @@
         <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
     </video>
             <div class="overlay">
-                <h2 class="text-[30px] sm:text-[45px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
+                <h1 class="text-[50px] sm:text-[55px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
                     <span>C</span><span>h</span><span>i</span><span>c</span><span>a</span><span>g</span><span>o</span>
-                </h2>
-                <h2 class="text-[30px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold fade-in spin-hover">
+                </h1>
+                <h2 class="text-[25px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold fade-in spin-hover">
                     <span>V</span><span>i</span><span>d</span><span>e</span><span>o</span> <span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span><span>.</span>
                 </h2>
                 <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[25px] mt-4 fade-in" style="animation-delay: 0.5s;">where your dreams come to life on the screen.</p>
                 <!-- <p class="text-[15px] sm:text-[13px] md:text-[20px] lg:text-[30px] mt-4 fade-in" style="animation-delay: 0.5s;"></p> -->
-                <a href="#contact" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
+                <a href="contactus.html" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
             </div>
         </section>
 
@@ -288,29 +319,29 @@
             <div class="banner-container">
                 <div class="banner-track" id="banner-track">
                     <!-- Image Set -->
-                    <img src="img/Santi1-01.jpg" alt="1" />
-                    <img src="img/Santi1-02.jpg" alt="2" />
-                    <img src="img/Santi1-03.jpg" alt="3" />
-                    <img src="img/Santi1-04.jpg" alt="4" />
-                    <img src="img/Santi1-05.jpg" alt="5" />
-                    <img src="img/Santi1-06.jpg" alt="6" />
-                    <img src="img/Santi1-07.jpg" alt="7" />
-                    <img src="img/Santi1-08.jpg" alt="8" />
-                    <img src="img/Santi1-09.jpg" alt="9" />
-                    <img src="img/Santi1-10.jpg" alt="10" />
-                    <img src="img/Santi1-12.jpg" alt="12" />
+                    <img src="img/ArtInstituteChicago-09.jpg" alt="Art Institute Chicago" />
+                    <img src="img/Bian-03.jpg" alt="Bian" />
+                    <img src="img/ChicagoTribune-12.jpg" alt="Chicago Tribune" />
+                    <img src="img/CocaCola-04.jpg" alt="CocaCola" />
+                    <img src="img/crainsChicagoBusiness-05.jpg" alt="Crains Chicago Business" />
+                    <img src="img/Lollapalooza-07.jpg" alt="Lollapalooza" />
+                    <img src="img/PBS-06.jpg" alt="PBS" />
+                    <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
+                    <img src="img/theEconomist-02.jpg" alt="The Economist" />
+                    <img src="img/TimeOut-08.jpg" alt="TimeOut" />
+                    <img src="img/vice-1.jpg" alt="vice" />
                     <!-- Duplicated Set -->
-                    <img src="img/Santi1-01.jpg" alt="1" />
-                    <img src="img/Santi1-02.jpg" alt="2" />
-                    <img src="img/Santi1-03.jpg" alt="3" />
-                    <img src="img/Santi1-04.jpg" alt="4" />
-                    <img src="img/Santi1-05.jpg" alt="5" />
-                    <img src="img/Santi1-06.jpg" alt="6" />
-                    <img src="img/Santi1-07.jpg" alt="7" />
-                    <img src="img/Santi1-08.jpg" alt="8" />
-                    <img src="img/Santi1-09.jpg" alt="9" />
-                    <img src="img/Santi1-10.jpg" alt="10" />
-                    <img src="img/Santi1-12.jpg" alt="12" />
+                    <img src="img/ArtInstituteChicago-09.jpg" alt="Art Institute Chicago" />
+                    <img src="img/Bian-03.jpg" alt="Bian" />
+                    <img src="img/ChicagoTribune-12.jpg" alt="Chicago Tribune" />
+                    <img src="img/CocaCola-04.jpg" alt="CocaCola" />
+                    <img src="img/crainsChicagoBusiness-05.jpg" alt="Crains Chicago Business" />
+                    <img src="img/Lollapalooza-07.jpg" alt="Lollapalooza" />
+                    <img src="img/PBS-06.jpg" alt="PBS" />
+                    <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
+                    <img src="img/theEconomist-02.jpg" alt="The Economist" />
+                    <img src="img/TimeOut-08.jpg" alt="TimeOut" />
+                    <img src="img/vice-1.jpg" alt="vice" />
                 </div>
             </div>
 
@@ -326,53 +357,74 @@
 
         </section>
 
+        <!-- Section: Welcome to Adapted -->
+        <section class="relative px-6 py-16 bg-black text-white">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-welcome"></div>
 
-        <section id="our-story" class="relative px-6 py-16 bg-black text-white">
             <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
-                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">Our Story</h2>
-                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                    Born in the heart of Chicago, our journey began with a vision: to capture real stories with cinematic beauty. From city streets to skyline dreams, every frame we create breathes authenticity, passion, and artistry.
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">The way you tell your story makes a difference.</h2>
+                <h3 class="text-3xl md:text-5xl font-bold mb-6">Welcome to Adapted</h3>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Based in the vibrant heart of Chicago, Adapted is a premiere video production company and creative agency that’s redefining visual storytelling. We’ve swiftly earned a reputation as the go-to partner for businesses, organizations, and individuals who
+                    demand exceptional attention-grabbing content.
                 </p>
             </div>
         </section>
-        <section>
+
+        <script>
+            // Floating Letters Creation
+            function createFloatingLetters(targetId) {
+                const collage = document.getElementById(targetId);
+                const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+                for (let i = 0; i < 30; i++) {
+                    const letter = document.createElement('div');
+                    letter.className = 'letter';
+                    letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                    collage.appendChild(letter);
+                }
+            }
+
+            window.onload = () => {
+                createFloatingLetters('collage-welcome');
+            };
+        </script>
 
 
 
+        <!-- Your Experience Matters Section -->
+        <section class="relative px-6 py-24 bg-black text-white overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-experience"></div>
 
-            <!-- Your Experience Matters Section -->
-            <section class="relative px-6 py-24 bg-black text-white overflow-hidden">
-                <!-- Floating Letters Background -->
-                <div class="collage" id="collage-experience"></div>
+            <!-- Content Layout -->
+            <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
 
-                <!-- Content Layout -->
-                <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
-
-                    <!-- Text Content -->
-                    <div class="w-full md:w-1/2 text-center md:text-left">
-                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Your Experience Matters</h2>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-4">
-                            Creating content should be an enjoyable, seamless and personalized experience. At
-                            <span class="text-white font-semibold">adapted.</span> we’re committed to providing that personal touch of authenticity and genuine interest that sets us apart.
-                        </p>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-                            Our clients aren’t just numbers to us; they’re integral partners in the creative process. We work tirelessly to ensure that their brand vision is not just realized but exceeded.
-                        </p>
-                        <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Your Experience Matters</h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-4">
+                        Creating content should be an enjoyable, seamless and personalized experience. At
+                        <span class="text-white font-semibold">adapted.</span> we’re committed to providing that personal touch of authenticity and genuine interest that sets us apart.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                        Our clients aren’t just numbers to us; they’re integral partners in the creative process. We work tirelessly to ensure that their brand vision is not just realized but exceeded.
+                    </p>
+                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
         Work With Us
       </a>
-                    </div>
+                </div>
 
-                    <!-- Interactive Video Embed -->
-                    <div class="w-full md:w-1/2 transform transition-transform duration-500 hover:scale-105 rounded-xl overflow-hidden shadow-lg">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full rounded-lg" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Adapted Studios"
-                                allowfullscreen>
+                <!-- Interactive Video Embed -->
+                <div class="w-full md:w-1/2 transform transition-transform duration-500 hover:scale-105 rounded-xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full rounded-lg" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Adapted Studios"
+                            allowfullscreen>
         </iframe>
-                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
 
 
@@ -380,382 +432,638 @@
 
 
 
-
-            <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
-                <div class="collage" id="collage"></div>
-                <div class="relative z-10 max-w-4xl mx-auto text-center fade-in-up">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
-                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        Our style is immersive. Our storytelling is intentional. We elevate voices through film and visual expression that stays with you.
-                    </p>
-                </div>
-            </section>
-
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage"></div>
+            <div class="relative z-10 max-w-4xl mx-auto text-center fade-in-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Our style is immersive. Our storytelling is intentional. We elevate voices through film and visual expression that stays with you.
+                </p>
+            </div>
+        </section>
 
 
-            <!-- About Section -->
-            <section class="bg-gray-900 text-white py-20 px-6">
-                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                    <img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=1200&q=80" alt="Cinematic" class="rounded-2xl shadow-xl w-full max-h-[500px] object-cover" />
-                    <div>
-                        <h2 class="text-4xl font-bold mb-4">Our Unique Approach</h2>
-                        <p class="text-lg leading-relaxed text-gray-300">At <span class="text-white font-semibold">Adapted.</span> we bring our clients' visions to life through cinematic storytelling. We work closely with every client to create tailored, compelling visuals that reflect their identity
-                            and message.
-                        </p>
-                        <button class="mt-6 bg-white text-black py-3 px-6 rounded-full hover:bg-gray-300 transition">Start Your Story</button>
-                    </div>
-                </div>
-            </section>
 
 
-            <!-- video section to inform user of services-->
-            <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">cinematic moments</h1>
-                <!-- adjust this section move it somewhere else. -->
-                <!-- <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2> -->
-                <!-- <p class="text-md md:text-lg text-white-500 mb-8">
+
+        <!-- video section to inform user of services-->
+        <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">cinematic moments</h1>
+            <!-- adjust this section move it somewhere else. -->
+            <!-- <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2> -->
+            <!-- <p class="text-md md:text-lg text-white-500 mb-8">
                     Dive into our curated gallery of cinematic visuals. Hover to explore each moment in motion and feel the impact of storytelling through the lens.
                 </p> -->
-                <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
-                    <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" title="Sample Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
+                <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" title="Sample Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                           <iframe title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
-                    </iframe>
+                </iframe>
+            </div>
+        </section>
+
+
+        <!-- Gallery Section -->
+        <div class="relative z-10 px-6 pb-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <!-- Image Cards -->
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 1</p>
+                    </div>
                 </div>
-            </section>
 
-
-            <!-- Gallery Section -->
-            <div class="relative z-10 px-6 pb-20">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <!-- Image Cards -->
-                    <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
-                        <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                            <p class="text-white p-4 text-lg">Description for image 1</p>
-                        </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(1)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 2</p>
                     </div>
+                </div>
 
-                    <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(1)">
-                        <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                            <p class="text-white p-4 text-lg">Description for image 2</p>
-                        </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(2)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 3</p>
                     </div>
+                </div>
 
-                    <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(2)">
-                        <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                            <p class="text-white p-4 text-lg">Description for image 3</p>
-                        </div>
-                    </div>
-
-                    <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(3)">
-                        <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                            <p class="text-white p-4 text-lg">Description for image 4</p>
-                        </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(3)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 4</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Lightbox -->
-            <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
-                <div class="relative max-w-screen-lg w-full px-4 fade-in">
-                    <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
-                    <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
-                    <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
-                    <div class="text-center">
-                        <img id="lightboxImage" src="" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300" />
-                        <p id="lightboxText" class="text-lg text-gray-300 mt-4"></p>
-                    </div>
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
+            <div class="relative max-w-screen-lg w-full px-4 fade-in">
+                <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
+                <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
+                <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
+                <div class="text-center">
+                    <img id="lightboxImage" src="" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300" />
+                    <p id="lightboxText" class="text-lg text-gray-300 mt-4"></p>
                 </div>
             </div>
+        </div>
 
 
 
 
-            <!-- Second Section with Floating Letters, Image, and Bullet Points -->
-            <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
-                <!-- Floating Letters Background -->
-                <div class="collage" id="collage-2"></div>
+        <!-- Second Section with Floating Letters, Image, and Bullet Points -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-2"></div>
 
-                <!-- Content Wrapper -->
-                <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
+            <!-- Content Wrapper -->
+            <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
 
-                    <!-- Image Placeholder -->
-                    <div class="w-full md:w-1/2">
-                        <img src="images/portfolio/gallery/g-beetle.jpg" alt="Team at Work" class="w-full rounded-lg shadow-lg" />
-                    </div>
-
-                    <!-- Text and Bullet Points -->
-                    <div class="w-full md:w-1/2 text-center md:text-left">
-                        <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
-                        <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
-                            <li>Authentic storytelling driven by emotion</li>
-                            <li>Decades of combined industry experience</li>
-                            <li>Cinematic visuals tailored to your brand</li>
-                            <li>Chicago-rooted, globally minded production</li>
-                        </ul>
-                    </div>
-
+                <!-- Image Placeholder -->
+                <div class="w-full md:w-1/2">
+                    <img src="images/portfolio/gallery/g-beetle.jpg" alt="Team at Work" class="w-full rounded-lg shadow-lg" />
                 </div>
-            </section>
+
+                <!-- Text and Bullet Points -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+                    <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
+                        <li>Authentic storytelling driven by emotion</li>
+                        <li>Decades of combined industry experience</li>
+                        <li>Cinematic visuals tailored to your brand</li>
+                        <li>Chicago-rooted, globally minded production</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
 
 
 
 
-            <!-- Drone Footage Section -->
-            <section class="relative bg-black text-white py-20 px-6 ">
-                <!-- Floating Letters Background -->
-                <div class="collage" id="collage-drone"></div>
+        <!-- Drone Footage Section -->
+        <section class="relative bg-black text-white py-20 px-6 ">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-drone"></div>
 
-                <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
+            <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
 
-                    <!-- Video on the Left -->
-                    <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Drone Footage" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                        </div>
+                <!-- Video on the Left -->
+                <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Drone Footage" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                     </div>
+                </div>
 
-                    <!-- Text on the Right -->
-                    <div class="w-full lg:w-1/2 text-center lg:text-left">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6">A New Perspective</h2>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-                            Elevate your visual storytelling with aerial cinematography that captures sweeping landscapes and dynamic movement from the sky.
-                        </p>
-                        <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+                <!-- Text on the Right -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">A New Perspective</h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                        Elevate your visual storytelling with aerial cinematography that captures sweeping landscapes and dynamic movement from the sky.
+                    </p>
+                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
         Book Aerial Coverage
       </a>
-                    </div>
-
                 </div>
-            </section>
+
+            </div>
+        </section>
 
 
 
 
-            <!-- Call to Action Section -->
-            <section class="bg-black text-white py-20 px-6 fade-in-up">
-                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Image -->
-                    <div class="group relative overflow-hidden rounded-2xl shadow-lg">
-                        <img src="adapResize.gif" alt="Storytelling Visual" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
-                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
-                            <p class="text-xl font-semibold opacity-0 group-hover:opacity-100 transition duration-300">Your Vision Here</p>
-                        </div>
+        <!-- Call to Action Section -->
+        <section class="bg-black text-white py-20 px-6 fade-in-up">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="adapResize.gif" alt="Storytelling Visual" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
+                        <p class="text-xl font-semibold opacity-0 group-hover:opacity-100 transition duration-300">Your Vision Here</p>
                     </div>
+                </div>
 
-                    <!-- Text Content -->
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Tell Your Story</h2>
-                        <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                            Adapted is here and ready to help you tell your story in a way that is truly unique, engaging, and unforgettable. Let’s collaborate to create content that stands out, resonates and makes an impact.
-                        </p>
-                        <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+                <!-- Text Content -->
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Tell Your Story</h2>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        Adapted is here and ready to help you tell your story in a way that is truly unique, engaging, and unforgettable. Let’s collaborate to create content that stands out, resonates and makes an impact.
+                    </p>
+                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
         Let's Collaborate
       </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--customer google reviews -->
+        <section class="relative bg-black text-white py-24 px-6 overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-testimonials"></div>
+
+            <div class="relative z-10 max-w-5xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-300 mb-12">Real stories. Real impact.</p>
+
+                <div class="carousel-container relative h-[420px] md:h-[360px] overflow-hidden">
+                    <div id="testimonialTrack" class="relative w-full h-full flex items-center justify-center">
+                        <!-- Testimonials dynamically rendered by JS -->
                     </div>
                 </div>
-            </section>
+
+                <div class="flex justify-center mt-6 space-x-4">
+                    <button id="prevTestimonial" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+        <i class="fas fa-chevron-left text-white"></i>
+      </button>
+                    <button id="nextTestimonial" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+        <i class="fas fa-chevron-right text-white"></i>
+      </button>
+                </div>
+            </div>
+        </section>
+
+
+        <script>
+            const reviews = [{
+                name: "Sarah Johnson",
+                role: "Creative Director",
+                text: "Absolutely amazing service! The team went above and beyond to help me with my project.",
+                avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+            }, {
+                name: "Michael Chen",
+                role: "Marketing Manager",
+                text: "The communication was excellent and the final product exceeded expectations.",
+                avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+            }, {
+                name: "Emily Rodriguez",
+                role: "Event Producer",
+                text: "Blown away by the attention to detail and professionalism. Delivered ahead of schedule.",
+                avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+            }];
+
+            const track = document.getElementById('testimonialTrack');
+            let current = 0;
+            let autoScroll;
+
+            function renderCarousel() {
+                track.innerHTML = reviews.map((review, i) => {
+                    const position = i === current ? 'active-review' :
+                        i === (current + 1) % reviews.length ? 'next-review' :
+                        i === (current - 1 + reviews.length) % reviews.length ? 'prev-review' : 'hidden-review';
+
+                    return `
+        <div class="absolute transition-all duration-500 ease-in-out review-card ${position} w-full md:w-2/3 p-4">
+          <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow-lg text-left">
+            <div class="flex items-center mb-4">
+              <img src="${review.avatar}" class="w-12 h-12 rounded-full object-cover mr-4">
+              <div>
+                <h4 class="font-bold">${review.name}</h4>
+                <span class="text-sm text-gray-300">${review.role}</span>
+              </div>
+            </div>
+            <p class="italic text-gray-200">"${review.text}"</p>
+          </div>
+        </div>`;
+                }).join('');
+            }
+
+            function updateIndex(dir) {
+                current = (current + dir + reviews.length) % reviews.length;
+                renderCarousel();
+                resetAutoplay();
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoScroll);
+                autoScroll = setInterval(() => updateIndex(1), 6000);
+            }
+
+            document.getElementById('nextTestimonial').addEventListener('click', () => updateIndex(1));
+            document.getElementById('prevTestimonial').addEventListener('click', () => updateIndex(-1));
+
+            // Initialize
+            renderCarousel();
+            autoScroll = setInterval(() => updateIndex(1), 6000);
+        </script>
 
 
 
 
-            <!-- Full-Width Clients Carousel with Floating Letters -->
-            <section class="relative bg-black text-white py-20 px-6 overflow-hidden">
-                <!-- Floating Letters Background -->
-                <div class="collage" id="collage-clients"></div>
 
-                <div class="relative z-10 w-full text-center fade-in-up">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-10">Our Clients</h2>
-                    <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto">
-                        Trusted by brands that move the world forward.
-                    </p>
 
-                    <!-- Scrolling Track -->
-                    <div class="overflow-hidden w-screen px-4 sm:px-8">
-                        <div class="flex space-x-16 animate-scroll-x whitespace-nowrap">
-                            <!-- Logos (repeat and duplicate for seamless loop) -->
-                            <img src="img/" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 1" />
-                            <img src="img/clients/logo2.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 2" />
-                            <img src="img/clients/logo3.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 3" />
-                            <img src="img/clients/logo4.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 4" />
-                            <img src="img/clients/logo5.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 5" />
-                            <!-- Duplicates -->
-                            <img src="img/clients/logo1.png" class="h-12 grayscale opacity-60" alt="Client 1" />
-                            <img src="img/clients/logo2.png" class="h-12 grayscale opacity-60" alt="Client 2" />
-                            <img src="img/clients/logo3.png" class="h-12 grayscale opacity-60" alt="Client 3" />
-                            <img src="img/clients/logo4.png" class="h-12 grayscale opacity-60" alt="Client 4" />
-                            <img src="img/clients/logo5.png" class="h-12 grayscale opacity-60" alt="Client 5" />
+        <!-- parallac sevices section-->
+
+
+        <style>
+            .parallax-services {
+                position: relative;
+                overflow: hidden;
+                color: #fff;
+                text-align: center;
+                padding: 100px 20px;
+            }
+            
+            .parallax-background {
+                background-image: url('your-parallax-image.jpg');
+                /* Replace with your image */
+                background-attachment: fixed;
+                background-size: cover;
+                background-position: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                transform: translateZ(0);
+            }
+            
+            .services-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+                margin-bottom: 50px;
+            }
+            
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+            }
+            
+            .service-item {
+                background: rgba(0, 0, 0, 0.6);
+                padding: 30px;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+            
+            .service-item:hover {
+                transform: translateY(-10px);
+            }
+            
+            .service-item h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .service-item p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        </style>
+        <section class="relative bg-black text-white overflow-hidden py-24 px-6">
+            <!-- Parallax Background -->
+            <div class="absolute inset-0 bg-fixed bg-cover bg-center z-0 opacity-30" style="background-image: url('your-parallax-image.jpg');"></div>
+
+            <div class="relative z-10 max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12">Our Services</h2>
+
+                <div class="space-y-6 text-left">
+                    <!-- Service Item -->
+                    <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
+                        <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
+          Drone Videography
+          <span class="icon">+</span>
+        </button>
+                        <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
+                            <img src="img/services/drone.jpg" class="rounded-lg object-cover w-full h-64" alt="Drone Service">
+                            <p>Capture stunning aerial footage from breathtaking heights. Our drones deliver ultra-smooth 4K video ideal for events, real estate, and cinematic sequences.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
+                        <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
+          Post-Production Editing
+          <span class="icon">+</span>
+        </button>
+                        <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
+                            <img src="img/services/editing.jpg" class="rounded-lg object-cover w-full h-64" alt="Editing Service">
+                            <p>From rough cuts to final grade, we handle every part of the post pipeline. Color correction, sound design, and storytelling cuts tailored to your goals.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
+                        <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
+          Live Streaming
+          <span class="icon">+</span>
+        </button>
+                        <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
+                            <img src="img/services/livestream.jpg" class="rounded-lg object-cover w-full h-64" alt="Livestream Service">
+                            <p>Engage your audience in real time with our professional multicam live streaming. Ideal for conferences, performances, and launches — broadcast-ready.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
+                        <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
+          Photography Services
+          <span class="icon">+</span>
+        </button>
+                        <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
+                            <img src="img/services/photo.jpg" class="rounded-lg object-cover w-full h-64" alt="Photography Service">
+                            <p>High-resolution, emotionally driven images for events, branding, editorial, or behind-the-scenes content. From aerial to handheld — every shot matters.</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Add this if not already present -->
-            <style>
-                @keyframes scroll-x {
-                    0% {
-                        transform: translateX(-50%);
+        <script>
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('.icon');
+                    const isOpen = content.classList.contains('open');
+
+                    // Close all
+                    document.querySelectorAll('.toggle-content').forEach(c => {
+                        c.classList.remove('open');
+                        c.style.maxHeight = '0px';
+                        c.style.marginTop = '0';
+                    });
+                    document.querySelectorAll('.icon').forEach(i => i.textContent = '+');
+
+                    // Open current
+                    if (!isOpen) {
+                        content.classList.add('open');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        content.style.marginTop = '1rem';
+                        icon.textContent = '−';
                     }
-                    100% {
-                        transform: translateX(0%);
-                    }
-                }
-                
-                .animate-scroll-x {
-                    animation: scroll-x 40s linear infinite;
-                }
-            </style>
+                });
+            });
+        </script>
 
 
 
+        <!-- Full-Width Clients Carousel with Floating Letters -->
+        <section class="relative bg-black text-white py-20 px-6 overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-clients"></div>
 
+            <div class="relative z-10 w-full text-center fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-10">Our Clients</h2>
+                <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto">
+                    Trusted by brands that move the world forward.
+                </p>
 
+                <!-- Scrolling Track -->
+                <div class="overflow-hidden w-screen px-4 sm:px-8">
+                    <div class="flex space-x-16 animate-scroll-x whitespace-nowrap">
+                        <!-- Logos (repeat and duplicate for seamless loop) -->
+                        <!-- <img src="img/" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 1" />
+                        <img src="img/clients/logo2.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 2" />
+                        <img src="img/clients/logo3.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 3" />
+                        <img src="img/clients/logo4.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 4" />
+                        <img src="img/clients/logo5.png" class="h-12 grayscale hover:grayscale-0 transition" alt="Client 5" /> -->
+                        <!-- Duplicates -->
+                        <!-- <img src="img/clients/logo1.png" class="h-12 grayscale opacity-60" alt="Client 1" />
+                        <img src="img/clients/logo2.png" class="h-12 grayscale opacity-60" alt="Client 2" />
+                        <img src="img/clients/logo3.png" class="h-12 grayscale opacity-60" alt="Client 3" />
+                        <img src="img/clients/logo4.png" class="h-12 grayscale opacity-60" alt="Client 4" />
+                        <img src="img/clients/logo5.png" class="h-12 grayscale opacity-60" alt="Client 5" /> -->
 
+                        <!-- Image Set -->
+                        <img src="img/ArtInstituteChicago-09.jpg" class="h-12 grayscale opacity-60" alt="Art Institute Chicago" />
+                        <img src="img/Bian-03.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Bian" />
+                        <img src="img/ChicagoTribune-12.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Chicago Tribune" />
+                        <img src="img/CocaCola-04.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="CocaCola" />
+                        <img src="img/crainsChicagoBusiness-05.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Crains Chicago Business" />
+                        <img src="img/Lollapalooza-07.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Lollapalooza" />
+                        <img src="img/PBS-06.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="PBS" />
+                        <img src="img/theatreGoodman-10.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="theatreGoodman" />
+                        <img src="img/theEconomist-02.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="The Economist" />
+                        <img src="img/TimeOut-08.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="TimeOut" />
+                        <img src="img/vice-1.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="vice" />
+                        <!-- Duplicated Set -->
+                        <img src="img/ArtInstituteChicago-09.jpg" class="h-12 grayscale opacity-60" alt="Art Institute Chicago" />
+                        <img src="img/Bian-03.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Bian" />
+                        <img src="img/ChicagoTribune-12.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Chicago Tribune" />
+                        <img src="img/CocaCola-04.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="CocaCola" />
+                        <img src="img/crainsChicagoBusiness-05.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Crains Chicago Business" />
+                        <img src="img/Lollapalooza-07.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Lollapalooza" />
+                        <img src="img/PBS-06.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="PBS" />
+                        <img src="img/theatreGoodman-10.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="theatreGoodman" />
+                        <img src="img/theEconomist-02.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="The Economist" />
+                        <img src="img/TimeOut-08.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="TimeOut" />
+                        <img src="img/vice-1.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="vice" />
 
-
-
-
-            <!-- google review section-->
-
-            <style>
-                .review-card {
-                    transition: transform 0.5s ease, opacity 0.5s ease;
-                }
-                
-                .carousel-container {
-                    perspective: 1000px;
-                }
-                
-                .active-review {
-                    transform: translateX(0) scale(1);
-                    opacity: 1;
-                    z-index: 10;
-                }
-                
-                .next-review {
-                    transform: translateX(30%) scale(0.9);
-                    opacity: 0.7;
-                    z-index: 5;
-                }
-                
-                .prev-review {
-                    transform: translateX(-30%) scale(0.9);
-                    opacity: 0.7;
-                    z-index: 5;
-                }
-                
-                .hidden-review {
-                    transform: translateX(100%) scale(0.8);
-                    opacity: 0;
-                    z-index: 1;
-                }
-            </style>
-
-
-
-            <section class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-4">
-                <div class="max-w-4xl w-full">
-                    <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">What Our Customers Say</h1>
-                    <div class="flex justify-center mb-8">
-                        <div class="flex items-center">
-                            <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google Reviews" class="h-8 mr-2">
-                            <span class="text-yellow-500 font-semibold">4.9 ★ from 127 reviews</span>
-                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="carousel-container relative h-96 md:h-80 overflow-hidden">
-                        <!-- Review cards will be inserted here by JavaScript -->
+        <!-- Add this if not already present -->
+        <style>
+            @keyframes scroll-x {
+                0% {
+                    transform: translateX(-50%);
+                }
+                100% {
+                    transform: translateX(0%);
+                }
+            }
+            
+            .animate-scroll-x {
+                animation: scroll-x 40s linear infinite;
+            }
+        </style>
+
+
+
+
+
+
+
+
+
+
+        <!-- google review section-->
+
+        <style>
+            .review-card {
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+            
+            .carousel-container {
+                perspective: 1000px;
+            }
+            
+            .active-review {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+                z-index: 10;
+            }
+            
+            .next-review {
+                transform: translateX(30%) scale(0.9);
+                opacity: 0.7;
+                z-index: 5;
+            }
+            
+            .prev-review {
+                transform: translateX(-30%) scale(0.9);
+                opacity: 0.7;
+                z-index: 5;
+            }
+            
+            .hidden-review {
+                transform: translateX(100%) scale(0.8);
+                opacity: 0;
+                z-index: 1;
+            }
+        </style>
+
+
+
+        <section class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-4">
+            <div class="max-w-4xl w-full">
+                <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">What Our Customers Say</h1>
+                <div class="flex justify-center mb-8">
+                    <div class="flex items-center">
+                        <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google Reviews" class="h-8 mr-2">
+                        <span class="text-yellow-500 font-semibold">4.9 ★ from 127 reviews</span>
                     </div>
+                </div>
 
-                    <div class="flex justify-center mt-6 space-x-3">
-                        <button id="prevBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
+                <div class="carousel-container relative h-96 md:h-80 overflow-hidden">
+                    <!-- Review cards will be inserted here by JavaScript -->
+                </div>
+
+                <div class="flex justify-center mt-6 space-x-3">
+                    <button id="prevBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
                 <i class="fas fa-chevron-left text-gray-700"></i>
             </button>
-                        <div id="indicators" class="flex items-center space-x-2">
-                            <!-- Indicators will be inserted here by JavaScript -->
-                        </div>
-                        <button id="nextBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
+                    <div id="indicators" class="flex items-center space-x-2">
+                        <!-- Indicators will be inserted here by JavaScript -->
+                    </div>
+                    <button id="nextBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
                 <i class="fas fa-chevron-right text-gray-700"></i>
             </button>
-                    </div>
                 </div>
+            </div>
 
-                <script>
-                    // 'your experience matters' section js //
+            <script>
+                // 'your experience matters' section js //
 
-                    // end of js section for 'your experience matters' //
+                // end of js section for 'your experience matters' //
 
 
-                    document.addEventListener('DOMContentLoaded', function() {
-                        // Sample review data (in a real app, you might fetch this from an API)
-                        const reviews = [{
-                            id: 1,
-                            name: "Sarah Johnson",
-                            rating: 5,
-                            date: "2 weeks ago",
-                            text: "Absolutely amazing service! The team went above and beyond to help me with my project. I couldn't be happier with the results. Highly recommend to anyone looking for quality work.",
-                            avatar: "https://randomuser.me/api/portraits/women/44.jpg"
-                        }, {
-                            id: 2,
-                            name: "Michael Chen",
-                            rating: 4,
-                            date: "1 month ago",
-                            text: "Great experience overall. The communication was excellent and the final product met all my expectations. Would definitely work with them again for future projects.",
-                            avatar: "https://randomuser.me/api/portraits/men/32.jpg"
-                        }, {
-                            id: 3,
-                            name: "Emily Rodriguez",
-                            rating: 5,
-                            date: "3 weeks ago",
-                            text: "I was blown away by the attention to detail and professionalism. They delivered exactly what I needed before the deadline. 10/10 would recommend!",
-                            avatar: "https://randomuser.me/api/portraits/women/68.jpg"
-                        }, {
-                            id: 4,
-                            name: "David Wilson",
-                            rating: 5,
-                            date: "2 months ago",
-                            text: "Exceptional service from start to finish. The team was responsive, knowledgeable, and delivered beyond my expectations. Will be using them for all my future needs.",
-                            avatar: "https://randomuser.me/api/portraits/men/75.jpg"
-                        }, {
-                            id: 5,
-                            name: "Jessica Kim",
-                            rating: 5,
-                            date: "1 week ago",
-                            text: "I'm so impressed with the quality of work and customer service. They made the entire process so easy and stress-free. Can't recommend them enough!",
-                            avatar: "https://randomuser.me/api/portraits/women/90.jpg"
-                        }];
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Sample review data (in a real app, you might fetch this from an API)
+                    const reviews = [{
+                        id: 1,
+                        name: "Sarah Johnson",
+                        rating: 5,
+                        date: "2 weeks ago",
+                        text: "Absolutely amazing service! The team went above and beyond to help me with my project. I couldn't be happier with the results. Highly recommend to anyone looking for quality work.",
+                        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+                    }, {
+                        id: 2,
+                        name: "Michael Chen",
+                        rating: 4,
+                        date: "1 month ago",
+                        text: "Great experience overall. The communication was excellent and the final product met all my expectations. Would definitely work with them again for future projects.",
+                        avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+                    }, {
+                        id: 3,
+                        name: "Emily Rodriguez",
+                        rating: 5,
+                        date: "3 weeks ago",
+                        text: "I was blown away by the attention to detail and professionalism. They delivered exactly what I needed before the deadline. 10/10 would recommend!",
+                        avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+                    }, {
+                        id: 4,
+                        name: "David Wilson",
+                        rating: 5,
+                        date: "2 months ago",
+                        text: "Exceptional service from start to finish. The team was responsive, knowledgeable, and delivered beyond my expectations. Will be using them for all my future needs.",
+                        avatar: "https://randomuser.me/api/portraits/men/75.jpg"
+                    }, {
+                        id: 5,
+                        name: "Jessica Kim",
+                        rating: 5,
+                        date: "1 week ago",
+                        text: "I'm so impressed with the quality of work and customer service. They made the entire process so easy and stress-free. Can't recommend them enough!",
+                        avatar: "https://randomuser.me/api/portraits/women/90.jpg"
+                    }];
 
-                        const carouselContainer = document.querySelector('.carousel-container');
-                        const indicatorsContainer = document.getElementById('indicators');
-                        const prevBtn = document.getElementById('prevBtn');
-                        const nextBtn = document.getElementById('nextBtn');
+                    const carouselContainer = document.querySelector('.carousel-container');
+                    const indicatorsContainer = document.getElementById('indicators');
+                    const prevBtn = document.getElementById('prevBtn');
+                    const nextBtn = document.getElementById('nextBtn');
 
-                        let currentIndex = 0;
-                        let autoScrollInterval;
-                        const autoScrollDelay = 5000; // 5 seconds
+                    let currentIndex = 0;
+                    let autoScrollInterval;
+                    const autoScrollDelay = 5000; // 5 seconds
 
-                        // Create review cards
-                        function createReviewCards() {
-                            carouselContainer.innerHTML = '';
-                            indicatorsContainer.innerHTML = '';
+                    // Create review cards
+                    function createReviewCards() {
+                        carouselContainer.innerHTML = '';
+                        indicatorsContainer.innerHTML = '';
 
-                            reviews.forEach((review, index) => {
-                                // Create review card
-                                const reviewCard = document.createElement('div');
-                                reviewCard.className = `review-card absolute w-full md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-lg p-6 transition-all duration-500 ${index === 0 ? 'active-review' : 'hidden-review'}`;
+                        reviews.forEach((review, index) => {
+                            // Create review card
+                            const reviewCard = document.createElement('div');
+                            reviewCard.className = `review-card absolute w-full md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-lg p-6 transition-all duration-500 ${index === 0 ? 'active-review' : 'hidden-review'}`;
 
-                                // Create stars
-                                let stars = '';
-                                for (let i = 0; i < 5; i++) {
-                                    stars += i < review.rating ?
-                                        '<i class="fas fa-star text-yellow-400"></i>' :
-                                        '<i class="far fa-star text-yellow-400"></i>';
-                                }
+                            // Create stars
+                            let stars = '';
+                            for (let i = 0; i < 5; i++) {
+                                stars += i < review.rating ?
+                                    '<i class="fas fa-star text-yellow-400"></i>' :
+                                    '<i class="far fa-star text-yellow-400"></i>';
+                            }
 
-                                reviewCard.innerHTML = `
+                            reviewCard.innerHTML = `
                         <div class="flex items-start mb-4">
                             <img src="${review.avatar}" alt="${review.name}" class="w-12 h-12 rounded-full mr-4 object-cover">
                             <div>
@@ -772,191 +1080,192 @@
                         </div>
                     `;
 
-                                carouselContainer.appendChild(reviewCard);
+                            carouselContainer.appendChild(reviewCard);
 
-                                // Create indicator
-                                const indicator = document.createElement('button');
-                                indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
-                                indicator.dataset.index = index;
-                                indicator.addEventListener('click', () => goToReview(index));
-                                indicatorsContainer.appendChild(indicator);
-                            });
-                        }
-
-                        // Update carousel position
-                        function updateCarousel() {
-                            const cards = document.querySelectorAll('.review-card');
-                            const indicators = document.querySelectorAll('#indicators button');
-
-                            cards.forEach((card, index) => {
-                                if (index === currentIndex) {
-                                    card.classList.remove('hidden-review', 'next-review', 'prev-review');
-                                    card.classList.add('active-review');
-                                } else if (index === (currentIndex + 1) % reviews.length) {
-                                    card.classList.remove('hidden-review', 'active-review', 'prev-review');
-                                    card.classList.add('next-review');
-                                } else if (index === (currentIndex - 1 + reviews.length) % reviews.length) {
-                                    card.classList.remove('hidden-review', 'active-review', 'next-review');
-                                    card.classList.add('prev-review');
-                                } else {
-                                    card.classList.remove('active-review', 'next-review', 'prev-review');
-                                    card.classList.add('hidden-review');
-                                }
-                            });
-
-                            indicators.forEach((indicator, index) => {
-                                indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
-                            });
-                        }
-
-                        // Navigate to specific review
-                        function goToReview(index) {
-                            currentIndex = index;
-                            updateCarousel();
-                            resetAutoScroll();
-                        }
-
-                        // Next review
-                        function nextReview() {
-                            currentIndex = (currentIndex + 1) % reviews.length;
-                            updateCarousel();
-                            resetAutoScroll();
-                        }
-
-                        // Previous review
-                        function prevReview() {
-                            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
-                            updateCarousel();
-                            resetAutoScroll();
-                        }
-
-                        // Auto-scroll functionality
-                        function startAutoScroll() {
-                            autoScrollInterval = setInterval(nextReview, autoScrollDelay);
-                        }
-
-                        function resetAutoScroll() {
-                            clearInterval(autoScrollInterval);
-                            startAutoScroll();
-                        }
-
-                        // Event listeners
-                        nextBtn.addEventListener('click', nextReview);
-                        prevBtn.addEventListener('click', prevReview);
-
-                        // Pause auto-scroll on hover
-                        carouselContainer.addEventListener('mouseenter', () => {
-                            clearInterval(autoScrollInterval);
+                            // Create indicator
+                            const indicator = document.createElement('button');
+                            indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                            indicator.dataset.index = index;
+                            indicator.addEventListener('click', () => goToReview(index));
+                            indicatorsContainer.appendChild(indicator);
                         });
+                    }
 
-                        carouselContainer.addEventListener('mouseleave', () => {
-                            startAutoScroll();
-                        });
+                    // Update carousel position
+                    function updateCarousel() {
+                        const cards = document.querySelectorAll('.review-card');
+                        const indicators = document.querySelectorAll('#indicators button');
 
-                        // Initialize
-                        createReviewCards();
-                        startAutoScroll();
-
-                        // Handle keyboard navigation
-                        document.addEventListener('keydown', (e) => {
-                            if (e.key === 'ArrowRight') {
-                                nextReview();
-                            } else if (e.key === 'ArrowLeft') {
-                                prevReview();
+                        cards.forEach((card, index) => {
+                            if (index === currentIndex) {
+                                card.classList.remove('hidden-review', 'next-review', 'prev-review');
+                                card.classList.add('active-review');
+                            } else if (index === (currentIndex + 1) % reviews.length) {
+                                card.classList.remove('hidden-review', 'active-review', 'prev-review');
+                                card.classList.add('next-review');
+                            } else if (index === (currentIndex - 1 + reviews.length) % reviews.length) {
+                                card.classList.remove('hidden-review', 'active-review', 'next-review');
+                                card.classList.add('prev-review');
+                            } else {
+                                card.classList.remove('active-review', 'next-review', 'prev-review');
+                                card.classList.add('hidden-review');
                             }
                         });
+
+                        indicators.forEach((indicator, index) => {
+                            indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                        });
+                    }
+
+                    // Navigate to specific review
+                    function goToReview(index) {
+                        currentIndex = index;
+                        updateCarousel();
+                        resetAutoScroll();
+                    }
+
+                    // Next review
+                    function nextReview() {
+                        currentIndex = (currentIndex + 1) % reviews.length;
+                        updateCarousel();
+                        resetAutoScroll();
+                    }
+
+                    // Previous review
+                    function prevReview() {
+                        currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+                        updateCarousel();
+                        resetAutoScroll();
+                    }
+
+                    // Auto-scroll functionality
+                    function startAutoScroll() {
+                        autoScrollInterval = setInterval(nextReview, autoScrollDelay);
+                    }
+
+                    function resetAutoScroll() {
+                        clearInterval(autoScrollInterval);
+                        startAutoScroll();
+                    }
+
+                    // Event listeners
+                    nextBtn.addEventListener('click', nextReview);
+                    prevBtn.addEventListener('click', prevReview);
+
+                    // Pause auto-scroll on hover
+                    carouselContainer.addEventListener('mouseenter', () => {
+                        clearInterval(autoScrollInterval);
                     });
 
+                    carouselContainer.addEventListener('mouseleave', () => {
+                        startAutoScroll();
+                    });
 
-                    // Floating Letters for Clients Section
-                    function createFloatingLetters(targetId) {
-                        const collage = document.getElementById(targetId);
-                        const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+                    // Initialize
+                    createReviewCards();
+                    startAutoScroll();
 
-                        for (let i = 0; i < 30; i++) {
-                            const letter = document.createElement('div');
-                            letter.className = 'letter';
-                            letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
-                            collage.appendChild(letter);
+                    // Handle keyboard navigation
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowRight') {
+                            nextReview();
+                        } else if (e.key === 'ArrowLeft') {
+                            prevReview();
                         }
+                    });
+                });
+
+
+                // Floating Letters for Clients Section
+                function createFloatingLetters(targetId) {
+                    const collage = document.getElementById(targetId);
+                    const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+
+                    for (let i = 0; i < 30; i++) {
+                        const letter = document.createElement('div');
+                        letter.className = 'letter';
+                        letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                        collage.appendChild(letter);
                     }
+                }
 
-                    function animateLetters() {
-                        document.querySelectorAll('.letter').forEach(el => {
-                            const x = Math.random() * window.innerWidth;
-                            const y = Math.random() * window.innerHeight;
-                            const offsetX = (Math.random() - 0.5) * 150;
-                            const offsetY = (Math.random() - 0.5) * 150;
-                            const rotation = Math.random() * 360;
-                            el.style.left = `${x}px`;
-                            el.style.top = `${y}px`;
-                            el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
-                        });
-                        setTimeout(animateLetters, 10000);
-                    }
+                function animateLetters() {
+                    document.querySelectorAll('.letter').forEach(el => {
+                        const x = Math.random() * window.innerWidth;
+                        const y = Math.random() * window.innerHeight;
+                        const offsetX = (Math.random() - 0.5) * 150;
+                        const offsetY = (Math.random() - 0.5) * 150;
+                        const rotation = Math.random() * 360;
+                        el.style.left = `${x}px`;
+                        el.style.top = `${y}px`;
+                        el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
+                    });
+                    setTimeout(animateLetters, 10000);
+                }
 
-                    // Add this to your existing onload logic:
-                    window.onload = () => {
-                        createFloatingLetters('collage');
-                        createFloatingLetters('collage-2');
-                        createFloatingLetters('collage-experience');
-                        createFloatingLetters('collage-clients'); // ✅ Add this line
-                        createFloatingLetters('collage-drone');
-                        animateLetters();
-                    };
-
-
-
-
-                    //carosel in clients section
-                </script>
-            </section>
+                // Add this to your existing onload logic:
+                window.onload = () => {
+                    createFloatingLetters('collage');
+                    createFloatingLetters('collage-2');
+                    createFloatingLetters('collage-experience');
+                    createFloatingLetters('collage-clients'); // ✅ Add this line
+                    createFloatingLetters('collage-drone');
+                    createFloatingLetters('collage-testimonials');
+                    animateLetters();
+                };
 
 
 
 
+                //carosel in clients section
+            </script>
+        </section>
 
 
 
 
 
-            <!-- Footer -->
-            <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                    <div>
-                        <h3 class="text-lg font-bold">Company Info</h3>
-                        <p>123 Business Street</p>
-                        <p>City, State, ZIP</p>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold">Contact Us</h3>
-                        <p>Email: contact@yourcompany.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                        <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
-                        <p>Want to schedule a Zoom meeting with us?</p>
-                        <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold">Follow Us</h3>
-                        <p>
 
-                            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                                <i class="fa-brands fa-square-vimeo"></i>
-                            </a>
-                            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </p>
-                    </div>
+
+
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div>
+                    <h3 class="text-lg font-bold">Company Info</h3>
+                    <p>123 Business Street</p>
+                    <p>City, State, ZIP</p>
                 </div>
-                <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
-            </footer>
+                <div>
+                    <h3 class="text-lg font-bold">Contact Us</h3>
+                    <p>Email: contact@yourcompany.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                    <p>Want to schedule a Zoom meeting with us?</p>
+                    <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Follow Us</h3>
+                    <p>
+
+                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                            <i class="fa-brands fa-square-vimeo"></i>
+                        </a>
+                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
+        </footer>
 
     </div>
 

@@ -1,224 +1,275 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Web Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Adapted Studios</title>
+
+    <!-- Tailwind, Fonts, and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="script.js"></script>
+
+    <style>
+        body {
+            font-family: 'Caviar Dreams', sans-serif;
+            background-image: url('Studio+Shots_0012.JPG');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 40s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.09;
+            backdrop-filter: blur(6px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        #lightboxText {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100" onclick="closeMenu(event)">
-    <!-- icons  -->
+
+<body class="relative">
+    <!-- Hidden H1 for SEO -->
+    <h1 class="sr-only">Adapted Studios - Chicago Video Production</h1>
+
+    <!-- Side Social Media Icons -->
     <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50">
-        <a href="#" class="text-white text-3xl transition-transform duration-300 hover:scale-125">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="#" class="text-white text-3xl transition-transform duration-300 hover:scale-125">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="text-white text-3xl transition-transform duration-300 hover:scale-125">
-            <i class="fab fa-linkedin"></i>
-        </a>
+        <a href="https://www.instagram.com/adaptedstudios/" class="text-2xl" style="color: #91969c;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-2xl" style="color: #91969c;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://vimeo.com/adapted" class="text-2xl" style="color: #91969c;"><i class="fab fa-vimeo"></i></a>
+        <a href="https://www.facebook.com/adapted.chicago/" class="text-2xl" style="color: #91969c;"><i class="fab fa-facebook"></i></a>
     </div>
 
-    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-        <div class="loader-text">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-gray-900 bg-opacity-70 top-0 left-0 p-4 flex justify-between items-center z-50">
+        <a href="#" class="text-white font-bold text-4xl spin-hover">
             <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
+        </a>
+        <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
+        <div id="menu" class="fixed top-0 right-[-100%] w-full sm:w-2/3 md:w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5 z-[9999]">
+            <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+            <ul class="mt-10 space-y-4 text-lg">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="text-red-500 font-semibold">Gallery</a></li>
+                <li><a href="teampage.html">The Team</a></li>
+                <li><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+            <h3 class="mt-10">Follow us:</h3>
+            <div class="flex space-x-4 mt-2">
+                <a href="https://www.instagram.com/adaptedstudios/" class="text-2xl" style="color: #91969c;"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/adapted-studios/" class="text-2xl" style="color: #91969c;"><i class="fab fa-linkedin"></i></a>
+                <a href="https://vimeo.com/adapted" class="text-2xl" style="color: #91969c;"><i class="fab fa-vimeo"></i></a>
+                <a href="https://www.facebook.com/adapted.chicago/" class="text-2xl" style="color: #91969c;"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Gallery Section -->
+    <main class="px-6 py-20">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-10 text-center">Gallery</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-container"></div>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
+        <div class="relative max-w-screen-lg w-full px-4">
+            <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
+            <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
+            <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
+            <div class="text-center">
+                <div id="lightboxContent" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300"></div>
+                <p id="lightboxText" class="text-white text-center text-lg mt-4 px-4"></p>
+
+            </div>
         </div>
     </div>
 
-    <div id="content" class="hidden">
-        <nav class="fixed w-full bg-gray-800 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
-            <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
-            </a>
-            <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
-            <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
-                <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
-                <ul>
-                    <li class="p-2"><a href="index.html">Home</a></li>
-                    <li class="p-2"><a href="gallery.html">Gallery</a></li>
-                    <li class="p-2"><a href="teampage.html">The Team</a></li>
-                    <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
-                    <li class="p-2"><a href="contactus.html">Contact</a></li>
-                </ul>
-                <div class="flex-1"></div>
-                <a href="#" class="text-white text-3xl transition-transform duration-300 hover:scale-125">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="text-white text-3xl transition-transform duration-300 hover:scale-125">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-white text-3xl transition-transform duration-300 hover:scale-125">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-50 p-6 text-white mt-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-bold">Company Info</h3>
+                <p>123 Business Street</p>
+                <p>City, State, ZIP</p>
             </div>
-        </nav>
-
-        <!-- New Banner Section with GIF -->
-        <section class="banner-section relative flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-700 text-white overflow-hidden h-1/2 sm:h-1/3">
-            <img src="path_to_your_gif.gif" alt="Banner GIF" class="absolute inset-0 w-full h-full object-cover opacity-30" />
-            <div class="relative z-10 text-center p-4 md:p-8">
-                <h1 class="text-3xl md:text-5xl font-bold">Your Vision, Our Creation</h1>
-                <p class="mt-4 text-lg md:text-xl">Bringing your stories to life through film and creativity.</p>
-                <a href="contactus.html" class="mt-6 bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg">Hire Us!</a>
+            <div>
+                <h3 class="text-lg font-bold">Contact Us</h3>
+                <p>Email: contact@yourcompany.com</p>
+                <p>Phone: (123) 456-7890</p>
             </div>
-        </section>
-
-        <!-- Video Section -->
-        <section class="video-container h-1/2">
-            <video class="w-full h-full object-cover" autoplay muted loop controls>
-                <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="overlay">
-                <h1 class="text-5xl font-bold fade-in">Welcome to Our Chicago-Based Video Production Company</h1>
-                <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
-                    Where your dreams come to life on screen.
-                </p>
-                <a href="contactus.html" class="mt-6 bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
-                    Hire us!
-                </a>
-            </div>
-        </section>
-
-        <div class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
-            <div class="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl" aria-hidden="true">
-              <div class="aspect-577/310 w-[36.0625rem] bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30" style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"></div>
-            </div>
-            <div class="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl" aria-hidden="true">
-              <div class="aspect-577/310 w-[36.0625rem] bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30" style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"></div>
-            </div>
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-              <p class="text-sm/6 text-gray-900">
-                <strong class="font-semibold">GeneriCon 2023</strong><svg viewBox="0 0 2 2" class="mx-2 inline size-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>Join us in Denver from June 7 – 9 to see what’s coming next.
-              </p>
-              <a href="#" class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Register now <span aria-hidden="true">&rarr;</span></a>
-            </div>
-            <div class="flex flex-1 justify-end">
-              <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
-                <span class="sr-only">Dismiss</span>
-                <svg class="size-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-        <!-- Scrolling Banner Section -->
-        <section class="banner-section">
-            <div class="overflow-hidden whitespace-nowrap bg-gray-800">
-                <div class="animate-scroll">
-                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
-                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
-                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 3">
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-2xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-2xl"><i class="fab fa-vimeo"></i></a>
+                    <a href="#" class="text-2xl"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
-        </section>
+        </div>
+        <p class="text-center mt-6 text-sm">&copy; 2025 Adapted Studios | All Rights Reserved</p>
+    </footer>
 
-        <section class="relative flex items-center justify-center min-h-screen p-6 bg-white shadow-lg rounded-2xl overflow-hidden">
-            <div class="max-w-4xl text-center opacity-0 translate-y-10 transition-all duration-1000 ease-in-out" id="aboutUs">
-                <h1 class="text-4xl font-bold text-gray-800 mb-4">About Us</h1>
-                <p class="text-gray-600 text-lg leading-relaxed">
-                    Welcome to <span class="font-semibold text-indigo-600">Our Company</span>, where innovation meets excellence. We are dedicated to delivering
-                    top-notch solutions tailored to your needs. Our team of experts is committed to quality,
-                    ensuring seamless experiences that drive success.
-                </p>
-                <p class="text-gray-600 text-lg leading-relaxed mt-4">
-                    At <span class="font-semibold text-indigo-600">Our Company</span>, we believe in fostering strong relationships with our clients, built on
-                    trust, transparency, and a passion for excellence. Join us on this journey to make a difference.
-                </p>
-            </div>
-        </section>
-    
-        <!-- Content Sections -->
-        <section class="h-screen bg-white flex justify-center items-center text-black">
-            <h2 class="text-4xl">Section 1</h2>
-        </section>
+    <script>
+        const videos = [{
+            src: 'https://player.vimeo.com/video/883180342',
+            thumb: "https://i.vimeocdn.com/video/1751578218-7415f9610f9f8c2abec481490b7f09c366dd66f1c694eba0ad88d4f34ebca806-d?mw=2000&mh=1502&q=70",
+            header: 'Porshe Lincolnwood',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/888141167',
+            thumb: 'https://i.vimeocdn.com/video/1712201113-5f37b2c867a057c3744e6e6edb2f1a0a7487b177df55771b90e2f53c6638f6c6-d_640',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/876543210',
+            thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb3_640.jpg',
+            header: 'Porshe Lincolnwood',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/867530900',
+            thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb4_640.jpg',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/883180342',
+            thumb: 'https://i.vimeocdn.com/video/1711234567-sample-thumb1_640.jpg',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/888141167',
+            thumb: 'https://i.vimeocdn.com/video/1712201113-5f37b2c867a057c3744e6e6edb2f1a0a7487b177df55771b90e2f53c6638f6c6-d_640',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/876543210',
+            thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb3_640.jpg',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/867530900',
+            thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb4_640.jpg',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }, {
+            src: 'https://player.vimeo.com/video/876543210',
+            thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb3_640.jpg',
+            description: 'Porshe Lincolnwood we out here ',
+            title: 'Porshe Lincolnwood '
+        }];
 
-        <section class="banner-section">
-            <div class="overflow-hidden whitespace-nowrap bg-gray-800">
-                <div class="animate-scroll">
-                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
-                    <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
-                </div>
-            </div>
-        </section>
+        const container = document.getElementById("gallery-container");
 
-        <section class="h-screen bg-black flex justify-center items-center text-white">
-            <h2 class="text-4xl"></h2>
-            <img src="img/Scene (1).gif" width="100%" height="100%">
-        </section>
+        videos.forEach((video, index) => {
+            const card = document.createElement('div');
+            card.className = "relative group overflow-hidden rounded-lg cursor-pointer transform transition-transform duration-300 hover:scale-105";
+            card.onclick = () => openLightbox(index);
 
-        <section class="h-screen bg-white flex justify-center items-center text-black">
-            <h2 class="text-4xl"></h2>
-            <section class="py-20 px-5">
-                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-800 p-8 rounded-lg text-center">
-                        <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
-                        <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
-                        <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
-                    </div>
-                    <div class="bg-gray-800 p-8 rounded-lg text-center">
-                        <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
-                        <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
-                        <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
-                    </div>
-                    <div class="bg-gray-800 p-8 rounded-lg text-center">
-                        <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
-                        <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
-                        <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
-                    </div>
-                </div>
-            </section>
-        </section>
+            const img = document.createElement('img');
+            img.src = video.thumb;
+            img.alt = video.description;
+            img.className = "w-full h-64 object-cover";
 
-        <section class="h-screen bg-black flex justify-center items-center text-white">
-            <h2 class="text-4xl">Section 4</h2>
-        </section>
-        
-        <!-- Footer -->
-        <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div>
-                    <h3 class="text-lg font-bold">Company Info</h3>
-                    <p>123 Business Street</p>
-                    <p>City, State, ZIP</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Contact Us</h3>
-                    <p>Email: contact@yourcompany.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
-                    <p>Want to schedule a Zoom meeting with us?</p>
-                    <p><a href="https://www.example.com" class="bg-blue-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Follow Us</h3>
-                    <p>
-                        <a href="#" class="text-blue-400 text-2xl mx-2">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="text-pink-400 text-2xl mx-2">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-blue-500 text-2xl mx-2">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </p>
-                </div>
-            </div>
-            <p class="mt-5">&copy; 2025 Your Brand | All Rights Reserved</p>
-        </footer>
-    </div> <!-- this is where the loader div ends -->
+            const overlay = document.createElement('div');
+            overlay.className = "absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300";
+
+            const playIcon = document.createElement('i');
+            playIcon.className = "fas fa-play text-white text-4xl";
+            overlay.appendChild(playIcon);
+
+            const desc = document.createElement('div');
+            desc.className = "absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-sm px-3 py-1 rounded";
+            desc.textContent = video.description;
+
+            const descOnimage = document.createElement('div');
+            desc.className = "absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-sm px-3 py-1 rounded";
+            desc.textContent = video.title;
+
+            const headerVideo = document.createElement('h1');
+            desc.className = "absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-xl font-bold px-3 py-1 rounded";
+            desc.textContent = video.header;
+
+            card.appendChild(img);
+            card.appendChild(overlay);
+            card.appendChild(desc);
+            card.appendChild(descOnimage);
+            card.appendChild(headerVideo);
+            container.appendChild(card);
+        });
+
+        // Lightbox Controls
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightboxContent').innerHTML = `
+            <iframe src="${videos[index].src}?autoplay=1&muted=1&title=0&byline=0&portrait=0"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+                class="w-full h-[75vh]">
+            </iframe>`;
+            document.getElementById('lightboxText').textContent = videos[index].description;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lightboxContent').innerHTML = '';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % videos.length;
+            openLightbox(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+            openLightbox(currentIndex);
+        }
+
+        // Menu buttons
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('menu').style.right = '0';
+        });
+        document.getElementById('close-btn').addEventListener('click', () => {
+            document.getElementById('menu').style.right = '-100%';
+        });
+    </script>
 </body>
+
 </html>
