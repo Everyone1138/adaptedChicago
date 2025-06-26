@@ -573,6 +573,11 @@
 
 
 
+
+
+
+
+
         <!-- Call to Action Section -->
         <section class="bg-black text-white py-20 px-6 fade-in-up">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -692,6 +697,34 @@
 
 
 
+        <!-- 🖼️ GIF Banner Section -->
+        <section class="relative w-full h-[28vh] sm:h-[32vh] md:h-[36vh] overflow-hidden m-0">
+
+            <!-- Background GIF -->
+            <div class="absolute inset-0 bg-center bg-cover bg-no-repeat pointer-events-none" style="background-image:url('none');">
+            </div>
+
+            <!-- Overlay content -->
+            <div class="relative z-10 flex items-center justify-center h-full text-center px-6">
+                <div>
+                    <h2 class="fade-in text-white text-2xl sm:text-3xl md:text-4xl font-extrabold">
+                        The way you tell your story makes a difference.
+                    </h2>
+                    <p class="fade-in text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-2">
+                        Elevating brands through intentional storytelling and powerful imagery.
+                    </p>
+                    <a href="contactus.html" class="fade-in mt-4 inline-block bg-red-500 hover:bg-red-700 transition text-white py-2 px-5 rounded-lg text-sm md:text-base" style="animation-delay:.6s">
+        Get in Touch
+      </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
 
 
         <!-- parallac sevices section-->
@@ -768,48 +801,71 @@
                 <h2 class="text-4xl md:text-5xl font-bold mb-12">Our Services</h2>
 
                 <div class="space-y-6 text-left">
-                    <!-- Service Item -->
+                    <!-- Drone Videography Accordion Item -->
                     <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
                         <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
-          Drone Videography
-          <span class="icon">+</span>
-        </button>
+                    Drone Videography
+                    <span class="icon">+</span>
+                </button>
                         <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
                             <img src="img/services/drone.jpg" class="rounded-lg object-cover w-full h-64" alt="Drone Service">
                             <p>Capture stunning aerial footage from breathtaking heights. Our drones deliver ultra-smooth 4K video ideal for events, real estate, and cinematic sequences.</p>
+                            <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg mt-4 transition">
+                        Contact Us
+                    </a>
                         </div>
                     </div>
 
+                    <!-- Post-Production Editing Accordion Item -->
                     <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
                         <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
-          Post-Production Editing
-          <span class="icon">+</span>
-        </button>
+                    Post-Production Editing
+                    <span class="icon">+</span>
+                </button>
                         <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
                             <img src="img/services/editing.jpg" class="rounded-lg object-cover w-full h-64" alt="Editing Service">
                             <p>From rough cuts to final grade, we handle every part of the post pipeline. Color correction, sound design, and storytelling cuts tailored to your goals.</p>
+                            <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg mt-4 transition">
+                        Contact Us
+                    </a>
                         </div>
                     </div>
 
+                    <!-- Live Streaming Accordion Item -->
                     <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
                         <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
-          Live Streaming
-          <span class="icon">+</span>
-        </button>
+                    Live Streaming
+                    <span class="icon">+</span>
+                </button>
                         <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
                             <img src="img/services/livestream.jpg" class="rounded-lg object-cover w-full h-64" alt="Livestream Service">
                             <p>Engage your audience in real time with our professional multicam live streaming. Ideal for conferences, performances, and launches — broadcast-ready.</p>
+                            <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg mt-4 transition">
+                        Contact Us
+                    </a>
                         </div>
                     </div>
 
+                    <!-- Photography Services Accordion Item with Self-Moving Photo Gallery -->
                     <div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
                         <button class="w-full text-left text-xl font-semibold flex justify-between items-center toggle-btn">
-          Photography Services
-          <span class="icon">+</span>
-        </button>
+                    Photography Services
+                    <span class="icon">+</span>
+                </button>
                         <div class="toggle-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-0 grid md:grid-cols-2 gap-4">
-                            <img src="img/services/photo.jpg" class="rounded-lg object-cover w-full h-64" alt="Photography Service">
+                            <div class="w-full h-64 overflow-hidden relative">
+                                <!-- Self Moving Photo Gallery -->
+                                <div class="photo-gallery-track flex animate-scroll-x">
+                                    <img src="galleryImages/277593663_113973881255524_6530026805987172586_n.jpg" alt="Photography 1" class="w-48 h-48 object-cover rounded-lg mx-2" />
+                                    <img src="galleryImages/296838782_1128702464660287_1956645361149287980_n.jpg" alt="Photography 2" class="w-48 h-48 object-cover rounded-lg mx-2" />
+                                    <img src="galleryImages/311059514_167811029239604_4262940601558909004_n.jpg" alt="Photography 3" class="w-48 h-48 object-cover rounded-lg mx-2" />
+                                    <img src="galleryImages/311737056_844786646700150_5908427041482592975_n.jpg" alt="Photography 4" class="w-48 h-48 object-cover rounded-lg mx-2" />
+                                </div>
+                            </div>
                             <p>High-resolution, emotionally driven images for events, branding, editorial, or behind-the-scenes content. From aerial to handheld — every shot matters.</p>
+                            <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg mt-4 transition">
+                        Contact Us
+                    </a>
                         </div>
                     </div>
                 </div>
@@ -842,6 +898,24 @@
             });
         </script>
 
+        <style>
+            @keyframes scroll-x {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+            
+            .animate-scroll-x {
+                animation: scroll-x 80s linear infinite;
+            }
+        </style>
+
+
+
+
 
 
         <!-- Full-Width Clients Carousel with Floating Letters -->
@@ -850,9 +924,11 @@
             <div class="collage" id="collage-clients"></div>
 
             <div class="relative z-10 w-full text-center fade-in-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-10">Our Clients</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-10">our clients</h2>
                 <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto">
-                    Trusted by brands that move the world forward.
+                    adapted has been a trusted partner for brands and businesses since 2020. We have a track record of producing exceptional visual content that captivates audiences and drives results for our clients. From corporate branding videos to documentary films,
+                    we have tackled a diverse range of projects and have consistently exceeded expectations. Our team of talented and experienced professionals works closely with clients to understand their unique needs and deliver customized solutions
+                    that meet their goals. At adapted, we are passionate about the power of visual content and its ability to tell compelling stories that resonate with viewers.
                 </p>
 
                 <!-- Scrolling Track -->
@@ -882,7 +958,7 @@
                         <img src="img/theatreGoodman-10.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="theatreGoodman" />
                         <img src="img/theEconomist-02.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="The Economist" />
                         <img src="img/TimeOut-08.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="TimeOut" />
-                        <img src="img/vice-1.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="vice" />
+                        <img src="img/vice-01.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="vice" />
                         <!-- Duplicated Set -->
                         <img src="img/ArtInstituteChicago-09.jpg" class="h-12 grayscale opacity-60" alt="Art Institute Chicago" />
                         <img src="img/Bian-03.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="Bian" />
@@ -894,7 +970,7 @@
                         <img src="img/theatreGoodman-10.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="theatreGoodman" />
                         <img src="img/theEconomist-02.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="The Economist" />
                         <img src="img/TimeOut-08.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="TimeOut" />
-                        <img src="img/vice-1.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="vice" />
+                        <img src="img/vice-01.jpg" class="h-12 grayscale hover:grayscale-0 transition" alt="vice" />
 
                     </div>
                 </div>

@@ -1,76 +1,230 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Web Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-    <script defer src="script.js"></script>
+    <title>Adapted Studios | Chicago Video Production</title>
+    <link rel="stylesheet" href="otherstyles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Caviar Dreams', sans-serif;
+            background-image: url('Studio+Shots_0012.JPG');
+            /* <-- Change this path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            /* Optional: makes it stay in place while scrolling */
+        }
+        
+        .fade-in {
+            animation: fadeInUp 1.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 40s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.09;
+            backdrop-filter: blur(6px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .collage {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .overlay {
+            position: relative;
+            z-index: 10;
+            text-align: right;
+            color: white;
+            padding-right: 5%;
+            width: 100%;
+        }
+        
+        .spin-hover span {
+            display: inline-block;
+            transition: transform 0.5s ease, color 0.5s ease;
+        }
+        
+        .spin-hover span:hover,
+        .spin-hover span:active {
+            transform: rotate(360deg);
+            color: #ef4444;
+            /* Tailwind red-500 */
+        }
+        
+        @media (min-width: 480px) {
+            .spin-hover span h1 {
+                font-size: 30px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .spin-hover span h1 {
+                font-size: 200px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .spin-hover span h2 {
+                font-size: 80px;
+            }
+        }
+        /* Your Experience Matters Section*/
+        
+        .aspect-w-16 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+        
+        .aspect-w-16 iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .review-card {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .active-review {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .prev-review {
+            transform: translateX(-30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .next-review {
+            transform: translateX(30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .hidden-review {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 0;
+        }
+    </style>
 </head>
 
+<!--Hidden H1 for SEO-->
+<h1 class="sr-only">Adapted Studios - Chicago Video Production</h1>
+
+<body class="bg-gray-100 relative bg-cover bg-fixed bg-center" onclick="closeMenu(event)" style="background-image: url('Studio+Shots_0012.JPG');">
+    <!-- ...rest of the document stays unchanged... -->
+
+    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50 grid grid-cols-1 md:grid-cols-3 gap-8">
 
 
-<body class="bg-gray-100" onclick="closeMenu(event)">
-    <!-- icons  -->
-    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50">
-        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-            <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/adaptedstudios/" class="text-grey-400 text-2xl mx-2">
+            <i class="fa-brands fa-instagram" style="color: white;"></i>
         </a>
-        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-            <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-grey-500 text-2xl mx-2">
+            <i class="fab fa-linkedin" style="color: white;"></i>
         </a>
         <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-            <i class="fa-brands fa-square-vimeo"></i>
+            <i class="fa-brands fa-square-vimeo" style="color: white;"></i>
         </a>
         <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-            <i class="fab fa-facebook"></i>
+            <i class="fa-brands fa-facebook" style="color: white;"></i>
         </a>
+
+
     </div>
+    <!-- Loader -->
     <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
         <div class="loader-text">
-            <span>a</span>
-            <span>d</span>
-            <span>a</span>
-            <span>p</span>
-            <span>t</span>
-            <span>e</span>
-            <span>d</span>
-            <span>.</span>
+            <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
         </div>
     </div>
 
+
+
     <div id="content" class="hidden">
-        <!-- Main content starts here -->
-
-
-
-        <nav class="fixed w-full bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
-            <!-- Spinning Text -->
-            <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-                <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
-
-
+        <!-- Navbar -->
+        <nav class="fixed w-full bg-gray-900 bg-opacity-70 top-0 left-0 p-4 flex justify-between items-center z-50">
+            <a href="#" class="text-white font-bold text-4xl spin-hover">
+                <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
             </a>
-
             <!-- Menu Button -->
             <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
 
             <!-- Side Menu -->
-            <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
+            <div id="menu" class="fixed top-0 right-[-100%] w-full sm:w-2/3 md:w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5 z-[9999]">
                 <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
                 <ul>
                     <li class="p-2"><a href="index.html">Home</a></li>
@@ -81,35 +235,43 @@
                 </ul>
 
                 <div class="flex-1"></div>
+                <h3> Follow us:</h3>
                 <!-- Bottom Icons -->
                 <p>
 
                     <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fa-brands fa-instagram" style="color: #91969c;"></i>
                     </a>
                     <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fa-brands fa-linkedin" style="color: #91969c;"></i>
                     </a>
                     <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                        <i class="fa-brands fa-square-vimeo"></i>
+                        <i class="fa-brands fa-square-vimeo" style="color: #91969c;"></i>
                     </a>
                     <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                        <i class="fab fa-facebook"></i>
+                        <i class="fa-brands fa-facebook" style="color: #91969c;"></i>
                     </a>
                 </p>
             </div>
+
         </nav>
 
+        <!-- Hero Video Section -->
+        <section class="video-container h-[50vh] w-full relative">
+            <!-- Vimeo Video Background -->
+            <iframe src="https://player.vimeo.com/video/888141167?badge=0&autopause=0&player_id=0&app_id=58479&controls=0&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full object-cover">
+    </iframe>
 
-        <!-- Video Background Section -->
-        <section class="h-screen flex justify-center items-center bg-black">
-            <video class="w-full h-full object-cover" autoplay muted loop>
-            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-            <div class="absolute text-white text-center">
-                <h1 class="text-5xl font-bold">Gallery</h1>
-                <p class="text-lg mt-3">Look and see some of the projects we've worked on.</p>
+            <!-- Content Above Video -->
+            <div class="overlay relative z-10 text-center">
+                <h1 class="text-[50px] sm:text-[55px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
+                    <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+                </h1>
+                <h2 class="text-[25px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold fade-in spin-hover">
+                    <span>t</span><span>o</span> <span>o</span><span>u</span><span>r</span> <span>g</span><span>a</span><span>l</span><span>l</span><span>e</span><span>r</span><span>y</span> <span>s</span><span>e</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span>.
+                </h2>
+                <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[25px] mt-4 fade-in" style="animation-delay: 0.5s;">where your dreams come to life on the screen.</p>
+                <a href="contactus.html" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
             </div>
         </section>
 
@@ -118,375 +280,203 @@
 
 
 
-        <!-- Gallery Section -->
-        <div class="relative z-10 px-6 pb-20">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <!-- Image Cards -->
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 1</p>
+
+
+
+
+
+
+        <style>
+            body {
+                font-family: 'Caviar Dreams', sans-serif;
+            }
+        </style>
+        </head>
+
+        <body class="bg-gray-100">
+
+
+            <!-- Picture Gallery Section -->
+            <section class="p-6">
+                <h2 class="text-2xl font-bold mb-4">Picture Gallery</h2>
+                <div id="picture-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+            </section>
+
+
+            <!-- Video Gallery Section -->
+            <section class="p-6">
+                <h2 class="text-2xl font-bold mb-4">Video Gallery</h2>
+                <div id="video-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- Lightbox -->
+            <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
+                <div class="relative max-w-screen-lg w-full px-4">
+                    <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
+                    <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
+                    <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
+                    <div class="text-center">
+                        <div id="lightboxContent" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300"></div>
+                        <p id="lightboxText" class="text-white text-center text-lg mt-4 px-4"></p>
                     </div>
                 </div>
+            </div>
 
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(1)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 2</p>
+            <script>
+                const videoGalleryData = [{
+                    src: 'https://player.vimeo.com/video/883180342',
+                    thumb: 'https://i.vimeocdn.com/video/1751578218-7415f9610f9f8c2abec481490b7f09c366dd66f1c694eba0ad88d4f34ebca806-d?mw=2000&mh=1502&q=70',
+                    title: 'Porsche Lincolnwood',
+                    description: 'Project featuring Porsche Lincolnwood'
+                }];
+
+                const pictureGalleryData = [{
+                    src: 'images/portfolio/lady-shutterbug.jpg',
+                    title: 'Lady Shutterbug',
+                    description: 'Description for image 1'
+                }, {
+                    src: 'images/portfolio/lady-shutterbug.jpg',
+                    title: 'Lady Shutterbug',
+                    description: 'Description for image 2'
+                }];
+
+                let currentGallery = 'video';
+                let currentIndex = 0;
+
+                function createCard({
+                    thumb,
+                    src,
+                    title,
+                    description
+                }, index, isVideo = false) {
+                    const card = document.createElement('div');
+                    card.className = 'relative group overflow-hidden rounded-lg cursor-pointer transform transition-transform duration-300 hover:scale-105';
+                    card.onclick = () => openLightbox(index, isVideo);
+
+                    const img = document.createElement('img');
+                    img.src = thumb || src;
+                    img.alt = title;
+                    img.className = 'w-full h-64 object-cover';
+
+                    const overlay = document.createElement('div');
+                    overlay.className = 'absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300';
+                    if (isVideo) {
+                        const playIcon = document.createElement('i');
+                        playIcon.className = 'fas fa-play text-white text-4xl';
+                        overlay.appendChild(playIcon);
+                    }
+
+                    const titleText = document.createElement('div');
+                    titleText.className = 'absolute bottom-12 left-2 text-white text-xl font-bold';
+                    titleText.textContent = title;
+
+                    const descText = document.createElement('div');
+                    descText.className = 'absolute bottom-2 left-2 text-white text-sm';
+                    descText.textContent = description;
+
+                    card.appendChild(img);
+                    card.appendChild(overlay);
+                    card.appendChild(titleText);
+                    card.appendChild(descText);
+                    return card;
+                }
+
+                function renderGalleries() {
+                    const videoContainer = document.getElementById('video-gallery');
+                    const pictureContainer = document.getElementById('picture-gallery');
+
+                    videoGalleryData.forEach((item, index) => {
+                        const card = createCard(item, index, true);
+                        videoContainer.appendChild(card);
+                    });
+
+                    pictureGalleryData.forEach((item, index) => {
+                        const card = createCard(item, index, false);
+                        pictureContainer.appendChild(card);
+                    });
+                }
+
+                function openLightbox(index, isVideo) {
+                    currentGallery = isVideo ? 'video' : 'picture';
+                    currentIndex = index;
+
+                    const data = isVideo ? videoGalleryData : pictureGalleryData;
+                    const item = data[index];
+
+                    const lightbox = document.getElementById('lightbox');
+                    const lightboxContent = document.getElementById('lightboxContent');
+                    const lightboxText = document.getElementById('lightboxText');
+
+                    lightboxContent.innerHTML = isVideo ? `
+        <iframe src="${item.src}?autoplay=1&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen class="w-full h-[75vh] rounded"></iframe>
+      ` : `<img src="${item.src}" alt="${item.title}" class="max-h-[75vh] mx-auto rounded" />`;
+
+                    lightboxText.textContent = item.description;
+                    lightbox.classList.remove('hidden');
+                }
+
+                function closeLightbox() {
+                    document.getElementById('lightbox').classList.add('hidden');
+                    document.getElementById('lightboxContent').innerHTML = '';
+                }
+
+                function nextImage() {
+                    const data = currentGallery === 'video' ? videoGalleryData : pictureGalleryData;
+                    currentIndex = (currentIndex + 1) % data.length;
+                    openLightbox(currentIndex, currentGallery === 'video');
+                }
+
+                function prevImage() {
+                    const data = currentGallery === 'video' ? videoGalleryData : pictureGalleryData;
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    openLightbox(currentIndex, currentGallery === 'video');
+                }
+
+                document.addEventListener('DOMContentLoaded', renderGalleries);
+            </script>
+
+
+            <!-- Footer -->
+            <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div>
+                        <h3 class="text-lg font-bold">Company Info</h3>
+                        <p>123 Business Street</p>
+                        <p>City, State, ZIP</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">Contact Us</h3>
+                        <p>Email: contact@yourcompany.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                        <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                        <p>Want to schedule a Zoom meeting with us?</p>
+                        <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">Follow Us</h3>
+                        <p>
+
+                            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+                                <i class="fa-brands fa-square-vimeo"></i>
+                            </a>
+                            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </p>
                     </div>
                 </div>
-
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(2)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 3</p>
-                    </div>
-                </div>
-
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(3)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
-            <div class="relative max-w-screen-lg w-full px-4 fade-in">
-                <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
-                <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
-                <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
-                <div class="text-center">
-                    <img id="lightboxImage" src="" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300" />
-                    <p id="lightboxText" class="text-lg text-gray-300 mt-4"></p>
-                </div>
-            </div>
-        </div>
+                <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
+            </footer>
 
 
 
 
-
-
-
-
-
-
-
-
-
-        <!--Gallery Section -->
-
-        <!-- 
-        <section class="pt-20 p-5">
-            <h2 class="text-4xl text-center font-bold mb-10">Gallery</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="Screenshot 2025-03-26 101132.png" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
-                </video>
-                </div>
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="image2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="video2.mp4" type="video/mp4">
-                </video>
-                </div>
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
-                </div>
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
-                </div>
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
-                </div>
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
-                </div>
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
-                </div>
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-gray-700 opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-                    <img src="image3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:hidden">
-                    <video class="w-full h-64 object-cover rounded-lg shadow-lg hidden group-hover:block" autoplay loop muted>
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
-                </div>
-            </div>
-        </section> -->
-
-
-
-        <!-- Gallery Section -->
-        <main class="px-6 py-20">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-10 text-center">Gallery</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-container"></div>
-        </main>
-
-        <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
-            <div class="relative max-w-screen-lg w-full px-4">
-                <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
-                <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
-                <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
-                <div class="text-center">
-                    <div id="lightboxContent" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300"></div>
-                    <p id="lightboxText" class="text-white text-center text-lg mt-4 px-4"></p>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-        <!-- Footer -->
-        <footer class="bg-gray-900 bg-opacity-50 text-white text-center p-10 mt-10">
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div>
-                    <h3 class="text-lg font-bold">Company Info</h3>
-                    <p>123 Business Street</p>
-                    <p>City, State, ZIP</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Contact Us</h3>
-                    <p>Email: contact@yourcompany.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
-                    <p>Want to schedule a Zoom meeting with us?</p>
-                    <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Follow Us</h3>
-                    <p>
-
-                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                            <i class="fa-brands fa-square-vimeo"></i>
-                        </a>
-                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </p>
-                </div>
-            </div>
-            <p class="mt-5">&copy; 2025 adapted. | All Rights Reserved</p>
-        </footer>
-
-
-
-
-
-        <script>
-            const videos = [{
-                src: 'https://player.vimeo.com/video/883180342',
-                thumb: "https://i.vimeocdn.com/video/1751578218-7415f9610f9f8c2abec481490b7f09c366dd66f1c694eba0ad88d4f34ebca806-d?mw=2000&mh=1502&q=70",
-                header: 'Porshe Lincolnwood',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/888141167',
-                thumb: 'https://i.vimeocdn.com/video/1712201113-5f37b2c867a057c3744e6e6edb2f1a0a7487b177df55771b90e2f53c6638f6c6-d_640',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/876543210',
-                thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb3_640.jpg',
-                header: 'Porshe Lincolnwood',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/867530900',
-                thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb4_640.jpg',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/883180342',
-                thumb: 'https://i.vimeocdn.com/video/1711234567-sample-thumb1_640.jpg',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/888141167',
-                thumb: 'https://i.vimeocdn.com/video/1712201113-5f37b2c867a057c3744e6e6edb2f1a0a7487b177df55771b90e2f53c6638f6c6-d_640',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/876543210',
-                thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb3_640.jpg',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/867530900',
-                thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb4_640.jpg',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }, {
-                src: 'https://player.vimeo.com/video/876543210',
-                thumb: 'https://i.vimeocdn.com/video/1700000000-dummy-thumb3_640.jpg',
-                description: 'Porshe Lincolnwood we out here ',
-                title: 'Porshe Lincolnwood '
-            }];
-
-            const container = document.getElementById("gallery-container");
-
-            videos.forEach((video, index) => {
-                const card = document.createElement('div');
-                card.className = "relative group overflow-hidden rounded-lg cursor-pointer transform transition-transform duration-300 hover:scale-105";
-                card.onclick = () => openLightbox(index);
-
-                const img = document.createElement('img');
-                img.src = video.thumb;
-                img.alt = video.description;
-                img.className = "w-full h-64 object-cover";
-
-                const overlay = document.createElement('div');
-                overlay.className = "absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300";
-
-                const playIcon = document.createElement('i');
-                playIcon.className = "fas fa-play text-white text-4xl";
-                overlay.appendChild(playIcon);
-
-                const desc = document.createElement('div');
-                desc.className = "absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-sm px-3 py-1 rounded";
-                desc.textContent = video.description;
-
-                const descOnimage = document.createElement('div');
-                desc.className = "absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-sm px-3 py-1 rounded";
-                desc.textContent = video.title;
-
-                const headerVideo = document.createElement('h1');
-                desc.className = "absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-xl font-bold px-3 py-1 rounded";
-                desc.textContent = video.header;
-
-                card.appendChild(img);
-                card.appendChild(overlay);
-                card.appendChild(desc);
-                card.appendChild(descOnimage);
-                card.appendChild(headerVideo);
-                container.appendChild(card);
-            });
-
-            // Lightbox Controls
-            let currentIndex = 0;
-
-            function openLightbox(index) {
-                currentIndex = index;
-                document.getElementById('lightboxContent').innerHTML = `
-            <iframe src="${videos[index].src}?autoplay=1&muted=1&title=0&byline=0&portrait=0"
-                frameborder="0"
-                allow="autoplay; fullscreen"
-                allowfullscreen
-                class="w-full h-[75vh]">
-            </iframe>`;
-                document.getElementById('lightboxText').textContent = videos[index].description;
-                document.getElementById('lightbox').classList.remove('hidden');
-            }
-
-            function closeLightbox() {
-                document.getElementById('lightbox').classList.add('hidden');
-                document.getElementById('lightboxContent').innerHTML = '';
-            }
-
-            function nextImage() {
-                currentIndex = (currentIndex + 1) % videos.length;
-                openLightbox(currentIndex);
-            }
-
-            function prevImage() {
-                currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-                openLightbox(currentIndex);
-            }
-
-            // Menu buttons
-            document.getElementById('menu-btn').addEventListener('click', () => {
-                document.getElementById('menu').style.right = '0';
-            });
-            document.getElementById('close-btn').addEventListener('click', () => {
-                document.getElementById('menu').style.right = '-100%';
-            });
-
-
-
-            // Picture Gallery 
-
-            const images = [{
-                src: 'images/portfolio/lady-shutterbug.jpg',
-                description: 'Description for image 1'
-            }, {
-                src: 'images/portfolio/lady-shutterbug.jpg',
-                description: 'Description for image 2'
-            }, {
-                src: 'images/portfolio/lady-shutterbug.jpg',
-                description: 'Description for image 3'
-            }, {
-                src: 'images/portfolio/lady-shutterbug.jpg',
-                description: 'Description for image 4'
-            }];
-
-            let currentIndex = 0;
-
-            function openLightbox(index) {
-                currentIndex = index;
-                const lightbox = document.getElementById('lightbox');
-                const image = document.getElementById('lightboxImage');
-                const text = document.getElementById('lightboxText');
-
-                image.src = images[index].src;
-                text.textContent = images[index].description;
-                lightbox.classList.remove('hidden');
-            }
-
-            function closeLightbox() {
-                document.getElementById('lightbox').classList.add('hidden');
-            }
-
-            function nextImage() {
-                currentIndex = (currentIndex + 1) % images.length;
-                openLightbox(currentIndex);
-            }
-
-            function prevImage() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                openLightbox(currentIndex);
-            }
-        </script>
-
-
-
-
-</body>
+        </body>
 
 </html>

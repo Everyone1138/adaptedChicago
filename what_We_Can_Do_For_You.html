@@ -1,187 +1,556 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Web Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
+    <title>Adapted Studios | Chicago Video Production</title>
+    <link rel="stylesheet" href="otherstyles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
-
-</head>
-<body class="bg-gray-100" onclick="closeMenu(event)">
-        <!--icons-->
-        <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50">
+    <style>
+        body {
+            font-family: 'Caviar Dreams', sans-serif;
+            background-image: url('Studio+Shots_0012.JPG');
+            /* <-- Change this path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            /* Optional: makes it stay in place while scrolling */
+        }
         
+        .fade-in {
+            animation: fadeInUp 1.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .letter {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(74, 144, 226, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 40s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            opacity: 0.09;
+            backdrop-filter: blur(6px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .collage {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            text-align: right;
+            color: white;
+            z-index: 10;
+        }
+        
+        .spin-hover span {
+            display: inline-block;
+            transition: transform 0.5s ease, color 0.5s ease;
+        }
+        
+        .spin-hover span:hover,
+        .spin-hover span:active {
+            transform: rotate(360deg);
+            color: #ef4444;
+            /* Tailwind red-500 */
+        }
+        
+        @media (min-width: 480px) {
+            .spin-hover span h1 {
+                font-size: 30px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .spin-hover span h1 {
+                font-size: 200px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .spin-hover span h2 {
+                font-size: 80px;
+            }
+        }
+        /* Your Experience Matters Section*/
+        
+        .aspect-w-16 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+        
+        .aspect-w-16 iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .review-card {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .active-review {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .prev-review {
+            transform: translateX(-30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .next-review {
+            transform: translateX(30%) scale(0.9);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .hidden-review {
+            opacity: 0;
+            transform: translateX(100%) scale(0.8);
+            z-index: 0;
+        }
+    </style>
+</head>
 
-            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                <i class="fa-brands fa-square-vimeo"></i>
-            </a>
-            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </div>
+<!--Hidden H1 for SEO-->
+<h1 class="sr-only">Adapted Studios - Chicago Video Production</h1>
+
+<body class="bg-gray-100 relative bg-cover bg-fixed bg-center" onclick="closeMenu(event)" style="background-image: url('Studio+Shots_0012.JPG');">
+    <!-- ...rest of the document stays unchanged... -->
+
+    <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+        <a href="https://www.instagram.com/adaptedstudios/" class="text-grey-400 text-2xl mx-2">
+            <i class="fa-brands fa-instagram" style="color: white;"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-grey-500 text-2xl mx-2">
+            <i class="fab fa-linkedin" style="color: white;"></i>
+        </a>
+        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
+            <i class="fa-brands fa-square-vimeo" style="color: white;"></i>
+        </a>
+        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
+            <i class="fa-brands fa-facebook" style="color: white;"></i>
+        </a>
+
+
+    </div>
+    <!-- Loader -->
     <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
         <div class="loader-text">
-            <span>a</span>
-            <span>d</span>
-            <span>a</span>
-            <span>p</span>
-            <span>t</span>
-            <span>e</span>
-            <span>d</span>
-            <span>.</span>
+            <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
         </div>
     </div>
-    
+
+
+
     <div id="content" class="hidden">
-            <!-- Main content starts here -->
-        
-    
-    
-    <nav class="fixed w-full bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50">
-        <!-- Spinning Text -->
-        <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white font-bold text-4xl" style="transition: transform 0.5s ease-in-out;">
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">a</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">p</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">t</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">e</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">d</span>
-            <span class="nav-text transition-transform duration-500 hover:rotate-360 hover:text-red-500">.</span>
+        <!-- Navbar -->
+        <nav class="fixed w-full bg-gray-900 bg-opacity-70 top-0 left-0 p-4 flex justify-between items-center z-50">
+            <a href="#" class="text-white font-bold text-4xl spin-hover">
+                <span>a</span><span>d</span><span>a</span><span>p</span><span>t</span><span>e</span><span>d</span><span>.</span>
+            </a>
+            <!-- Menu Button -->
+            <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
 
-            
-        </a>
-    
-        <!-- Menu Button -->
-        <button id="menu-btn" class="text-white text-3xl focus:outline-none transition-transform duration-300">☰</button>
-    
-        <!-- Side Menu -->
-        <div id="menu" class="fixed top-0 right-[-100%] w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5">
-            <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
-            <ul>
-                <li class="p-2"><a href="index.html">Home</a></li>
-                <li class="p-2"><a href="gallery.html">Gallery</a></li>
-                <li class="p-2"><a href="teampage.html">The Team</a></li>
-                <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
-                <li class="p-2"><a href="contactus.html">Contact</a></li>
-            </ul>
+            <!-- Side Menu -->
+            <div id="menu" class="fixed top-0 right-[-100%] w-full sm:w-2/3 md:w-1/3 h-full bg-black text-white shadow-lg transition-all duration-700 p-5 z-[9999]">
+                <button id="close-btn" class="text-white text-3xl absolute top-5 right-5">&times;</button>
+                <ul>
+                    <li class="p-2"><a href="index.html">Home</a></li>
+                    <li class="p-2"><a href="gallery.html">Gallery</a></li>
+                    <li class="p-2"><a href="teampage.html">The Team</a></li>
+                    <li class="p-2"><a href="what_We_Can_Do_For_You.html">Services</a></li>
+                    <li class="p-2"><a href="contactus.html">Contact</a></li>
+                </ul>
 
-            <div class="flex-1"></div>
-
-            <!-- Bottom Icons -->
-            <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                <i class="fa-brands fa-square-vimeo"></i>
-            </a>
-            <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </div>
-    </nav>
-
-    
-    <!-- Video Section with Overlay Text -->
-    <section class="video-container">
-        <video autoplay muted loop>
-            <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="overlay">
-            <h1 class="text-5xl font-bold fade-in">adapted studios</h1>
-            <p class="text-xl mt-4 fade-in" style="animation-delay: 0.5s; max-width: 800px;">
-    where your dreams come to life of the screen.
-    
-            </p>
-            <a href="gallery.html" class="mt-6 bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-lg fade-in" style="animation-delay: 1s;">
-                Explore Our Work
-            </a>
-        </div>
-    </section>
-            <!-- Scrolling Banner Section -->
-            <section class="banner-section">
-                <div class="overflow-hidden whitespace-nowrap bg-gray-800">
-                    <div class="animate-scroll">
-                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 1">
-                        <img src="sdfvsdvsdv.jpg" alt="Banner Image 2">
-                    </div>
-                </div>
-            </section>
-            <section class="h-screen bg-black flex justify-center items-center text-white">
-                <h2 class="text-4xl"></h2>
-            </section>
-    
-    <!-- Services Grid -->
-    <section class="py-20 px-5">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div class="bg-gray-800 p-8 rounded-lg text-center">
-                <img src="img/cinematography.jpg" alt="Cinematography" class="w-full h-48 object-cover mb-4 rounded-lg">
-                <h3 class="text-2xl font-bold mb-3">Cinematography</h3>
-                <p class="text-gray-300">High-quality filming using professional-grade cameras and equipment.</p>
-            </div>
-            
-            <div class="bg-gray-800 p-8 rounded-lg text-center">
-                <img src="img/video_editing.jpg" alt="Video Editing" class="w-full h-48 object-cover mb-4 rounded-lg">
-                <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
-                <p class="text-gray-300">Expert editing services to bring your vision to life with seamless transitions and effects.</p>
-            </div>
-            <div class="bg-gray-800 p-8 rounded-lg text-center">
-                <img src="img/post_production.jpg" alt="Post-Production" class="w-full h-48 object-cover mb-4 rounded-lg">
-                <h3 class="text-2xl font-bold mb-3">Post-Production</h3>
-                <p class="text-gray-300">Color grading, sound design, and final touches to ensure a professional finish.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 bg-opacity-50 text-white text-center p-10 mt-10">
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div>
-                <h3 class="text-lg font-bold">Company Info</h3>
-                <p>123 Business Street</p>
-                <p>City, State, ZIP</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold">Contact Us</h3>
-                <p>Email: contact@yourcompany.com</p>
-                <p>Phone: (123) 456-7890</p>
-                <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
-                <p>Want to schedule a Zoom meeting with us?</p>
-                <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold">Follow Us</h3>
+                <div class="flex-1"></div>
+                <h3> Follow us:</h3>
+                <!-- Bottom Icons -->
                 <p>
 
                     <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fa-brands fa-instagram" style="color: #91969c;"></i>
                     </a>
                     <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fa-brands fa-linkedin" style="color: #91969c;"></i>
                     </a>
                     <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                        <i class="fa-brands fa-square-vimeo"></i>
+                        <i class="fa-brands fa-square-vimeo" style="color: #91969c;"></i>
                     </a>
                     <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                        <i class="fab fa-facebook"></i>
+                        <i class="fa-brands fa-facebook" style="color: #91969c;"></i>
                     </a>
                 </p>
             </div>
-        </div>
-        <p class="mt-5">&copy; 2025 adapted. | All Rights Reserved</p>
-    </footer>
+
+        </nav>
+
+
+
+        <!-- Hero Video Section -->
+        <section class="video-container h-screen flex items-center justify-center relative">
+            <video autoplay muted loop playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" class="pointer-events-none">
+        <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+    </video>
+            <div class="overlay">
+                <h1 class="text-[50px] sm:text-[55px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
+                    <span>C</span><span>h</span><span>i</span><span>c</span><span>a</span><span>g</span><span>o</span>
+                </h1>
+                <h2 class="text-[25px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold fade-in spin-hover">
+                    <span>V</span><span>i</span><span>d</span><span>e</span><span>o</span> <span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span><span>.</span>
+                </h2>
+                <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[25px] mt-4 fade-in" style="animation-delay: 0.5s;">where your dreams come to life on the screen.</p>
+                <!-- <p class="text-[15px] sm:text-[13px] md:text-[20px] lg:text-[30px] mt-4 fade-in" style="animation-delay: 0.5s;"></p> -->
+                <a href="contactus.html" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
+            </div>
+        </section>
+
+        <section>
+            <style>
+                body {
+                    margin: 0;
+                    background: #f3f4f6;
+                }
+                
+                .banner-container {
+                    overflow: hidden;
+                    width: 100%;
+                    background-color: #f3f4f6;
+                    padding: 3px 0;
+                }
+                
+                .banner-track {
+                    display: flex;
+                    width: max-content;
+                    animation: scroll-left 80s linear infinite;
+                }
+                
+                .banner-track img {
+                    height: 100px;
+                    object-fit: cover;
+                    margin: 0 1px;
+                    border-radius: 8px;
+                }
+                
+                @keyframes scroll-left {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
+
+
+
+
+            <div class="banner-container">
+                <div class="banner-track" id="banner-track">
+                    <!-- Image Set -->
+                    <img src="img/ArtInstituteChicago-09.jpg" alt="Art Institute Chicago" />
+                    <img src="img/Bian-03.jpg" alt="Bian" />
+                    <img src="img/ChicagoTribune-12.jpg" alt="Chicago Tribune" />
+                    <img src="img/CocaCola-04.jpg" alt="CocaCola" />
+                    <img src="img/crainsChicagoBusiness-05.jpg" alt="Crains Chicago Business" />
+                    <img src="img/Lollapalooza-07.jpg" alt="Lollapalooza" />
+                    <img src="img/PBS-06.jpg" alt="PBS" />
+                    <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
+                    <img src="img/theEconomist-02.jpg" alt="The Economist" />
+                    <img src="img/TimeOut-08.jpg" alt="TimeOut" />
+                    <img src="img/vice-1.jpg" alt="vice" />
+                    <!-- Duplicated Set -->
+                    <img src="img/ArtInstituteChicago-09.jpg" alt="Art Institute Chicago" />
+                    <img src="img/Bian-03.jpg" alt="Bian" />
+                    <img src="img/ChicagoTribune-12.jpg" alt="Chicago Tribune" />
+                    <img src="img/CocaCola-04.jpg" alt="CocaCola" />
+                    <img src="img/crainsChicagoBusiness-05.jpg" alt="Crains Chicago Business" />
+                    <img src="img/Lollapalooza-07.jpg" alt="Lollapalooza" />
+                    <img src="img/PBS-06.jpg" alt="PBS" />
+                    <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
+                    <img src="img/theEconomist-02.jpg" alt="The Economist" />
+                    <img src="img/TimeOut-08.jpg" alt="TimeOut" />
+                    <img src="img/vice-1.jpg" alt="vice" />
+                </div>
+            </div>
+
+            <script>
+                // Optional: Dynamically duplicate images if needed
+                const track = document.getElementById('banner-track');
+                const children = [...track.children];
+                children.forEach((child) => {
+                    const clone = child.cloneNode(true);
+                    track.appendChild(clone);
+                });
+            </script>
+
+        </section>
+
+        <!-- Section: Welcome to Adapted -->
+        <section class="relative px-6 py-16 bg-black text-white">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-welcome"></div>
+
+            <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">The way you tell your story makes a difference.</h2>
+                <h3 class="text-3xl md:text-5xl font-bold mb-6">Welcome to Adapted</h3>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Based in the vibrant heart of Chicago, Adapted is a premiere video production company and creative agency that’s redefining visual storytelling. We’ve swiftly earned a reputation as the go-to partner for businesses, organizations, and individuals who
+                    demand exceptional attention-grabbing content.
+                </p>
+            </div>
+        </section>
+
+        <script>
+            // Floating Letters Creation
+            function createFloatingLetters(targetId) {
+                const collage = document.getElementById(targetId);
+                const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+                for (let i = 0; i < 30; i++) {
+                    const letter = document.createElement('div');
+                    letter.className = 'letter';
+                    letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                    collage.appendChild(letter);
+                }
+            }
+
+            window.onload = () => {
+                createFloatingLetters('collage-welcome');
+            };
+        </script>
+
+        <!-- Creative Consulting Section -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage-consulting"></div>
+            <div class="relative z-10 max-w-5xl mx-auto text-center fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Creative Consulting</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Unlock your vision by leveraging Adapted’s consulting services—a helping hand from idea to final result.
+                </p>
+                <h3 class="text-3xl md:text-4xl font-semibold mb-4">Why Choose Us?</h3>
+                <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside mx-auto max-w-2xl mb-6">
+                    <li><strong>Fresh Ideas, Any Stage:</strong> From being a brainstorming partner to starting from scratch, we bring innovation to every project.</li>
+                    <li><strong>Holistic & Tailored:</strong> Aligning creativity with your brand, our collaborative approach delivers bespoke solutions for your unique needs.</li>
+                </ul>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Embark on a creative journey with Adapted. Whether you have a concept or a blank canvas, our Creative Consulting Services amplify your storytelling potential.
+                </p>
+                <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+            Contact Us to start crafting something extraordinary
+        </a>
+            </div>
+        </section>
+
+        <!-- Film Production Section -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage-production"></div>
+            <div class="relative z-10 max-w-5xl mx-auto text-center fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Film Production</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Discover a personalized touch in every frame with Adapted, your destination for cinematic excellence.
+                </p>
+                <h3 class="text-3xl md:text-4xl font-semibold mb-4">Versatility Redefined:</h3>
+                <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside mx-auto max-w-2xl mb-6">
+                    <li><strong>Commercials & Promos:</strong> Impactful storytelling tailored for your brand.</li>
+                    <li><strong>Social Media Ads:</strong> Grab attention in the blink of an eye with dynamic story content.</li>
+                    <li><strong>Music Videos & Narratives:</strong> From rhythm to narrative, we craft visual masterpieces based on your vision.</li>
+                </ul>
+                <h3 class="text-3xl md:text-4xl font-semibold mb-4">Why Choose Adapted?</h3>
+                <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside mx-auto max-w-2xl mb-6">
+                    <li><strong>Genre Expertise:</strong> Versatile proficiency across all film genres.</li>
+                    <li><strong>Personalized Service:</strong> Your project is unique; our tailored approach reflects that.</li>
+                    <li><strong>End-to-End Excellence:</strong> We handle everything, so you can focus on the story.</li>
+                </ul>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    From concept to screen, Adapted transforms ideas into visual stories.
+                </p>
+                <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+            Contact Us to kickstart your cinematic journey
+        </a>
+            </div>
+        </section>
+
+        <!-- Photography Section -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage-photography"></div>
+            <div class="relative z-10 max-w-5xl mx-auto text-center fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Photography</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    At Adapted, our lens transforms moments into timeless images.
+                </p>
+                <h3 class="text-3xl md:text-4xl font-semibold mb-4">Versatile Expertise:</h3>
+                <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside mx-auto max-w-2xl mb-6">
+                    <li><strong>Lifestyle:</strong> Authentic and vibrant snapshots of everyday life.</li>
+                    <li><strong>Product:</strong> Precision and artistry to showcase your products.</li>
+                    <li><strong>Events:</strong> Detailed storytelling capturing the spirit of your occasions.</li>
+                    <li><strong>Behind the Scenes:</strong> Exclusive insights into the magic behind major productions.</li>
+                </ul>
+                <h3 class="text-3xl md:text-4xl font-semibold mb-4">Why Choose Adapted?</h3>
+                <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside mx-auto max-w-2xl mb-6">
+                    <li><strong>Diverse Mastery:</strong> From everyday moments to behind-the-scenes magic, we excel in every realm.</li>
+                    <li><strong>Crafted Masterpieces:</strong> Each photo reflects the unique essence of your brand or event.</li>
+                </ul>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Inquire today about our photography services.
+                </p>
+                <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+            Contact Us for Photography Services
+        </a>
+            </div>
+        </section>
+
+        <!-- Livestream Section -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage-livestream"></div>
+            <div class="relative z-10 max-w-5xl mx-auto text-center fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Livestream</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Whether unveiling a new product, hosting a virtual event, or connecting with your audience in real-time, Adapted specializes in bringing your vision to life through cutting-edge livestream services.
+                </p>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    We employ state-of-the-art equipment and the latest technology to guarantee the highest quality, coupled with meticulous attention to detail and an unwavering commitment to excellence.
+                </p>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Elevate your live experiences with us.
+                </p>
+                <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+            Contact Us for Livestream Services
+        </a>
+            </div>
+        </section>
+
+        <!-- Aerial Section -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage-aerial"></div>
+            <div class="relative z-10 max-w-5xl mx-auto text-center fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Aerial</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Drones have revolutionized aerial photography, and at Adapted, our experienced FAA licensed pilots bring this innovation to your fingertips.
+                </p>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Whether it's a breathtaking photo or dynamic video, our professional-grade drones capture the extraordinary. From real estate showcases to dynamic car commercials, we bring the sky's limitless possibilities to your project.
+                </p>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                    Experience the world from new heights with our unparalleled drone services.
+                </p>
+                <a href="contactus.html" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+            Contact Us for Aerial Services
+        </a>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div>
+                    <h3 class="text-lg font-bold">Company Info</h3>
+                    <p>123 Business Street</p>
+                    <p>City, State, ZIP</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Contact Us</h3>
+                    <p>Email: contact@yourcompany.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
+                    <p>Want to schedule a Zoom meeting with us?</p>
+                    <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Follow Us</h3>
+                    <p>
+
+                        <a href="https://www.instagram.com/adaptedstudios/" class="text-white text-2xl mx-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-white text-2xl mx-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://vimeo.com/adapted" class="text-white text-2xl mx-2">
+                            <i class="fa-brands fa-square-vimeo"></i>
+                        </a>
+                        <a href="https://www.facebook.com/adapted.chicago/" class="text-white text-2xl mx-2">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
+        </footer>
+
 </body>
+
 </html>
