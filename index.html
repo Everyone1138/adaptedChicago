@@ -54,7 +54,7 @@
 
 
     <!-- Favicon and Icons -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="faviconAdapted.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="faviconAdapted.png">
     <link rel="manifest" href="site.webmanifest">
 
@@ -132,7 +132,7 @@
     <style>
         body {
             font-family: 'Caviar Dreams', sans-serif;
-            background-image: url('Studio+Shots_0012.JPG');
+            background-image: url('img/Studio+Shots_0012.JPG');
             /* <-- Change this path */
             background-size: cover;
             background-repeat: no-repeat;
@@ -295,7 +295,7 @@
 <!--Hidden H1 for SEO-->
 <h1 class="sr-only">Adapted Studios - Chicago Video Production</h1>
 
-<body class="bg-gray-100 relative bg-cover bg-fixed bg-center" onclick="closeMenu(event)" style="background-image: url('Studio+Shots_0012.JPG');">
+<body class="bg-gray-100 relative bg-cover bg-fixed bg-center" onclick="closeMenu(event)" style="background-image: url('img/Studio+Shots_0012.JPG');">
     <!-- ...rest of the document stays unchanged... -->
 
     <div class="hidden md:flex flex-col fixed left-4 top-1/3 space-y-4 z-50 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -1417,42 +1417,44 @@
 
 
         <!-- Footer -->
-        <footer class="bg-gray-900 bg-opacity-50 top-0 left-0 p-5 flex justify-between items-center z-50 text-white">
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <footer class="bg-gray-900 bg-opacity-70 text-white py-10 px-6">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center sm:text-left">
+                <!-- Company Info -->
                 <div>
-                    <h3 class="text-lg font-bold">Company Info</h3>
+                    <h3 class="text-lg font-bold mb-2">Company Info</h3>
                     <p>123 Business Street</p>
                     <p>City, State, ZIP</p>
                 </div>
+
+                <!-- Contact Info -->
                 <div>
-                    <h3 class="text-lg font-bold">Contact Us</h3>
+                    <h3 class="text-lg font-bold mb-2">Contact Us</h3>
                     <p>Email: contact@yourcompany.com</p>
                     <p>Phone: (123) 456-7890</p>
-                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
-                    <p>Want to schedule a Zoom meeting with us?</p>
-                    <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
+                    <h3 class="text-lg font-bold mt-4 mb-2">Zoom Meeting</h3>
+                    <p>Want to schedule a Zoom meeting?</p>
+                    <a href="https://www.example.com" class="inline-block mt-2 bg-red-500 hover:bg-red-700 text-white py-1 px-4 rounded text-sm">Visit External Link</a>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold">Follow Us</h3>
-                    <p>
 
-                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                            <i class="fa-brands fa-square-vimeo"></i>
-                        </a>
-                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </p>
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Follow Us</h3>
+                    <div class="flex justify-center sm:justify-start space-x-4 mt-2">
+                        <a href="https://www.instagram.com/adaptedstudios/" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" aria-label="LinkedIn"><i class="fab fa-linkedin text-2xl"></i></a>
+                        <a href="https://vimeo.com/adapted" aria-label="Vimeo"><i class="fab fa-vimeo text-2xl"></i></a>
+                        <a href="https://www.facebook.com/adapted.chicago/" aria-label="Facebook"><i class="fab fa-facebook text-2xl"></i></a>
+                    </div>
                 </div>
             </div>
-            <p class="mt-5">&copy; 2025 adapted studios | All Rights Reserved</p>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-sm text-gray-400">
+                &copy; 2025 Adapted Studios | All Rights Reserved
+            </div>
         </footer>
+
+
 
     </div>
 
