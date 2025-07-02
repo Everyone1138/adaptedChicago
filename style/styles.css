@@ -1,0 +1,591 @@
+@import url(https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap);
+@import "tailwindcss";
+body {
+    font-family: 'Caviar Dreams', sans-serif, Arial, Helvetica, sans-serif;
+    background: url('Studio+Shots_0012.JPG') no-repeat center center fixed;
+    background-size: cover;
+}
+
+i {
+    font-size: 0.8em;
+    /* Makes the <i> element smaller */
+    color: grey;
+    /* Changes the font color to grey */
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    color: white;
+    z-index: 30;
+    transform: translateY(-50%);
+}
+
+.overlay h1 {
+    font-size: 100px;
+}
+
+.overlay span {
+    font-size: 100px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-text {
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+
+.nav-text:hover {
+    transform: rotate(360deg);
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.loader-text span {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: bounce 3s infinite alternate;
+}
+
+.loader-text span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loader-text span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.loader-text span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.loader-text span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.loader-text span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.loader-text span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.loader-text span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+
+/* css for potential loading screen spinner*/
+
+.nav-text {
+    display: inline-block;
+    transition: transform 0.5s ease-in-out, color 0.25s ease-in-out;
+    font-size: 10rem;
+    /* Adjust as needed */
+    font-weight: bold;
+}
+
+
+/**/
+
+@keyframes spinAndColor {
+    0% {
+        transform: rotate(0deg);
+        color: white;
+    }
+    50% {
+        transform: rotate(180deg);
+        color: red;
+    }
+    /* Midway turns red */
+    100% {
+        transform: rotate(360deg);
+        color: white;
+    }
+    /* Returns to white */
+}
+
+body {
+    font-family: 'Caviar Dreams', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+.oleez-loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(adapW.gif) center no-repeat #fff;
+}
+
+footer {
+    background: rgba(31, 41, 55, 0.5);
+    /* Semi-transparent dark background */
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/* scrolling banner css */
+
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 50s linear infinite;
+    display: flex;
+    align-items: center;
+}
+
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.banner-section img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+.s-works {
+    margin-top: 2rem;
+    /* remove or set to 0 */
+}
+
+@media (max-width: 768px) {
+    .banner-section {
+        height: 30vh;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-section {
+        height: 20vh;
+        width: 100%;
+    }
+}
+
+
+/*  Adjust text size , Default size for larger screens, Smaller size for very small screens,Adjust size for tablet screens, Adjust size for tablet screens*/
+
+@media (max-width: 600px) {
+    .nav-text {
+        font-size: 50px;
+    }
+    #menu {
+        width: 100%;
+    }
+}
+
+.nav-text {
+    font-size: 100px;
+}
+
+@media (max-width: 768px) {
+    .nav-text {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-text {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav-text {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav-text {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-text {
+        font-size: 30px;
+        /* Smaller text on small screens */
+    }
+    .video-container .overlay {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .video-container .overlay h1 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        gap: 20px;
+    }
+}
+
+
+/* trying to figure out the sizing of this font when in cell phone m,ode*/
+
+@media only screen and (max-width:6500px) {
+    .span {
+        font-size: 100px;
+    }
+}
+
+@media only screen and (max-width:30000px) {
+    .span {
+        font-size: 100px;
+    }
+}
+
+@media only screen and (max-width:300px) {
+    .video-container h1 {
+        display: inline;
+        font-size: 1.5rem;
+    }
+}
+
+
+/* come back to this code later. organize everything then work with the resize */
+
+.nav-text {
+    font-size: 5vw;
+    /* Responsive scaling based on viewport width */
+    transition: transform 0.5s;
+}
+
+
+/* Medium screens (tablets) */
+
+@media (max-width: 1024px) {
+    .nav-text {
+        font-size: 4vw;
+    }
+}
+
+
+/* Small screens (phones) */
+
+@media (max-width: 768px) {
+    .nav-text {
+        font-size: 6vw;
+    }
+}
+
+
+/* Extra small screens */
+
+@media (max-width: 480px) {
+    .nav-text {
+        font-size: 8vw;
+    }
+}
+
+@layer utilities {
+    .animate-pop {
+        animation: pop 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+    .animate-slide {
+        animation: slide 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+    .animate-slide-left {
+        animation: slide-left 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+    .animate-slide-up {
+        animation: slide-up 0.7s cubic-bezier(0.26, 0.53, 0.74, 1.48) backwards;
+    }
+    @keyframes pop {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            transform: translateX(4em);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slide-left {
+        0% {
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(3em);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1200px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.letter {
+    width: 80px;
+    height: 80px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #4a90e2;
+    background-color: transparent;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    user-select: none;
+}
+
+.letter.visible {
+    opacity: 1;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: #bbbbbb;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.about-text {
+    max-width: 800px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #dddddd;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .letter {
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+    .subtitle {
+        font-size: 20px;
+    }
+    .about-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .letter {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+    .subtitle {
+        font-size: 18px;
+    }
+    .about-text {
+        font-size: 15px;
+    }
+}
+
+
+/* Carousel Section */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 300px;
+    }
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+    }
+}
