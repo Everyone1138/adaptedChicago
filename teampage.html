@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Web Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/styless.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link href="https://fonts.googleapis.com/css2?family=Caviar+Dreams&display=swap" rel="stylesheet">
@@ -215,41 +215,52 @@
             </script>
         </body>
         <!-- Footer -->
-        <footer class="bg-gray-900 bg-opacity-50 text-white text-center p-10 mt-10">
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <footer class="bg-gray-900 bg-opacity-70 text-white py-10 px-6">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
+                <!-- Contact Info -->
                 <div>
-                    <h3 class="text-lg font-bold">Company Info</h3>
+                    <h3 class="text-lg font-bold  mb-2">Let's set up a meeting</h3>
+                    <p>We would love to hear from you.</p>
+                    <a href="contactus.html" class="inline-block mt-2 bg-red-500 hover:bg-red-700 text-white py-1 px-4 rounded text-sm">Let's work together</a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold  mb-2">Contact Us</h3>
+                    <p>Email: contact@yourcompany.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Company Info</h3>
                     <p>123 Business Street</p>
                     <p>City, State, ZIP</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold">Contact Us</h3>
-                    <p>Email: contact@yourcompany.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <h3 class="text-lg font-bold">Schedule a Zoom Meeting</h3>
-                    <p>Want to schedule a Zoom meeting with us?</p>
-                    <p><a href="https://www.example.com" class="bg-red-500 text-white py-1 px-4 rounded">Visit External Link</a></p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Follow Us</h3>
-                    <p>
 
-                        <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                            <i class="fab fa-instagram"></i>
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Follow Us</h3>
+                    <div class="flex justify-center sm:justify-start gap-6 mt-2">
+                        <a href="https://www.instagram.com/adaptedstudios/" aria-label="Instagram">
+                            <i class="fab fa-instagram text-2xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-2xl"></i>
                         </a>
-                        <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                            <i class="fa-brands fa-square-vimeo"></i>
+                        <a href="https://vimeo.com/adapted" aria-label="Vimeo">
+                            <i class="fab fa-vimeo text-2xl"></i>
                         </a>
-                        <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                            <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/adapted.chicago/" aria-label="Facebook">
+                            <i class="fab fa-facebook text-2xl"></i>
                         </a>
-                    </p>
+                    </div>
                 </div>
             </div>
-            <p class="mt-5">&copy; 2025 Your Brand | All Rights Reserved</p>
+
+            <!-- Move this OUTSIDE the grid for proper alignment -->
+            <div class="mt-10 text-center text-sm text-gray-400">
+                &copy; 2025 Adapted Studios | All Rights Reserved
+            </div>
         </footer>
 </body>
 

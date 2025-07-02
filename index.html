@@ -103,7 +103,7 @@
             "@type": "VideoProductionCompany",
             "name": "Adapted Studios",
             "url": "https://adaptedstudios.com",
-            "logo": "https://adaptedstudios.com/assets/logo.png",
+            "logo": "https://everyone1138.github.io/adaptedChicago/Adapted+LOGO.jpg",
             "description": "Adapted Studios is a Chicago-based video production company specializing in branded content, cinematic storytelling, and creative services.",
             "address": {
                 "@type": "PostalAddress",
@@ -351,16 +351,16 @@
                 <p>
 
                     <a href="https://www.instagram.com/adaptedstudios/" class="text-pink-400 text-2xl mx-2">
-                        <i class="fa-brands fa-instagram" style="color: #91969c;"></i>
+                        <i class="fa-brands fa-instagram" style="color: white;"></i>
                     </a>
                     <a href="https://www.linkedin.com/company/adapted-studios/" class="text-blue-500 text-2xl mx-2">
-                        <i class="fa-brands fa-linkedin" style="color: #91969c;"></i>
+                        <i class="fa-brands fa-linkedin" style="color: white;"></i>
                     </a>
                     <a href="https://vimeo.com/adapted" class="text-blue-500 text-2xl mx-2">
-                        <i class="fa-brands fa-square-vimeo" style="color: #91969c;"></i>
+                        <i class="fa-brands fa-square-vimeo" style="color: white;"></i>
                     </a>
                     <a href="https://www.facebook.com/adapted.chicago/" class="text-blue-400 text-2xl mx-2">
-                        <i class="fa-brands fa-facebook" style="color: #91969c;"></i>
+                        <i class="fa-brands fa-facebook" style="color: white;"></i>
                     </a>
                 </p>
             </div>
@@ -715,6 +715,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
         <!--customer google reviews -->
         <section class="relative bg-black text-white py-24 px-6 overflow-hidden">
             <!-- Floating Letters Background -->
@@ -731,78 +740,202 @@
                 </div>
 
                 <div class="flex justify-center mt-6 space-x-4">
-                    <button id="prevTestimonial" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
-        <i class="fas fa-chevron-left text-white"></i>
-      </button>
-                    <button id="nextTestimonial" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
-        <i class="fas fa-chevron-right text-white"></i>
-      </button>
+                    <button id="prevBtn" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+    <i class="fas fa-chevron-left text-white"></i>
+  </button>
+                    <button id="nextBtn" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+    <i class="fas fa-chevron-right text-white"></i>
+  </button>
                 </div>
+                <div id="indicators" class="flex justify-center mt-4 space-x-2"></div>
+
             </div>
         </section>
 
 
         <script>
-            const reviews = [{
-                name: "Sarah Johnson",
-                role: "Creative Director",
-                text: "Absolutely amazing service! The team went above and beyond to help me with my project.",
-                avatar: "https://randomuser.me/api/portraits/women/44.jpg"
-            }, {
-                name: "Michael Chen",
-                role: "Marketing Manager",
-                text: "The communication was excellent and the final product exceeded expectations.",
-                avatar: "https://randomuser.me/api/portraits/men/32.jpg"
-            }, {
-                name: "Emily Rodriguez",
-                role: "Event Producer",
-                text: "Blown away by the attention to detail and professionalism. Delivered ahead of schedule.",
-                avatar: "https://randomuser.me/api/portraits/women/68.jpg"
-            }];
+            // 'your experience matters' section js //
 
-            const track = document.getElementById('testimonialTrack');
-            let current = 0;
-            let autoScroll;
+            // end of js section for 'your experience matters' //
 
-            function renderCarousel() {
-                track.innerHTML = reviews.map((review, i) => {
-                    const position = i === current ? 'active-review' :
-                        i === (current + 1) % reviews.length ? 'next-review' :
-                        i === (current - 1 + reviews.length) % reviews.length ? 'prev-review' : 'hidden-review';
 
-                    return `
-        <div class="absolute transition-all duration-500 ease-in-out review-card ${position} w-full md:w-2/3 p-4">
-          <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow-lg text-left">
-            <div class="flex items-center mb-4">
-              <img src="${review.avatar}" class="w-12 h-12 rounded-full object-cover mr-4">
-              <div>
-                <h4 class="font-bold">${review.name}</h4>
-                <span class="text-sm text-gray-300">${review.role}</span>
-              </div>
-            </div>
-            <p class="italic text-gray-200">"${review.text}"</p>
-          </div>
-        </div>`;
-                }).join('');
-            }
+            document.addEventListener('DOMContentLoaded', function() {
+                // Sample review data (in a real app, you might fetch this from an API)
+                const reviews = [{
+                    id: 1,
+                    name: "Sarah Johnson",
+                    rating: 5,
+                    date: "2 weeks ago",
+                    text: "Absolutely amazing service! The team went above and beyond to help me with my project. I couldn't be happier with the results. Highly recommend to anyone looking for quality work.",
+                    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+                }, {
+                    id: 2,
+                    name: "Michael Chen",
+                    rating: 4,
+                    date: "1 month ago",
+                    text: "Great experience overall. The communication was excellent and the final product met all my expectations. Would definitely work with them again for future projects.",
+                    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+                }, {
+                    id: 3,
+                    name: "Emily Rodriguez",
+                    rating: 5,
+                    date: "3 weeks ago",
+                    text: "I was blown away by the attention to detail and professionalism. They delivered exactly what I needed before the deadline. 10/10 would recommend!",
+                    avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+                }, {
+                    id: 4,
+                    name: "David Wilson",
+                    rating: 5,
+                    date: "2 months ago",
+                    text: "Exceptional service from start to finish. The team was responsive, knowledgeable, and delivered beyond my expectations. Will be using them for all my future needs.",
+                    avatar: "https://randomuser.me/api/portraits/men/75.jpg"
+                }, {
+                    id: 5,
+                    name: "Jessica Kim",
+                    rating: 5,
+                    date: "1 week ago",
+                    text: "I'm so impressed with the quality of work and customer service. They made the entire process so easy and stress-free. Can't recommend them enough!",
+                    avatar: "https://randomuser.me/api/portraits/women/90.jpg"
+                }];
 
-            function updateIndex(dir) {
-                current = (current + dir + reviews.length) % reviews.length;
-                renderCarousel();
-                resetAutoplay();
-            }
+                const carouselContainer = document.querySelector('.carousel-container');
+                const indicatorsContainer = document.getElementById('indicators');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
 
-            function resetAutoplay() {
-                clearInterval(autoScroll);
-                autoScroll = setInterval(() => updateIndex(1), 6000);
-            }
+                let currentIndex = 0;
+                let autoScrollInterval;
+                const autoScrollDelay = 5000; // 5 seconds
 
-            document.getElementById('nextTestimonial').addEventListener('click', () => updateIndex(1));
-            document.getElementById('prevTestimonial').addEventListener('click', () => updateIndex(-1));
+                // Create review cards
+                function createReviewCards() {
+                    carouselContainer.innerHTML = '';
+                    indicatorsContainer.innerHTML = '';
 
-            // Initialize
-            renderCarousel();
-            autoScroll = setInterval(() => updateIndex(1), 6000);
+                    reviews.forEach((review, index) => {
+                        // Create review card
+                        const reviewCard = document.createElement('div');
+                        reviewCard.className = `review-card absolute w-full md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-lg p-6 transition-all duration-500 ${index === 0 ? 'active-review' : 'hidden-review'}`;
+
+                        // Create stars
+                        let stars = '';
+                        for (let i = 0; i < 5; i++) {
+                            stars += i < review.rating ?
+                                '<i class="fas fa-star text-yellow-400"></i>' :
+                                '<i class="far fa-star text-yellow-400"></i>';
+                        }
+
+                        reviewCard.innerHTML = `
+                        <div class="flex items-start mb-4">
+                            <img src="${review.avatar}" alt="${review.name}" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">${review.name}</h3>
+                                <div class="flex items-center mt-1">
+                                    ${stars}
+                                    <span class="text-gray-500 text-sm ml-2">${review.date}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"${review.text}"</p>
+                        <div class="mt-4 flex justify-end">
+                            <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google" class="h-6">
+                        </div>
+                    `;
+
+                        carouselContainer.appendChild(reviewCard);
+
+                        // Create indicator
+                        const indicator = document.createElement('button');
+                        indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                        indicator.dataset.index = index;
+                        indicator.addEventListener('click', () => goToReview(index));
+                        indicatorsContainer.appendChild(indicator);
+                    });
+                }
+
+                // Update carousel position
+                function updateCarousel() {
+                    const cards = document.querySelectorAll('.review-card');
+                    const indicators = document.querySelectorAll('#indicators button');
+
+                    cards.forEach((card, index) => {
+                        if (index === currentIndex) {
+                            card.classList.remove('hidden-review', 'next-review', 'prev-review');
+                            card.classList.add('active-review');
+                        } else if (index === (currentIndex + 1) % reviews.length) {
+                            card.classList.remove('hidden-review', 'active-review', 'prev-review');
+                            card.classList.add('next-review');
+                        } else if (index === (currentIndex - 1 + reviews.length) % reviews.length) {
+                            card.classList.remove('hidden-review', 'active-review', 'next-review');
+                            card.classList.add('prev-review');
+                        } else {
+                            card.classList.remove('active-review', 'next-review', 'prev-review');
+                            card.classList.add('hidden-review');
+                        }
+                    });
+
+                    indicators.forEach((indicator, index) => {
+                        indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                    });
+                }
+
+                // Navigate to specific review
+                function goToReview(index) {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Next review
+                function nextReview() {
+                    currentIndex = (currentIndex + 1) % reviews.length;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Previous review
+                function prevReview() {
+                    currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Auto-scroll functionality
+                function startAutoScroll() {
+                    autoScrollInterval = setInterval(nextReview, autoScrollDelay);
+                }
+
+                function resetAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                    startAutoScroll();
+                }
+
+                // Event listeners
+                nextBtn.addEventListener('click', nextReview);
+                prevBtn.addEventListener('click', prevReview);
+
+                // Pause auto-scroll on hover
+                carouselContainer.addEventListener('mouseenter', () => {
+                    clearInterval(autoScrollInterval);
+                });
+
+                carouselContainer.addEventListener('mouseleave', () => {
+                    startAutoScroll();
+                });
+
+                // Initialize
+                createReviewCards();
+                startAutoScroll();
+
+                // Handle keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        nextReview();
+                    } else if (e.key === 'ArrowLeft') {
+                        prevReview();
+                    }
+                });
+            });
         </script>
 
 
@@ -1113,299 +1246,54 @@
 
 
 
-        <!-- google review section-->
 
-        <style>
-            .review-card {
-                transition: transform 0.5s ease, opacity 0.5s ease;
+
+
+
+        <script>
+            // Floating Letters for Clients Section
+            function createFloatingLetters(targetId) {
+                const collage = document.getElementById(targetId);
+                const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
+
+                for (let i = 0; i < 30; i++) {
+                    const letter = document.createElement('div');
+                    letter.className = 'letter';
+                    letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
+                    collage.appendChild(letter);
+                }
             }
-            
-            .carousel-container {
-                perspective: 1000px;
-            }
-            
-            .active-review {
-                transform: translateX(0) scale(1);
-                opacity: 1;
-                z-index: 10;
-            }
-            
-            .next-review {
-                transform: translateX(30%) scale(0.9);
-                opacity: 0.7;
-                z-index: 5;
-            }
-            
-            .prev-review {
-                transform: translateX(-30%) scale(0.9);
-                opacity: 0.7;
-                z-index: 5;
-            }
-            
-            .hidden-review {
-                transform: translateX(100%) scale(0.8);
-                opacity: 0;
-                z-index: 1;
-            }
-        </style>
 
-
-
-        <section class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-4">
-            <div class="max-w-4xl w-full">
-                <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">What Our Customers Say</h1>
-                <div class="flex justify-center mb-8">
-                    <div class="flex items-center">
-                        <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google Reviews" class="h-8 mr-2">
-                        <span class="text-yellow-500 font-semibold">4.9 ★ from 127 reviews</span>
-                    </div>
-                </div>
-
-                <div class="carousel-container relative h-96 md:h-80 overflow-hidden">
-                    <!-- Review cards will be inserted here by JavaScript -->
-                </div>
-
-                <div class="flex justify-center mt-6 space-x-3">
-                    <button id="prevBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
-                <i class="fas fa-chevron-left text-gray-700"></i>
-            </button>
-                    <div id="indicators" class="flex items-center space-x-2">
-                        <!-- Indicators will be inserted here by JavaScript -->
-                    </div>
-                    <button id="nextBtn" class="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition">
-                <i class="fas fa-chevron-right text-gray-700"></i>
-            </button>
-                </div>
-            </div>
-
-            <script>
-                // 'your experience matters' section js //
-
-                // end of js section for 'your experience matters' //
-
-
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Sample review data (in a real app, you might fetch this from an API)
-                    const reviews = [{
-                        id: 1,
-                        name: "Sarah Johnson",
-                        rating: 5,
-                        date: "2 weeks ago",
-                        text: "Absolutely amazing service! The team went above and beyond to help me with my project. I couldn't be happier with the results. Highly recommend to anyone looking for quality work.",
-                        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
-                    }, {
-                        id: 2,
-                        name: "Michael Chen",
-                        rating: 4,
-                        date: "1 month ago",
-                        text: "Great experience overall. The communication was excellent and the final product met all my expectations. Would definitely work with them again for future projects.",
-                        avatar: "https://randomuser.me/api/portraits/men/32.jpg"
-                    }, {
-                        id: 3,
-                        name: "Emily Rodriguez",
-                        rating: 5,
-                        date: "3 weeks ago",
-                        text: "I was blown away by the attention to detail and professionalism. They delivered exactly what I needed before the deadline. 10/10 would recommend!",
-                        avatar: "https://randomuser.me/api/portraits/women/68.jpg"
-                    }, {
-                        id: 4,
-                        name: "David Wilson",
-                        rating: 5,
-                        date: "2 months ago",
-                        text: "Exceptional service from start to finish. The team was responsive, knowledgeable, and delivered beyond my expectations. Will be using them for all my future needs.",
-                        avatar: "https://randomuser.me/api/portraits/men/75.jpg"
-                    }, {
-                        id: 5,
-                        name: "Jessica Kim",
-                        rating: 5,
-                        date: "1 week ago",
-                        text: "I'm so impressed with the quality of work and customer service. They made the entire process so easy and stress-free. Can't recommend them enough!",
-                        avatar: "https://randomuser.me/api/portraits/women/90.jpg"
-                    }];
-
-                    const carouselContainer = document.querySelector('.carousel-container');
-                    const indicatorsContainer = document.getElementById('indicators');
-                    const prevBtn = document.getElementById('prevBtn');
-                    const nextBtn = document.getElementById('nextBtn');
-
-                    let currentIndex = 0;
-                    let autoScrollInterval;
-                    const autoScrollDelay = 5000; // 5 seconds
-
-                    // Create review cards
-                    function createReviewCards() {
-                        carouselContainer.innerHTML = '';
-                        indicatorsContainer.innerHTML = '';
-
-                        reviews.forEach((review, index) => {
-                            // Create review card
-                            const reviewCard = document.createElement('div');
-                            reviewCard.className = `review-card absolute w-full md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-lg p-6 transition-all duration-500 ${index === 0 ? 'active-review' : 'hidden-review'}`;
-
-                            // Create stars
-                            let stars = '';
-                            for (let i = 0; i < 5; i++) {
-                                stars += i < review.rating ?
-                                    '<i class="fas fa-star text-yellow-400"></i>' :
-                                    '<i class="far fa-star text-yellow-400"></i>';
-                            }
-
-                            reviewCard.innerHTML = `
-                        <div class="flex items-start mb-4">
-                            <img src="${review.avatar}" alt="${review.name}" class="w-12 h-12 rounded-full mr-4 object-cover">
-                            <div>
-                                <h3 class="font-semibold text-gray-800">${review.name}</h3>
-                                <div class="flex items-center mt-1">
-                                    ${stars}
-                                    <span class="text-gray-500 text-sm ml-2">${review.date}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-600">"${review.text}"</p>
-                        <div class="mt-4 flex justify-end">
-                            <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google" class="h-6">
-                        </div>
-                    `;
-
-                            carouselContainer.appendChild(reviewCard);
-
-                            // Create indicator
-                            const indicator = document.createElement('button');
-                            indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
-                            indicator.dataset.index = index;
-                            indicator.addEventListener('click', () => goToReview(index));
-                            indicatorsContainer.appendChild(indicator);
-                        });
-                    }
-
-                    // Update carousel position
-                    function updateCarousel() {
-                        const cards = document.querySelectorAll('.review-card');
-                        const indicators = document.querySelectorAll('#indicators button');
-
-                        cards.forEach((card, index) => {
-                            if (index === currentIndex) {
-                                card.classList.remove('hidden-review', 'next-review', 'prev-review');
-                                card.classList.add('active-review');
-                            } else if (index === (currentIndex + 1) % reviews.length) {
-                                card.classList.remove('hidden-review', 'active-review', 'prev-review');
-                                card.classList.add('next-review');
-                            } else if (index === (currentIndex - 1 + reviews.length) % reviews.length) {
-                                card.classList.remove('hidden-review', 'active-review', 'next-review');
-                                card.classList.add('prev-review');
-                            } else {
-                                card.classList.remove('active-review', 'next-review', 'prev-review');
-                                card.classList.add('hidden-review');
-                            }
-                        });
-
-                        indicators.forEach((indicator, index) => {
-                            indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
-                        });
-                    }
-
-                    // Navigate to specific review
-                    function goToReview(index) {
-                        currentIndex = index;
-                        updateCarousel();
-                        resetAutoScroll();
-                    }
-
-                    // Next review
-                    function nextReview() {
-                        currentIndex = (currentIndex + 1) % reviews.length;
-                        updateCarousel();
-                        resetAutoScroll();
-                    }
-
-                    // Previous review
-                    function prevReview() {
-                        currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
-                        updateCarousel();
-                        resetAutoScroll();
-                    }
-
-                    // Auto-scroll functionality
-                    function startAutoScroll() {
-                        autoScrollInterval = setInterval(nextReview, autoScrollDelay);
-                    }
-
-                    function resetAutoScroll() {
-                        clearInterval(autoScrollInterval);
-                        startAutoScroll();
-                    }
-
-                    // Event listeners
-                    nextBtn.addEventListener('click', nextReview);
-                    prevBtn.addEventListener('click', prevReview);
-
-                    // Pause auto-scroll on hover
-                    carouselContainer.addEventListener('mouseenter', () => {
-                        clearInterval(autoScrollInterval);
-                    });
-
-                    carouselContainer.addEventListener('mouseleave', () => {
-                        startAutoScroll();
-                    });
-
-                    // Initialize
-                    createReviewCards();
-                    startAutoScroll();
-
-                    // Handle keyboard navigation
-                    document.addEventListener('keydown', (e) => {
-                        if (e.key === 'ArrowRight') {
-                            nextReview();
-                        } else if (e.key === 'ArrowLeft') {
-                            prevReview();
-                        }
-                    });
+            function animateLetters() {
+                document.querySelectorAll('.letter').forEach(el => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    const offsetX = (Math.random() - 0.5) * 150;
+                    const offsetY = (Math.random() - 0.5) * 150;
+                    const rotation = Math.random() * 360;
+                    el.style.left = `${x}px`;
+                    el.style.top = `${y}px`;
+                    el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
                 });
+                setTimeout(animateLetters, 10000);
+            }
 
-
-                // Floating Letters for Clients Section
-                function createFloatingLetters(targetId) {
-                    const collage = document.getElementById(targetId);
-                    const lettersSet = ['a', 'd', 'a', 'p', 't', 'e', 'd', '.'];
-
-                    for (let i = 0; i < 30; i++) {
-                        const letter = document.createElement('div');
-                        letter.className = 'letter';
-                        letter.textContent = lettersSet[Math.floor(Math.random() * lettersSet.length)];
-                        collage.appendChild(letter);
-                    }
-                }
-
-                function animateLetters() {
-                    document.querySelectorAll('.letter').forEach(el => {
-                        const x = Math.random() * window.innerWidth;
-                        const y = Math.random() * window.innerHeight;
-                        const offsetX = (Math.random() - 0.5) * 150;
-                        const offsetY = (Math.random() - 0.5) * 150;
-                        const rotation = Math.random() * 360;
-                        el.style.left = `${x}px`;
-                        el.style.top = `${y}px`;
-                        el.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
-                    });
-                    setTimeout(animateLetters, 10000);
-                }
-
-                // Add this to your existing onload logic:
-                window.onload = () => {
-                    createFloatingLetters('collage');
-                    createFloatingLetters('collage-2');
-                    createFloatingLetters('collage-experience');
-                    createFloatingLetters('collage-clients'); // ✅ Add this line
-                    createFloatingLetters('collage-drone');
-                    createFloatingLetters('collage-testimonials');
-                    animateLetters();
-                };
+            // Add this to your existing onload logic:
+            window.onload = () => {
+                createFloatingLetters('collage');
+                createFloatingLetters('collage-2');
+                createFloatingLetters('collage-experience');
+                createFloatingLetters('collage-clients'); // ✅ Add this line
+                createFloatingLetters('collage-drone');
+                createFloatingLetters('collage-testimonials');
+                animateLetters();
+            };
 
 
 
 
-                //carosel in clients section
-            </script>
+            //carosel in clients section
+        </script>
         </section>
 
 
@@ -1418,7 +1306,20 @@
 
         <!-- Footer -->
         <footer class="bg-gray-900 bg-opacity-70 text-white py-10 px-6">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center sm:text-left">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold  mb-2">Let's set up a meeting</h3>
+                    <p>We would love to hear from you.</p>
+                    <a href="contactus.html" class="inline-block mt-2 bg-red-500 hover:bg-red-700 text-white py-1 px-4 rounded text-sm">Let's work together</a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold  mb-2">Contact Us</h3>
+                    <p>Email: contact@yourcompany.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+
                 <!-- Company Info -->
                 <div>
                     <h3 class="text-lg font-bold mb-2">Company Info</h3>
@@ -1426,29 +1327,27 @@
                     <p>City, State, ZIP</p>
                 </div>
 
-                <!-- Contact Info -->
-                <div>
-                    <h3 class="text-lg font-bold mb-2">Contact Us</h3>
-                    <p>Email: contact@yourcompany.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <h3 class="text-lg font-bold mt-4 mb-2">Zoom Meeting</h3>
-                    <p>Want to schedule a Zoom meeting?</p>
-                    <a href="https://www.example.com" class="inline-block mt-2 bg-red-500 hover:bg-red-700 text-white py-1 px-4 rounded text-sm">Visit External Link</a>
-                </div>
-
                 <!-- Social Media -->
                 <div>
                     <h3 class="text-lg font-bold mb-2">Follow Us</h3>
-                    <div class="flex justify-center sm:justify-start space-x-4 mt-2">
-                        <a href="https://www.instagram.com/adaptedstudios/" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
-                        <a href="https://www.linkedin.com/company/adapted-studios/" aria-label="LinkedIn"><i class="fab fa-linkedin text-2xl"></i></a>
-                        <a href="https://vimeo.com/adapted" aria-label="Vimeo"><i class="fab fa-vimeo text-2xl"></i></a>
-                        <a href="https://www.facebook.com/adapted.chicago/" aria-label="Facebook"><i class="fab fa-facebook text-2xl"></i></a>
+                    <div class="flex justify-center sm:justify-start gap-6 mt-2">
+                        <a href="https://www.instagram.com/adaptedstudios/" aria-label="Instagram">
+                            <i class="fab fa-instagram text-2xl" style="color: white"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/adapted-studios/" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://vimeo.com/adapted" aria-label="Vimeo">
+                            <i class="fab fa-vimeo text-2xl" style="color: white"></i>
+                        </a>
+                        <a href="https://www.facebook.com/adapted.chicago/" aria-label="Facebook">
+                            <i class="fab fa-facebook text-2xl" style="color: white"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Copyright -->
+            <!-- Move this OUTSIDE the grid for proper alignment -->
             <div class="mt-10 text-center text-sm text-gray-400">
                 &copy; 2025 Adapted Studios | All Rights Reserved
             </div>
