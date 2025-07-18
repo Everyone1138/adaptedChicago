@@ -172,6 +172,19 @@
             transform: translateX(100%) scale(0.8);
             z-index: 0;
         }
+        
+        @keyframes scroll-x {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .animate-scroll-x {
+            animation: scroll-x 40s linear infinite;
+        }
     </style>
 </head>
 
@@ -271,35 +284,62 @@
                 </h2>
                 <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[25px] mt-4 fade-in" style="animation-delay: 0.5s;">where your dreams come to life on the screen.</p>
                 <!-- <p class="text-[15px] sm:text-[13px] md:text-[20px] lg:text-[30px] mt-4 fade-in" style="animation-delay: 0.5s;"></p> -->
-                <a href="contactus.html" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
+                <a href="contactus.html" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Let's work together1</a>
             </div>
         </section>
 
 
+        <!-- Gallery & Contact Section -->
+        <section class="py-20 px-5 bg-black text-white">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-        <!-- Contact Form -->
-        <section class="py-20 px-5 bg-black text-white flex justify-center">
-            <form class="bg-transparent p-10 w-full max-w-2xl">
-                <h2 class="text-3xl font-bold mb-5 text-center">Get in Touch</h2>
-                <label class="block mb-2">Name:     <i>(required)</i></label>
-                <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Name Here!" required>
+                <!-- Picture Gallery -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">some of our clients.</h2>
+                    <div id="picture-gallery" class="flex space-x-6 items-center overflow-hidden whitespace-nowrap animate-scroll-x"></div>
+                </div>
 
-                <label class="block mb-2">Email: <i>(required)</i></label>
-                <input type="email" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="Your Email Here!" required>
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Thank you for wanting to reach out to us. We look forward to hearing from you and working on making your visual dreams come true.
+                    </p>
+                    <form class="bg-transparent p-6 space-y-4">
+                        <label class="block">
+          <span class="text-white">Name <i>(required)</i></span>
+          <input type="text" class="w-full mt-1 p-3 bg-gray-800 text-white rounded-lg" placeholder="Your Name" required>
+        </label>
 
-                <label class="block mb-2">Budget:  <i>(required)</i></label>
-                <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="What's your budget for this project?" required>
+                        <label class="block">
+          <span class="text-white">Email <i>(required)</i></span>
+          <input type="email" class="w-full mt-1 p-3 bg-gray-800 text-white rounded-lg" placeholder="you@example.com" required>
+        </label>
 
+                        <label class="block">
+          <span class="text-white">Budget <i>(required)</i></span>
+          <input type="text" class="w-full mt-1 p-3 bg-gray-800 text-white rounded-lg" placeholder="Your budget" required>
+        </label>
 
-                <label class="block mb-2">Project Scope: <i>(required)</i></label>
-                <textarea class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" rows="5" placeholder="Your Message" required></textarea>
+                        <label class="block">
+          <span class="text-white">Project Scope <i>(required)</i></span>
+          <textarea class="w-full mt-1 p-3 bg-gray-800 text-white rounded-lg" rows="4" placeholder="Describe your project" required></textarea>
+        </label>
 
-                <label class="block mb-2">Website:  <i>(not required)</i></label>
-                <input type="text" class="w-full p-3 bg-gray-800 text-white rounded-lg mb-4" placeholder="www.yourwebsite.com">
+                        <label class="block">
+          <span class="text-white">Website <i>(optional)</i></span>
+          <input type="url" class="w-full mt-1 p-3 bg-gray-800 text-white rounded-lg" placeholder="https://">
+        </label>
 
-                <button type="submit" class="w-full bg-gray-700 text-white py-3 rounded-lg hover:bg-gray-600">Send Message</button>
-            </form>
+                        <button type="submit" class="w-full bg-red-500 hover:bg-red-700 text-white py-3 rounded-lg">
+          Send Message
+        </button>
+                    </form>
+                </div>
+
+            </div>
         </section>
+
 
 
         <!-- Google Map Embed -->
@@ -356,6 +396,67 @@
                 &copy; 2025 Adapted Studios | All Rights Reserved
             </div>
         </footer>
+        <script>
+            const pictureGalleryData = [{
+                    src: 'DavidEllis_0013.JPG',
+                    title: 'Lady Shutterbug',
+                    description: 'Description for image 1'
+                }, {
+                    src: 'galleryImages/EmmyStarBrown-4.jpg',
+                    title: 'Drone Over Chicago',
+                    description: 'Description for image 2'
+                }, {
+                    src: 'galleryImages/Tommaso_0172.jpg',
+                    title: 'Drone Over Chicago',
+                    description: 'Description for image 3'
+                }
+                // …add more items here…
+            ];
+
+            function createCard({
+                src,
+                title,
+                description
+            }, index) {
+                // wrapper
+                const card = document.createElement('div');
+                card.className = 'relative group overflow-hidden rounded-lg cursor-pointer';
+
+                // image
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = title;
+                img.className =
+                    'h-24 sm:h-48 md:h-72 lg:h-[54rem] w-auto object-cover transition-transform duration-300 group-hover:scale-105';
+                img.style.height = '864px'; // 288px × 3
+                img.style.objectFit = 'cover';
+                img.classList.add('w-auto', 'transition-transform', 'duration-300', 'group-hover:scale-105');
+
+                // overlay container
+                const overlay = document.createElement('div');
+                overlay.className = 'absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300';
+
+                // description text
+                const desc = document.createElement('p');
+                desc.className = 'text-white p-4 text-lg';
+                desc.textContent = description;
+
+                overlay.appendChild(desc);
+                card.appendChild(img);
+                card.appendChild(overlay);
+
+                return card;
+            }
+
+            function renderGallery() {
+                const container = document.getElementById('picture-gallery');
+                pictureGalleryData.forEach((item, idx) => {
+                    container.appendChild(createCard(item, idx));
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', renderGallery);
+        </script>
 
 
     </div>

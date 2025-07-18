@@ -1226,6 +1226,20 @@
                 font-size: 1rem;
                 line-height: 1.5;
             }
+            
+            .hero {
+                height: 60vh;
+                /* 60% of viewport height */
+                max-height: 500px;
+                /* optional cap */
+            }
+            
+            @media (min-width: 768px) {
+                .hero {
+                    height: 75vh;
+                }
+                /* taller on tablets+ */
+            }
         </style>
         <section class="relative bg-black text-white overflow-hidden py-24 px-6">
             <!-- Parallax Background -->
@@ -1361,8 +1375,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold mb-10">our clients</h2>
                 <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto">
                     adapted has been a trusted partner for brands and businesses since 2020. We have a track record of producing exceptional visual content that captivates audiences and drives results for our clients. From corporate branding videos to documentary films,
-                    we have tackled a diverse range of projects and have consistently exceeded expectations. Our team of talented and experienced professionals works closely with clients to understand their unique needs and deliver customized solutions
-                    that meet their goals. At adapted, we are passionate about the power of visual content and its ability to tell compelling stories that resonate with viewers.
+                    we have tackled a diverse range of projects and have consistently exceeded expectations.
                 </p>
 
                 <!-- Scrolling Track -->

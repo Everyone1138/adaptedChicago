@@ -19,8 +19,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
     <style>
+        html,
         body {
             font-family: 'Caviar Dreams', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         
         .fade-in {
@@ -171,6 +174,20 @@
             transform: translateX(100%) scale(0.8);
             z-index: 0;
         }
+        
+        .hero {
+            height: 60vh;
+            /* 60% of viewport height */
+            max-height: 500px;
+            /* optional cap */
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                height: 75vh;
+            }
+            /* taller on tablets+ */
+        }
     </style>
 </head>
 
@@ -253,23 +270,147 @@
 
         </nav>
 
-        <!-- Hero Video Section -->
-        <section class="video-container h-[50vh] w-full relative">
-            <!-- Vimeo Video Background -->
-            <iframe src="https://player.vimeo.com/video/888141167?badge=0&autopause=0&player_id=0&app_id=58479&controls=0&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full object-cover">
-    </iframe>
+        <style>
+            /* make the wrapper fill the screen (or your desired height) */
+            
+            .hero‑section {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .video-wrapper {
+                position: relative;
+                width: 100vw;
+                height: 56.25vw;
+                /* 16:9 aspect ratio */
+                max-height: 75vh;
+                /* never taller than viewport */
+                overflow: hidden;
+            }
+            /* absolutely position the iframe to cover the wrapper */
+            
+            .video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 56.25vw;
+                z-index: 1;
+            }
+            /* overlayed text block */
+            
+            .video-wrapper .video-text {
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                transform: translateY(-50%);
+                z-index: 2;
+                color: #fff;
+                max-width: 40%;
+                /* adjust as needed */
+            }
+            
+            .video-wrapper .video-text h1 {
+                margin: 0 0 0.5em;
+                font-size: 2rem;
+            }
+            
+            .video-wrapper .video-text p {
+                margin: 0;
+                font-size: 1rem;
+            }
+            /* smaller on phones */
+            
+            @media (max-width: 640px) {
+                .video-wrapper {
+                    height: 200px;
+                }
+                .video-wrapper iframe {
+                    height: 200px;
+                }
+                .video-wrapper .video-text {
+                    top: 10%;
+                    left: 5%;
+                    transform: none;
+                    max-width: 90%;
+                }
+                .video-wrapper .video-text h1 {
+                    font-size: 1.25rem;
+                }
+                .video-wrapper .video-text p {
+                    font-size: 0.875rem;
+                }
+            }
+            
+            .video-wrapper .video-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                width: 100%;
+                padding: 0 5%;
+                text-align: center;
+                /* center the text */
+                color: #fff;
+            }
+            /* mobile tweaks */
+            
+            @media (max-width: 640px) {
+                .video-wrapper {
+                    height: 200px;
+                }
+                .video-wrapper iframe {
+                    height: 200px;
+                }
+                .video-wrapper .video-text {
+                    top: 10%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 90%;
+                }
+                .video-wrapper .video-text h1 {
+                    font-size: 1.25rem;
+                }
+                .video-wrapper .video-text p {
+                    font-size: 0.875rem;
+                }
+            }
+            
+            @keyframes scroll-x {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+            
+            .animate-scroll-x {
+                animation: scroll-x 40s linear infinite;
+            }
+        </style>
 
-            <!-- Content Above Video -->
-            <div class="overlay relative z-10 text-center">
-                <h1 class="text-[50px] sm:text-[55px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
+        <div class="video-wrapper">
+            <iframe id="vimeoplayer" src="//player.vimeo.com/video/537801937?api=1&background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+  </iframe>
+
+            <div class="video-text">
+                <h1 class="spin-hover fade-in text-[50px] sm:text-[55px] md:text-[130px] lg:text-[100px] font-bold">
                     <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
                 </h1>
-                <h2 class="text-[25px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold fade-in spin-hover">
-                    <span>t</span><span>o</span> <span>o</span><span>u</span><span>r</span> <span>g</span><span>a</span><span>l</span><span>l</span><span>e</span><span>r</span><span>y</span> <span>s</span><span>e</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span>.
+                <h2 class="spin-hover fade-in text-[25px] sm:text-[30px] md:text-[50px] lg:text-[47px] font-bold">
+                    <span>t</span><span>o</span> …
                 </h2>
-                <p class="text-[15px] sm:text-[20px] md:text-[20px] lg:text-[25px] mt-4 fade-in" style="animation-delay: 0.5s;">where your dreams come to life on the screen.</p>
-                <a href="contactus.html" class="mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg fade-in" style="animation-delay: 2s;">Hire us!</a>
+                <p class="fade-in mt-4">where your dreams come to life on the screen.</p>
+                <a href="contactus.html" class="fade-in mt-6 inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg">
+      Hire us!
+    </a>
             </div>
+        </div>
+
+        <!-- Content Above Video -->
+
         </section>
 
 
@@ -283,14 +424,101 @@
 
 
 
-        <style>
-            body {
-                font-family: 'Caviar Dreams', sans-serif;
-            }
-        </style>
         </head>
 
         <body class="bg-gray-100">
+
+
+            <!-- Self‑Moving Drone Gallery Section -->
+            <section class="relative bg-black text-white py-20 px-6">
+                <!-- Floating Letters Background -->
+                <div class="collage" id="collage-drone"></div>
+
+                <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
+
+                    <!-- Auto‑Scrolling Image Gallery on the Left -->
+                    <div class="w-full lg:w-1/2 overflow-hidden rounded-xl">
+                        <div class="flex animate-scroll-x whitespace-nowrap">
+                            <!-- Replace these srcs with your own images -->
+                            <img src="galleryImages/277593663_113973881255524_6530026805987172586_n.jpg" alt="Drone 3" class="inline-block h-64 object-cover rounded-lg mr-4">
+
+                            <img src="galleryImages/316734409_146602111462024_1645770187982716241_n.jpg" alt="Drone 1" class="inline-block h-64 object-cover rounded-lg mr-4">
+                            <img src="galleryImages/277324558_2167640460051058_124057404638467244_n.jpg" alt="Drone 2" class="inline-block h-64 object-cover rounded-lg mr-4">
+                            <img src="galleryImages/311175931_663166171805850_4619783579078719971_n.jpg" alt="Drone 4" class="inline-block h-64 object-cover rounded-lg mr-4">
+
+                            <!-- duplicate for seamless loop -->
+                            <img src="img/drone1.jpg" alt="Drone 1" class="inline-block h-64 object-cover rounded-lg mr-4">
+                            <img src="img/drone2.jpg" alt="Drone 2" class="inline-block h-64 object-cover rounded-lg mr-4">
+                            <img src="img/drone3.jpg" alt="Drone 3" class="inline-block h-64 object-cover rounded-lg mr-4">
+                            <img src="img/drone4.jpg" alt="Drone 4" class="inline-block h-64 object-cover rounded-lg mr-4">
+                        </div>
+                    </div>
+
+                    <!-- Text & Buttons on the Right -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                            Thank you for visiting our gallery!
+                        </h2>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                            Feel free to explore more below.
+                        </p>
+                        <div class="inline-flex space-x-4 justify-center lg:justify-start">
+                            <a href="#picture-gallery" class="bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+          View Pictures
+        </a>
+                            <a href="#video-gallery" class="border border-white hover:bg-white hover:text-black text-white py-3 px-6 rounded-lg text-lg transition">
+          View Videos
+        </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Video Gallery Section -->
+            <section class="p-6">
+                <h2 class="text-2xl font-bold mb-4">Video Gallery</h2>
+                <div id="video-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+            </section>
+
+
+            <!-- Thank‑You + Video Section -->
+            <section class="relative bg-black text-white py-20 px-6">
+                <!-- Floating Letters Background -->
+                <div class="collage" id="collage-drone"></div>
+
+                <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
+
+                    <!-- Text on the Left -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                            Thank you for exploring our gallery!
+                        </h2>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                            We hope you enjoyed the images—feel free to dive back into the collections below.
+                        </p>
+                        <div class="inline-flex space-x-4 justify-center lg:justify-start">
+                            <a href="#picture-gallery" class="bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+          Return to Pictures
+        </a>
+                            <a href="#video-gallery" class="border border-white hover:bg-white hover:text-black text-white py-3 px-6 rounded-lg text-lg transition">
+          Return to Videos
+        </a>
+                        </div>
+                    </div>
+
+                    <!-- Video on the Right -->
+                    <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe src="https://player.vimeo.com/video/697524149?badge=0&autopause=0&player_id=0&app_id=58479" title="Drone Footage" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+        </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
 
 
             <!-- Picture Gallery Section -->
@@ -300,11 +528,7 @@
             </section>
 
 
-            <!-- Video Gallery Section -->
-            <section class="p-6">
-                <h2 class="text-2xl font-bold mb-4">Video Gallery</h2>
-                <div id="video-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
-            </section>
+
 
             <!-- Lightbox -->
             <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
