@@ -137,9 +137,8 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            background-attachment: center;
+            background-attachment: fixed;
             /* Optional: makes it stay in place while scrolling */
-            background-attachment: scroll;
         }
         
         .fade-in {
@@ -289,21 +288,6 @@
             opacity: 0;
             transform: translateX(100%) scale(0.8);
             z-index: 0;
-        }
-        /* 1) Target phones & small screens */
-        
-        @supports (background-image: -webkit-image-set(url() 1x,
-        url() 2x)) {
-            body {
-                background-image: -webkit-image-set( url('img/Studio+Shots_0012.JPG') 1x, url('img/Studio+Shots_0012@2x.JPG') 2x);
-                /* still scrollable */
-                background-attachment: scroll;
-            }
-        }
-        /* fallback for other browsers: JS swap */
-        
-        @media only screen and (max-width: 640px) {
-            /* if you want extra insurance, you can detect DPR in JS and swap */
         }
     </style>
 </head>
@@ -1559,6 +1543,7 @@
 
     <script>
         // carosel last
+
 
 
 
