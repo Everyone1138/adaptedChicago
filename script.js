@@ -83,6 +83,7 @@ module.exports = {
                 'fade-in-left': 'fade-in-left 1s ease-out',
                 'fade-in-up': 'fade-in-up 1s ease-out',
             },
+
         },
     },
     plugins: [],
