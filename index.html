@@ -440,7 +440,7 @@
                     <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
                     <img src="img/theEconomist-02.jpg" alt="The Economist" />
                     <img src="img/TimeOut-08.jpg" alt="TimeOut" />
-                    <img src="img/vice-1.jpg" alt="vice" />
+                    <img src="img/vice-01.jpg" alt="vice" />
                     <!-- Duplicated Set -->
                     <img src="img/ArtInstituteChicago-09.jpg" alt="Art Institute Chicago" />
                     <img src="img/Bian-03.jpg" alt="Bian" />
@@ -452,7 +452,7 @@
                     <img src="img/theatreGoodman-10.jpg" alt="theatreGoodman" />
                     <img src="img/theEconomist-02.jpg" alt="The Economist" />
                     <img src="img/TimeOut-08.jpg" alt="TimeOut" />
-                    <img src="img/vice-1.jpg" alt="vice" />
+                    <img src="img/vice-01.jpg" alt="vice" />
                 </div>
             </div>
 
@@ -474,7 +474,7 @@
             <div class="collage" id="collage-welcome"></div>
 
             <div class="max-w-5xl mx-auto text-center fade-in-up z-10">
-                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">The way you tell your story makes a difference.</h2>
+                <!-- <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide">The way you tell your story makes a difference.</h2> -->
                 <h3 class="text-3xl md:text-5xl font-bold mb-6">Welcome to Adapted</h3>
                 <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
                     Based in the vibrant heart of Chicago, Adapted is a premiere video production company and creative agency that’s redefining visual storytelling. We’ve swiftly earned a reputation as the go-to partner for businesses, organizations, and individuals who
@@ -577,7 +577,7 @@
             <div class="video-inner">
                 <iframe class="vid" src="https://player.vimeo.com/video/697524149?background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen"></iframe>
             </div>
-            <div class="video-text text-[25px] sm:text-[25px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
+            <div class="video-text text-[50px] sm:text-[55px] md:text-[130px] lg:text-[100px] font-bold fade-in">
                 <h1>Your Heading Here</h1>
                 <p>Your subtitle or description goes here.</p>
             </div>
@@ -681,7 +681,7 @@
 
         <!-- Gallery Section -->
         <div class="relative z-10 px-6 pb-20">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
                 <!-- Image Cards -->
                 <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
                     <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
@@ -1073,6 +1073,84 @@
 
 
 
+        <!-- <iframe id="vimeoplayer" src="//player.vimeo.com/video/537801937?api=1&amp;background=1" class="background-video ready" style="width: 100%; height: 478.301px; left: 0px; top: -6.15039px;" data-dashlane-frameid="732"></iframe> -->
+
+        <style>
+            /* make the wrapper fill the screen (or your desired height) */
+            
+            .video-wrapper {
+                position: relative;
+                width: 100vw;
+                height: 56.25vw;
+                /* 16:9 aspect ratio */
+                max-height: 75vh;
+                /* never taller than viewport */
+                overflow: hidden;
+            }
+            /* absolutely position the iframe to cover the wrapper */
+            
+            .video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 56.25vw;
+                z-index: 1;
+            }
+            /* overlayed text block */
+            
+            .video-wrapper .video-text {
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                transform: translateY(-50%);
+                z-index: 2;
+                color: #fff;
+                max-width: 40%;
+                /* adjust as needed */
+            }
+            
+            .video-wrapper .video-text h1 {
+                margin: 0 0 0.5em;
+                font-size: 2rem;
+            }
+            
+            .video-wrapper .video-text p {
+                margin: 0;
+                font-size: 1rem;
+            }
+            /* smaller on phones */
+            
+            @media (max-width: 640px) {
+                .video-wrapper {
+                    height: 200px;
+                }
+                .video-wrapper iframe {
+                    height: 200px;
+                }
+                .video-wrapper .video-text {
+                    top: 10%;
+                    left: 5%;
+                    transform: none;
+                    max-width: 90%;
+                }
+                .video-wrapper .video-text h1 {
+                    font-size: 1.25rem;
+                }
+                .video-wrapper .video-text p {
+                    font-size: 0.875rem;
+                }
+            }
+        </style>
+
+        <div class="video-wrapper">
+            <iframe id="vimeoplayer" src="//player.vimeo.com/video/537801937?api=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+  </iframe>
+            <div class="video-text">
+                <h1>Your Headline Here</h1>
+                <p>Your subtitle or call‑to‑action goes here.</p>
+            </div>
+        </div>
 
 
 
