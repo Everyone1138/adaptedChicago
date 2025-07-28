@@ -377,9 +377,11 @@
 
         <!-- Hero Video Section -->
         <section class="video-container h-[60vh] h-screen flex items-center justify-center relative">
-            <video autoplay muted loop playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" class="pointer-events-none">
-        <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
+            <div class="video-container absolute inset-0">
+                <video autoplay muted loop playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" class="w-full h-full object-cover">
+      <source src="adapted_2024_film_reel (720p).mp4" type="video/mp4">
     </video>
+            </div>
             <div class="overlay">
                 <h1 class="text-[50px] sm:text-[55px] md:text-[130px] lg:text-[100px] font-bold fade-in spin-hover">
                     <span>C</span><span>h</span><span>i</span><span>c</span><span>a</span><span>g</span><span>o</span>
@@ -509,6 +511,37 @@
 
 
 
+        <!-- Your Experience Matters Section -->
+        <section class="relative px-6 py-24 bg-black text-white overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-experience"></div>
+
+            <!-- Content Layout -->
+            <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
+
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Your Experience Matters</h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-4">
+                        Creating content should be an enjoyable, seamless and personalized experience. At
+                        <span class="text-white font-semibold">adapted.</span> we’re committed to providing that personal touch of authenticity and genuine interest that sets us apart.
+                    </p>
+
+                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+        Work With Us
+      </a>
+                </div>
+
+                <!-- Interactive Video Embed -->
+                <div class="w-full md:w-1/2 transform transition-transform duration-500 hover:scale-105 rounded-xl overflow-hidden shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full rounded-lg" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Adapted Studios"
+                            allowfullscreen>
+        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
@@ -518,6 +551,633 @@
 
 
 
+
+
+
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <div class="collage" id="collage"></div>
+            <div class="relative z-10 max-w-4xl mx-auto text-center fade-in-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Our style is immersive. Our storytelling is intentional. We elevate voices through film and visual expression that stays with you.
+                </p>
+            </div>
+        </section>
+
+
+
+
+        <style>
+            .hero-overlay {
+                background: rgba(0, 0, 0, 0.4);
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+            }
+            
+            .video-containers {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            
+            .video-containers iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                transform: scale(4.2);
+                transform-origin: center;
+            }
+            
+            .banner-section {
+                height: 25vh;
+                overflow: hidden;
+                position: relative;
+                margin: 0;
+                width: 100%;
+            }
+            
+            .scroll-indicator {
+                animation: bounce 2s infinite;
+            }
+            
+            @keyframes bounce {
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0);
+                }
+                40% {
+                    transform: translateY(-20px);
+                }
+                60% {
+                    transform: translateY(-10px);
+                }
+            }
+            
+            .btn-glow {
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .btn-glow:hover {
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            }
+            
+            .btn-glow::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: rgba(255, 255, 255, 0.1);
+                transform: rotate(45deg);
+                transition: all 0.6s ease;
+                opacity: 0;
+            }
+            
+            .btn-glow:hover::after {
+                opacity: 1;
+                top: -30%;
+                left: -30%;
+            }
+            
+            .text-stroke {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                text-stroke: 1px rgba(255, 255, 255, 0.3);
+            }
+            
+            @media (max-width: 768px) {
+                .video-containers {
+                    top: -5%;
+                    height: 110%;
+                }
+            }
+        </style>
+
+        <!-- Banner Section 1 -->
+        <section class="banner-section relative">
+            <!-- Video Background -->
+            <div class="video-containers">
+                <iframe src="https://player.vimeo.com/video/506532592?background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+
+            <!-- Overlay -->
+            <div class="hero-overlay absolute top-0 left-0 w-full h-full flex items-center"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div class="text-left md:text-center space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Featured Content</span>
+                    </h2>
+                    <p class="text-lg text-gray-200 max-w-2xl mx-auto">
+                        Discover more about our premium services and offerings
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- video section to inform user of services-->
+        <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">cinematic moments</h1>
+            <!-- adjust this section move it somewhere else. -->
+            <!-- <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2> -->
+            <!-- <p class="text-md md:text-lg text-white-500 mb-8">
+                    Dive into our curated gallery of cinematic visuals. Hover to explore each moment in motion and feel the impact of storytelling through the lens.
+                </p> -->
+            <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
+                <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" title="Sample Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                          <iframe title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+                </iframe>
+            </div>
+        </section>
+
+
+        <!-- Gallery Section -->
+        <div class="relative z-10 px-6 pb-20">
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                <!-- Image Cards -->
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 1</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(1)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 2</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(2)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 3</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(3)">
+                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white p-4 text-lg">Description for image 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
+            <div class="relative max-w-screen-lg w-full px-4 fade-in">
+                <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
+                <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
+                <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
+                <div class="text-center">
+                    <img id="lightboxImage" src="" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300" />
+                    <p id="lightboxText" class="text-lg text-gray-300 mt-4"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Second Section with Floating Letters, Image, and Bullet Points -->
+        <section class="relative px-6 py-20 bg-black text-white overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-2"></div>
+
+            <!-- Content Wrapper -->
+            <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
+
+                <!-- Image Placeholder -->
+                <div class="w-full md:w-1/2">
+                    <img src="images/portfolio/gallery/g-beetle.jpg" alt="Team at Work" class="w-full rounded-lg shadow-lg" />
+                </div>
+
+                <!-- Text and Bullet Points -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">What Sets Us Apart</h2>
+                    <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
+                        <li>Authentic storytelling driven by emotion</li>
+                        <li>Decades of combined industry experience</li>
+                        <li>Cinematic visuals tailored to your brand</li>
+                        <li>Chicago-rooted, globally minded production</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- Drone Footage Section -->
+        <section class="relative bg-black text-white py-20 px-6 ">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-drone"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
+
+                <!-- Video on the Left -->
+                <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Drone Footage" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Text on the Right -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">A New Perspective</h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                        Elevate your visual storytelling with aerial cinematography that captures sweeping landscapes and dynamic movement from the sky.
+                    </p>
+                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+        Book Aerial Coverage
+      </a>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- Call to Action Section -->
+        <section class="bg-black text-white py-20 px-6 fade-in-up">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="adapResize.gif" alt="Storytelling Visual" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
+                        <p class="text-xl font-semibold opacity-0 group-hover:opacity-100 transition duration-300">Your Vision Here</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Tell Your Story</h2>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        Adapted is here and ready to help you tell your story in a way that is truly unique, engaging, and unforgettable. Let’s collaborate to create content that stands out, resonates and makes an impact.
+                    </p>
+                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
+        Let's Collaborate
+      </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--customer google reviews -->
+        <section class="relative bg-black text-white py-24 px-6 overflow-hidden">
+            <!-- Floating Letters Background -->
+            <div class="collage" id="collage-testimonials"></div>
+
+            <div class="relative z-10 max-w-5xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-300 mb-12">Real stories. Real impact.</p>
+
+                <div class="carousel-container relative h-[420px] md:h-[360px] overflow-hidden">
+                    <div id="testimonialTrack" class="relative w-full h-full flex items-center justify-center">
+                        <!-- Testimonials dynamically rendered by JS -->
+                    </div>
+                </div>
+
+                <div class="flex justify-center mt-6 space-x-4">
+                    <button id="prevBtn" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+    <i class="fas fa-chevron-left text-white"></i>
+  </button>
+                    <button id="nextBtn" class="p-3 bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+    <i class="fas fa-chevron-right text-white"></i>
+  </button>
+                </div>
+                <div id="indicators" class="flex justify-center mt-4 space-x-2"></div>
+
+            </div>
+        </section>
+
+
+        <script>
+            // 'your experience matters' section js //
+
+            // end of js section for 'your experience matters' //
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Sample review data (in a real app, you might fetch this from an API)
+                const reviews = [{
+                    id: 1,
+                    name: "Sarah Johnson",
+                    rating: 5,
+                    date: "2 weeks ago",
+                    text: "Absolutely amazing service! The team went above and beyond to help me with my project. I couldn't be happier with the results. Highly recommend to anyone looking for quality work.",
+                    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+                }, {
+                    id: 2,
+                    name: "Michael Chen",
+                    rating: 4,
+                    date: "1 month ago",
+                    text: "Great experience overall. The communication was excellent and the final product met all my expectations. Would definitely work with them again for future projects.",
+                    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+                }, {
+                    id: 3,
+                    name: "Emily Rodriguez",
+                    rating: 5,
+                    date: "3 weeks ago",
+                    text: "I was blown away by the attention to detail and professionalism. They delivered exactly what I needed before the deadline. 10/10 would recommend!",
+                    avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+                }, {
+                    id: 4,
+                    name: "David Wilson",
+                    rating: 5,
+                    date: "2 months ago",
+                    text: "Exceptional service from start to finish. The team was responsive, knowledgeable, and delivered beyond my expectations. Will be using them for all my future needs.",
+                    avatar: "https://randomuser.me/api/portraits/men/75.jpg"
+                }, {
+                    id: 5,
+                    name: "Jessica Kim",
+                    rating: 5,
+                    date: "1 week ago",
+                    text: "I'm so impressed with the quality of work and customer service. They made the entire process so easy and stress-free. Can't recommend them enough!",
+                    avatar: "https://randomuser.me/api/portraits/women/90.jpg"
+                }];
+
+                const carouselContainer = document.querySelector('.carousel-container');
+                const indicatorsContainer = document.getElementById('indicators');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+
+                let currentIndex = 0;
+                let autoScrollInterval;
+                const autoScrollDelay = 5000; // 5 seconds
+
+                // Create review cards
+                function createReviewCards() {
+                    carouselContainer.innerHTML = '';
+                    indicatorsContainer.innerHTML = '';
+
+                    reviews.forEach((review, index) => {
+                        // Create review card
+                        const reviewCard = document.createElement('div');
+                        reviewCard.className = `review-card absolute w-full md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-lg p-6 transition-all duration-500 ${index === 0 ? 'active-review' : 'hidden-review'}`;
+
+                        // Create stars
+                        let stars = '';
+                        for (let i = 0; i < 5; i++) {
+                            stars += i < review.rating ?
+                                '<i class="fas fa-star text-yellow-400"></i>' :
+                                '<i class="far fa-star text-yellow-400"></i>';
+                        }
+
+                        reviewCard.innerHTML = `
+                        <div class="flex items-start mb-4">
+                            <img src="${review.avatar}" alt="${review.name}" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">${review.name}</h3>
+                                <div class="flex items-center mt-1">
+                                    ${stars}
+                                    <span class="text-gray-500 text-sm ml-2">${review.date}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"${review.text}"</p>
+                        <div class="mt-4 flex justify-end">
+                            <img src="https://www.google.com/images/branding/product/1x/google_reviews_48dp.png" alt="Google" class="h-6">
+                        </div>
+                    `;
+
+                        carouselContainer.appendChild(reviewCard);
+
+                        // Create indicator
+                        const indicator = document.createElement('button');
+                        indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                        indicator.dataset.index = index;
+                        indicator.addEventListener('click', () => goToReview(index));
+                        indicatorsContainer.appendChild(indicator);
+                    });
+                }
+
+                // Update carousel position
+                function updateCarousel() {
+                    const cards = document.querySelectorAll('.review-card');
+                    const indicators = document.querySelectorAll('#indicators button');
+
+                    cards.forEach((card, index) => {
+                        if (index === currentIndex) {
+                            card.classList.remove('hidden-review', 'next-review', 'prev-review');
+                            card.classList.add('active-review');
+                        } else if (index === (currentIndex + 1) % reviews.length) {
+                            card.classList.remove('hidden-review', 'active-review', 'prev-review');
+                            card.classList.add('next-review');
+                        } else if (index === (currentIndex - 1 + reviews.length) % reviews.length) {
+                            card.classList.remove('hidden-review', 'active-review', 'next-review');
+                            card.classList.add('prev-review');
+                        } else {
+                            card.classList.remove('active-review', 'next-review', 'prev-review');
+                            card.classList.add('hidden-review');
+                        }
+                    });
+
+                    indicators.forEach((indicator, index) => {
+                        indicator.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} transition-colors`;
+                    });
+                }
+
+                // Navigate to specific review
+                function goToReview(index) {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Next review
+                function nextReview() {
+                    currentIndex = (currentIndex + 1) % reviews.length;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Previous review
+                function prevReview() {
+                    currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+                    updateCarousel();
+                    resetAutoScroll();
+                }
+
+                // Auto-scroll functionality
+                function startAutoScroll() {
+                    autoScrollInterval = setInterval(nextReview, autoScrollDelay);
+                }
+
+                function resetAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                    startAutoScroll();
+                }
+
+                // Event listeners
+                nextBtn.addEventListener('click', nextReview);
+                prevBtn.addEventListener('click', prevReview);
+
+                // Pause auto-scroll on hover
+                carouselContainer.addEventListener('mouseenter', () => {
+                    clearInterval(autoScrollInterval);
+                });
+
+                carouselContainer.addEventListener('mouseleave', () => {
+                    startAutoScroll();
+                });
+
+                // Initialize
+                createReviewCards();
+                startAutoScroll();
+
+                // Handle keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        nextReview();
+                    } else if (e.key === 'ArrowLeft') {
+                        prevReview();
+                    }
+                });
+            });
+        </script>
+
+
+
+
+        <!-- 🖼️ GIF Banner Section -->
+        <section class="relative w-full h-[28vh] sm:h-[32vh] md:h-[36vh] overflow-hidden m-0">
+
+            <!-- Background GIF -->
+            <div class="absolute inset-0 bg-center bg-cover bg-no-repeat pointer-events-none" style="background-image:url('none');">
+            </div>
+
+            <!-- Overlay content -->
+            <div class="relative z-10 flex items-center justify-center h-full text-center px-6">
+                <div>
+                    <h2 class="fade-in text-white text-2xl sm:text-3xl md:text-4xl font-extrabold">
+                        The way you tell your story makes a difference.
+                    </h2>
+                    <p class="fade-in text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-2">
+                        Elevating brands through intentional storytelling and powerful imagery.
+                    </p>
+                    <a href="contactus.html" class="fade-in mt-4 inline-block bg-red-500 hover:bg-red-700 transition text-white py-2 px-5 rounded-lg text-sm md:text-base" style="animation-delay:.6s">
+        Get in Touch
+      </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- <iframe id="vimeoplayer" src="//player.vimeo.com/video/537801937?api=1&amp;background=1" class="background-video ready" style="width: 100%; height: 478.301px; left: 0px; top: -6.15039px;" data-dashlane-frameid="732"></iframe> -->
+
+        <style>
+            /* make the wrapper fill the screen (or your desired height) */
+            
+            .video-wrapper {
+                position: relative;
+                width: 100vw;
+                height: 56.25vw;
+                /* 16:9 aspect ratio */
+                max-height: 75vh;
+                /* never taller than viewport */
+                overflow: hidden;
+            }
+            /* absolutely position the iframe to cover the wrapper */
+            
+            .video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 56.25vw;
+                z-index: 1;
+            }
+            /* overlayed text block */
+            
+            .video-wrapper .video-text {
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                transform: translateY(-50%);
+                z-index: 2;
+                color: #fff;
+                max-width: 40%;
+                /* adjust as needed */
+            }
+            
+            .video-wrapper .video-text h1 {
+                margin: 0 0 0.5em;
+                font-size: 2rem;
+            }
+            
+            .video-wrapper .video-text p {
+                margin: 0;
+                font-size: 1rem;
+            }
+            /* smaller on phones */
+            
+            @media (max-width: 640px) {
+                .video-wrapper {
+                    height: 200px;
+                }
+                .video-wrapper iframe {
+                    height: 200px;
+                }
+                .video-wrapper .video-text {
+                    top: 10%;
+                    left: 5%;
+                    transform: none;
+                    max-width: 90%;
+                }
+                .video-wrapper .video-text h1 {
+                    font-size: 1.25rem;
+                }
+                .video-wrapper .video-text p {
+                    font-size: 0.875rem;
+                }
+            }
+        </style>
+
+        <div class="video-wrapper">
+            <iframe id="vimeoplayer" src="//player.vimeo.com/video/537801937?api=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+  </iframe>
+            <div class="video-text">
+                <h1>Your Headline Here</h1>
+                <p>Your subtitle or call‑to‑action goes here.</p>
+            </div>
+        </div>
 
 
 
@@ -727,341 +1387,6 @@
 
 
 
-
-
-        <!-- Your Experience Matters Section -->
-        <section class="relative px-6 py-24 bg-black text-white overflow-hidden">
-            <!-- Floating Letters Background -->
-            <div class="collage" id="collage-experience"></div>
-
-            <!-- Content Layout -->
-            <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-in-up">
-
-                <!-- Text Content -->
-                <div class="w-full md:w-1/2 text-center md:text-left">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Your Experience Matters</h2>
-                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-4">
-                        Creating content should be an enjoyable, seamless and personalized experience. At
-                        <span class="text-white font-semibold">adapted.</span> we’re committed to providing that personal touch of authenticity and genuine interest that sets us apart.
-                    </p>
-
-                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
-        Work With Us
-      </a>
-                </div>
-
-                <!-- Interactive Video Embed -->
-                <div class="w-full md:w-1/2 transform transition-transform duration-500 hover:scale-105 rounded-xl overflow-hidden shadow-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full rounded-lg" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Adapted Studios"
-                            allowfullscreen>
-        </iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <style>
-            .hero-overlay {
-                background: rgba(0, 0, 0, 0.4);
-                background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
-            }
-            
-            .video-containers {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-            }
-            
-            .video-containers iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                transform: scale(4.2);
-                transform-origin: center;
-            }
-            
-            .hero-section {
-                height: 90vh;
-                overflow: hidden;
-                position: relative;
-            }
-            
-            .banner-section {
-                height: 25vh;
-                overflow: hidden;
-                position: relative;
-                margin: 0;
-                width: 100%;
-            }
-            
-            .scroll-indicator {
-                animation: bounce 2s infinite;
-            }
-            
-            @keyframes bounce {
-                0%,
-                20%,
-                50%,
-                80%,
-                100% {
-                    transform: translateY(0);
-                }
-                40% {
-                    transform: translateY(-20px);
-                }
-                60% {
-                    transform: translateY(-10px);
-                }
-            }
-            
-            .btn-glow {
-                transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .btn-glow:hover {
-                box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-            }
-            
-            .btn-glow::after {
-                content: '';
-                position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                background: rgba(255, 255, 255, 0.1);
-                transform: rotate(45deg);
-                transition: all 0.6s ease;
-                opacity: 0;
-            }
-            
-            .btn-glow:hover::after {
-                opacity: 1;
-                top: -30%;
-                left: -30%;
-            }
-            
-            .text-stroke {
-                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-                text-stroke: 1px rgba(255, 255, 255, 0.3);
-            }
-            
-            @media (max-width: 768px) {
-                .hero-section {
-                    height: 80vh;
-                }
-                .video-container {
-                    top: -5%;
-                    height: 110%;
-                }
-            }
-        </style>
-
-
-
-
-
-
-
-        <!-- video section to inform user of services-->
-        <section class="text-center px-6 md:px-12 mb-16 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">cinematic moments</h1>
-            <!-- adjust this section move it somewhere else. -->
-            <!-- <h2 class="text-xl md:text-2xl font-semibold mb-4 text-red-500">Experience the Story in Motion</h2> -->
-            <!-- <p class="text-md md:text-lg text-white-500 mb-8">
-                    Dive into our curated gallery of cinematic visuals. Hover to explore each moment in motion and feel the impact of storytelling through the lens.
-                </p> -->
-            <div class="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8 transform transition-transform duration-500 hover:scale-105 hover:ring-4 hover:ring-white-500/30">
-                <iframe class="w-full h-full" title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" title="Sample Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                          <iframe title="vimeo-player" src="https://player.vimeo.com/video/883180342?h=d9b730c8bc" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
-                </iframe>
-            </div>
-        </section>
-
-
-        <!-- Gallery Section -->
-        <div class="relative z-10 px-6 pb-20">
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                <!-- Image Cards -->
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(0)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 1</p>
-                    </div>
-                </div>
-
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(1)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 2</p>
-                    </div>
-                </div>
-
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(2)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 3</p>
-                    </div>
-                </div>
-
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(3)">
-                    <img src="images/portfolio/lady-shutterbug.jpg" alt="Image 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 hover-zoom" />
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-end opacity-0 group-hover:opacity-100 transition duration-300">
-                        <p class="text-white p-4 text-lg">Description for image 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
-            <div class="relative max-w-screen-lg w-full px-4 fade-in">
-                <button onclick="closeLightbox()" class="absolute top-2 right-4 text-white text-4xl">&times;</button>
-                <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10094;</button>
-                <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4">&#10095;</button>
-                <div class="text-center">
-                    <img id="lightboxImage" src="" class="max-h-[75vh] max-w-full mx-auto rounded shadow-lg transition-transform duration-300" />
-                    <p id="lightboxText" class="text-lg text-gray-300 mt-4"></p>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <!-- Drone Footage Section -->
-        <section class="relative bg-black text-white py-20 px-6 ">
-            <!-- Floating Letters Background -->
-            <div class="collage" id="collage-drone"></div>
-
-            <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 fade-in-up">
-
-                <!-- Video on the Left -->
-                <div class="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://player.vimeo.com/video/697524149?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Drone Footage" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- Text on the Right -->
-                <div class="w-full lg:w-1/2 text-center lg:text-left">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">A New Perspective</h2>
-                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-                        Elevate your visual storytelling with aerial cinematography that captures sweeping landscapes and dynamic movement from the sky.
-                    </p>
-                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
-        Book Aerial Coverage
-      </a>
-                </div>
-
-            </div>
-        </section>
-
-
-
-
-        <!-- Banner Section 1 -->
-        <section class="banner-section relative">
-            <!-- Video Background -->
-            <div class="video-containers">
-                <iframe src="https://player.vimeo.com/video/506532592?background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-
-            <!-- Overlay -->
-            <div class="hero-overlay absolute top-0 left-0 w-full h-full flex items-center"></div>
-
-            <!-- Content -->
-            <div class="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <div class="text-left md:text-center space-y-4">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Featured Content</span>
-                    </h2>
-                    <p class="text-lg text-gray-200 max-w-2xl mx-auto">
-                        Discover more about our premium services and offerings
-                    </p>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- 🖼️ GIF Banner Section -->
-        <section class="relative w-full h-[28vh] sm:h-[32vh] md:h-[36vh] overflow-hidden m-0">
-
-            <!-- Background GIF -->
-            <div class="absolute inset-0 bg-center bg-cover bg-no-repeat pointer-events-none" style="background-image:url('none');">
-            </div>
-
-            <!-- Overlay content -->
-            <div class="relative z-10 flex items-center justify-center h-full text-center px-6">
-                <div>
-                    <h2 class="fade-in text-white text-2xl sm:text-3xl md:text-4xl font-extrabold">
-                        The way you tell your story makes a difference.
-                    </h2>
-                    <p class="fade-in text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-2">
-                        Elevating brands through intentional storytelling and powerful imagery.
-                    </p>
-                    <a href="contactus.html" class="fade-in mt-4 inline-block bg-red-500 hover:bg-red-700 transition text-white py-2 px-5 rounded-lg text-sm md:text-base" style="animation-delay:.6s">
-        Get in Touch
-      </a>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- Full-Width Clients Carousel with Floating Letters -->
         <section class="relative bg-black text-white py-20 px-6 overflow-hidden">
             <!-- Floating Letters Background -->
@@ -1142,29 +1467,6 @@
 
 
 
-        <!-- Call to Action Section -->
-        <section class="bg-black text-white py-20 px-6 fade-in-up">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <!-- Image -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="adapResize.gif" alt="Storytelling Visual" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
-                    <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
-                        <p class="text-xl font-semibold opacity-0 group-hover:opacity-100 transition duration-300">Your Vision Here</p>
-                    </div>
-                </div>
-
-                <!-- Text Content -->
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Tell Your Story</h2>
-                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                        Adapted is here and ready to help you tell your story in a way that is truly unique, engaging, and unforgettable. Let’s collaborate to create content that stands out, resonates and makes an impact.
-                    </p>
-                    <a href="#contact" class="inline-block bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-lg text-lg transition">
-        Let's Collaborate
-      </a>
-                </div>
-            </div>
-        </section>
 
 
 
