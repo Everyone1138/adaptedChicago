@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adapted Studios | Chicago Video Production</title>
-    <link rel="stylesheet" href="public/otherstyles.css">
+    <link rel="stylesheet" href="otherstyles.css">
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -209,6 +209,36 @@
                 transform: translateX(-50%);
             }
         }
+        /* Backdrop: dark with a subtle blur */
+        
+        #thankyou-modal {
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(4px);
+        }
+        /* Modal box: deep gray, red outline, white text */
+        
+        #thankyou-modal .modal-content {
+            background-color: #111827;
+            /* Tailwind gray‑900 */
+            color: #f9fafb;
+            /* Tailwind gray‑50 */
+            border: 2px solid #ef4444;
+            /* Tailwind red‑500 */
+            border-radius: 1rem;
+            /* match your rounded-lg/2xl vibe */
+        }
+        /* Button: match your site’s red calls‑to‑action */
+        
+        #thankyou-modal .modal-content button {
+            background-color: #ef4444;
+            /* red‑500 */
+            transition: background-color .2s;
+        }
+        
+        #thankyou-modal .modal-content button:hover {
+            background-color: #b91c1c;
+            /* red‑700 */
+        }
     </style>
 </head>
 
@@ -368,9 +398,19 @@
   </button>
                     </form>
 
-                </div>
+                    <!-- insert right below your form -->
+                    <div id="thankyou-modal" class="fixed inset-0 flex items-center justify-center hidden z-50">
+                        <div class="modal-content p-8 w-11/12 max-w-md text-center shadow-2xl">
+                            <h2 class="text-3xl font-bold mb-4">Thank you!</h2>
+                            <p class="text-lg mb-6">
+                                Your message has been sent successfully.<br> We’ll be in touch soon.
+                            </p>
+                            <button id="modal-close-btn" class="px-6 py-2 text-white font-semibold rounded-lg">
+      Back to Contact Page
+    </button>
+                        </div>
+                    </div>
 
-            </div>
 
         </section>
 
@@ -496,11 +536,61 @@
 
 
             document.addEventListener('DOMContentLoaded', renderGallery);
+
+
+            document
+                .getElementById('contact-form')
+                .addEventListener('submit', function() {
+                    // this alert will pop up immediately when they hit “Send Message”
+                    alert('Thank you for messaging Adapted Studios! We’ll be in touch soon.');
+                    // then the form continues submitting to your /send endpoint
+                });
+
+
+
+            //contact form pop-up
+
+            const form = document.getElementById('contact-form');
+            const modal = document.getElementById('thankyou-modal');
+            const closeBtn = document.getElementById('modal-close-btn');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+
+                try {
+                    const resp = await fetch(form.action, {
+                        method: 'POST',
+                        body: new URLSearchParams(new FormData(form))
+                    });
+                    if (!resp.ok) throw new Error('Network response was not ok');
+
+                    // show the modal
+                    modal.classList.remove('hidden');
+
+                    // auto‑redirect after 5 seconds
+                    setTimeout(() => {
+                        window.location.href = '/contactus.html';
+                    }, 5000);
+
+                } catch (err) {
+                    console.error(err);
+                    alert('Oops! Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message';
+                }
+            });
+
+            closeBtn.addEventListener('click', () => {
+                window.location.href = '/contactus.html';
+            });
         </script>
 
 
 
-    </div>
+        </div>
 </body>
 
 </html>
